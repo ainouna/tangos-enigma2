@@ -607,7 +607,6 @@ class MovieSelection(Screen, HelpableScreen, SelectionEventInfo, InfoBarBase, Pr
 
 		self["InfobarActions"] = HelpableActionMap(self, "InfobarActions",
 			{
-				"showMovies": (self.doPathSelect, _("Select the movie path")),
 				"showRadio": (self.btn_radio, boundFunction(self.getinitUserDefinedActionsDescription, "btn_radio")),
 				"showTv": (self.btn_tv, boundFunction(self.getinitUserDefinedActionsDescription, "btn_tv")),
 				"showText": (self.btn_text, boundFunction(self.getinitUserDefinedActionsDescription, "btn_text")),
@@ -640,6 +639,8 @@ class MovieSelection(Screen, HelpableScreen, SelectionEventInfo, InfoBarBase, Pr
 			{
 				"contextMenu": (self.doContext, _("Menu")),
 				"showEventInfo": (self.showEventInformation, _("Show event details")),
+				"selectMovie": (self.itemSelected, _("Select movie")),
+				"showMovies": (self.doPathSelect, _("Select the movie path")),
 			})
 
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",

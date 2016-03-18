@@ -315,6 +315,8 @@
 		<key id="KEY_OPTION" mapto="contextMenu" flags="m"/>
 		<!--key id="KEY_HELP" mapto="contextMenu" flags="m"/-->
 		<key id="KEY_INFO" mapto="showEventInfo" flags="m"/>
+		<key id="KEY_PLAY" mapto="selectMovie" flags="b"/>
+		<key id="KEY_PLAY" mapto="showMovies" flags="l"/>
 	</map>
 
 	<map context="InfobarMovieListActions">
