@@ -344,7 +344,7 @@ class InfoBarShowHide(InfoBarScreenSaver):
 		self.hideTimer.stop()
 		if self.__state == self.STATE_SHOWN:
 			self.hide()
-			
+
 	def epg(self):
 		self.__state = self.STATE_EPG
 		self.hide()
@@ -356,7 +356,7 @@ class InfoBarShowHide(InfoBarScreenSaver):
 			self.openServiceList()
 		else:
 			self.toggleShow()
-			
+
 	def toggleShow(self):
 		if self.__state == self.STATE_HIDDEN:
 			self.showFirstInfoBar()
@@ -440,20 +440,20 @@ class NumberZap(Screen):
 	def keyOK(self):
 		self.Timer.stop()
 		self.close(self.service, self.bouquet)
-		
+
 	def handleServiceName(self):
 		if self.searchNumber:
 			self.service, self.bouquet = self.searchNumber(int(self["number"].getText()))
 			self["servicename"].text = self["servicename_summary"].text = ServiceReference(self.service).getServiceName()
 			if not self.startBouquet:
 				self.startBouquet = self.bouquet
-	
+
 	def handlePicon(self):
 		if self.service is not None:
 			sname = self.service.toString()
 			pngname = getPiconName(sname)
 			self["picon"].instance.setPixmapFromFile(pngname)
-			
+
 	def keyBlue(self):
 		self.startTimer()
 		if self.searchNumber:
@@ -470,7 +470,7 @@ class NumberZap(Screen):
 
 		self.handleServiceName()
 		self.handlePicon()
-		
+
 		if len(self.numberString) >= 5:
 			self.keyOK()
 
@@ -632,7 +632,7 @@ class InfoBarChannelSelection:
 		self["ChannelSelectActions"] = HelpableActionMap(self, "InfobarChannelSelection",
 			{
 				"keyUp": (self.keyUpCheck, self.getKeyUpHelptext),
-				"keyDown": (self.keyDownCheck, self.getKeyDownHelptext),
+				"keyDown": (self.keyDownCheck, self.getKeyDownHelpText),
 				"keyLeft": (self.keyLeftCheck, self.getKeyLeftHelptext),
 				"keyRight": (self.keyRightCheck, self.getKeyRightHelptext),
 				"historyBack": (self.historyBack, _("Switch to previous channel in history")),
@@ -730,7 +730,7 @@ class InfoBarChannelSelection:
 					value += " " + _("and select previous channel")
 		return value
 
-	def getKeyDownHelptext(self):
+	def getKeyDownHelpText(self):
 		if config.usage.oldstyle_zap_controls.value:
 			value = _("Switch to previous channel")
 		else:
@@ -966,14 +966,6 @@ class InfoBarEPG:
 			pluginlist.append((_("Show EPG for current channel..."), self.openSingleServiceEPG, "current_channel"))
 		pluginlist.append((_("Multi EPG"), self.openMultiServiceEPG, "multi_epg"))
 		pluginlist.append((_("Current event EPG"), self.openEventView, "event_epg"))
-#		pluginlist.reverse()
-#		if pluginlist:
-#			from Components.ServiceEventTracker import InfoBarCount
-#			pluginlist.append((_("Current event EPG"), self.openEventView, "event_epg"))
-#			pluginlist.append((_("Multi EPG"), self.openMultiServiceEPG, "multi_epg"))
-#			if getAll or InfoBarCount == 1:
-#				pluginlist.append((_("Show EPG for current channel..."), self.openSingleServiceEPG, "current_channel"))
-#			pluginlist.reverse()
 		return pluginlist
 
 	def showEventInfoWhenNotVisible(self):
@@ -1672,10 +1664,11 @@ class TimeshiftLive(Screen):
 
 class InfoBarTimeshiftState(InfoBarPVRState):
 	def __init__(self):
-		InfoBarPVRState.__init__(self, screen=TimeshiftState, force_show = True)
+		InfoBarPVRState.__init__(self, screen=TimeshiftState, force_show=True)
 		self.timeshiftLiveScreen = self.session.instantiateDialog(TimeshiftLive)
 		self.onHide.append(self.timeshiftLiveScreen.hide)
 		self.secondInfoBarScreen and self.secondInfoBarScreen.onShow.append(self.timeshiftLiveScreen.hide)
+		self.secondInfoBarScreenSimple and self.secondInfoBarScreenSimple.onShow.append(self.timeshiftLiveScreen.hide)
 		self.timeshiftLiveScreen.hide()
 		self.__hideTimer = eTimer()
 		self.__hideTimer.callback.append(self.__hideTimeshiftState)
@@ -1685,6 +1678,8 @@ class InfoBarTimeshiftState(InfoBarPVRState):
 		if self.timeshiftEnabled():
 			if self.secondInfoBarScreen and self.secondInfoBarScreen.shown:
 				self.secondInfoBarScreen.hide()
+			if self.secondInfoBarScreenSimple and self.secondInfoBarScreenSimple.shown:
+				self.secondInfoBarScreenSimple.hide()
 			if self.timeshiftActivated():
 				self.pvrStateDialog.show()
 				self.timeshiftLiveScreen.hide()
@@ -2810,7 +2805,7 @@ class VideoMode(Screen):
 		policy.value = policy.choices[idx]
 		self["videomode"].setText(policy.value)
 		self.close()
-		
+
 	def isWideScreen(self):
 		from Components.Converter.ServiceInfo import WIDESCREEN
 		service = self.session.nav.getCurrentService()
@@ -3380,143 +3375,6 @@ class InfoBarPowersaver:
 		if not Screens.Standby.inStandby:
 			print "[InfoBarPowersaver] goto standby"
 			self.session.open(Screens.Standby.Standby)
-
-class InfoBarAspectSelection:
-	def __init__(self):
-		self["AspectSelectionAction"] = HelpableActionMap(self, "InfobarAspectSelectionActions",
-			{
-				"aspectSelection": (self.ExGreen_toggleGreen, _("Aspect list...")),
-			})
-
-		self["key_green"] = Boolean(True)
-		self["key_yellow"] = Boolean(True)
-		self["key_blue"] = Boolean(True)
-
-	def ExGreen_doResolution(self):
-		self.resolutionSelection()
-
-	def ExGreen_toggleGreen(self, arg=""):
-		self.aspectSelection()
-
-	def aspectSelection(self):
-		selection = 0
-		tlist = []
-		tlist.append((_("Subservice list..."), "subservice"))
-		tlist.append((_("Resolution"), "resolution"))
-		tlist.append((_("3D Modus"), "tdmodus"))
-		tlist.append(("--", ""))
-		tlist.append(("Letterbox", "letterbox"))
-		tlist.append(("PanScan", "panscan"))
-		tlist.append(("Non Linear", "non"))
-		tlist.append(("Bestfit", "bestfit"))
-
-		mode = open("/proc/stb/video/policy").read()[:-1]
-		print mode
-		for x in range(len(tlist)):
-			if tlist[x][1] == mode:
-				selection = x
-
-		keys = ["green", "yellow", "blue", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
-		self.session.openWithCallback(self.aspectSelected, ChoiceBox, title=_("Please select an aspect ratio..."), list = tlist, selection = selection, keys = keys) 
-
-	def aspectSelected(self, aspect):
-		if not aspect is None:
-			if isinstance(aspect[1], str):
-				if aspect[1] == "resolution":
-					self.ExGreen_doResolution()
-				elif aspect[1] == "tdmodus":
-					self.tdmodus()
-				elif aspect[1] == "subservice":
-					self.subserviceSelection()
-				else:
-					open("/proc/stb/video/policy", "w").write(aspect[1])
-		return
-
-	def tdmodus(self):
-		selection = 0
-		tlist = []
-		tlist.append((_("off"), "off"))
-		tlist.append((_("Side-by-Side"), "sbs"))
-		tlist.append((_("Top and Bottom"), "tab"))
-		keys = ["green", "yellow", "blue"]
-		self.session.openWithCallback(self.tdSelected, ChoiceBox, title=_("Please select an 3D modus..."), list = tlist, selection = selection, keys = keys)
-
-	def tdSelected(self, tdmod):
-		if not tdmod is None:
-			if isinstance(tdmod[1], str):
-				if tdmod[1] == "off":
-					config.av.threedmode.value = "off"
-					config.av.threedmode.save()
-					command('killall 3d-mode')
-				elif tdmod[1] == "sbs":
-					config.av.threedmode.value = "sbs"
-					config.av.threedmode.save()
-					command('3d-mode 40 &')
-				elif tdmod[1] == "tab":
-					config.av.threedmode.value = "tab"
-					config.av.threedmode.save()
-		return
-
-	def resolutionSelection(self):
-		xresString = open("/proc/stb/vmpeg/0/xres", "r").read()
-		yresString = open("/proc/stb/vmpeg/0/yres", "r").read()
-		fpsString = open("/proc/stb/vmpeg/0/framerate", "r").read()
-		xres = int(xresString, 16)
-		yres = int(yresString, 16)
-		fps = int(fpsString, 16)
-		fpsFloat = float(fps)
-		fpsFloat = fpsFloat/1000
-
-		selection = 0
-		tlist = []
-		tlist.append((_("Exit"), "exit"))
-		tlist.append((_("Auto(not available)"), "auto"))
-		tlist.append(("Video: " + str(xres) + "x" + str(yres) + "@" + str(fpsFloat) + "hz", ""))
-		tlist.append(("--", ""))
-		tlist.append(("576i", "576i50"))
-		tlist.append(("576p", "576p50"))
-		tlist.append(("720p@50hz", "720p50"))
-		tlist.append(("720p@60hz", "720p60"))
-		tlist.append(("1080i@50hz", "1080i50"))
-		tlist.append(("1080i@60hz", "1080i60"))
-		tlist.append(("1080p@23.976hz", "1080p23"))
-		tlist.append(("1080p@24hz", "1080p24"))
-		tlist.append(("1080p@25hz", "1080p25"))
-		tlist.append(("1080p@29hz", "1080p29"))
-		tlist.append(("1080p@30hz", "1080p30"))
-		tlist.append(("1080p@50hz", "1080p50"))
-		tlist.append(("1080p@59hz", "1080p59"))
-		tlist.append(("1080p@60hz", "1080p60"))
-
-		keys = ["green", "yellow", "blue", "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
-
-		mode = open("/proc/stb/video/videomode").read()[:-1]
-		print mode
-		for x in range(len(tlist)):
-			if tlist[x][1] == mode:
-				selection = x
-
-		self.session.openWithCallback(self.ResolutionSelected, ChoiceBox, title=_("Please select a resolution..."), list = tlist, selection = selection, keys = keys)
-
-	def ResolutionSelected(self, Resolution):
-		if not Resolution is None:
-			if isinstance(Resolution[1], str):
-				if Resolution[1] != "auto":
-					open("/proc/stb/video/videomode", "w").write(Resolution[1])
-					from enigma import gMainDC
-					gMainDC.getInstance().setResolution(-1, -1)
-		return
-
-class InfoBarSleepTimer:
-	def __init__(self):
-		self.addExtension((self.getSleepTimerName, self.showSleepTimerSetup, lambda: True), "blue")
-
-	def getSleepTimerName(self):
-		return _("Sleep Timer")
-
-	def showSleepTimerSetup(self):
-		from Screens.SleepTimerEdit import SleepTimerEdit
-		self.session.open(SleepTimerEdit)
 
 class InfoBarHDMI:
 	def HDMIIn(self):
