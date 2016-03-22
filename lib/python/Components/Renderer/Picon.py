@@ -73,11 +73,15 @@ def getPiconName(serviceName):
 	if not pngname: # picon by channel name
 		name = ServiceReference(serviceName).getServiceName()
 		name = unicodedata.normalize('NFKD', unicode(name, 'utf_8', errors='ignore')).encode('ASCII', 'ignore')
-		name = re.sub('[^a-z0-9]', '', name.replace('&', 'and').replace('+', 'plus').replace('*', 'star').lower())
-		if name:
-			pngname = findPicon(name)
-			if not pngname and len(name) > 2 and name.endswith('hd'):
-				pngname = findPicon(name[:-2])
+		piconname = re.sub('[^a-z0-9]', '', name.replace('&', 'and').replace('+', 'plus').replace('*', 'star').lower())
+		if piconname:
+			pngname = findPicon(piconname)
+			if not pngname and len(piconname) > 2 and name.endswith('hd'):
+				pngname = findPicon(piconname[:-2])
+			if not pngname: # try picon by channel name without last word
+				piconname = ' '.join(name.split(' ')[:-1])
+				piconname = re.sub('[^a-z0-9]', '', piconname.replace('&', 'and').replace('+', 'plus').replace('*', 'star').lower())
+				pngname = findPicon(piconname)
 	if not pngname:
 		tmp = resolveFilename(SCOPE_CURRENT_SKIN, "picon_default.png")
 		if pathExists(tmp):

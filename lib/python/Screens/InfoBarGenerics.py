@@ -344,7 +344,7 @@ class InfoBarShowHide(InfoBarScreenSaver):
 		self.hideTimer.stop()
 		if self.__state == self.STATE_SHOWN:
 			self.hide()
-			
+
 	def epg(self):
 		self.__state = self.STATE_EPG
 		self.hide()
@@ -356,7 +356,7 @@ class InfoBarShowHide(InfoBarScreenSaver):
 			self.openServiceList()
 		else:
 			self.toggleShow()
-			
+
 	def toggleShow(self):
 		if self.__state == self.STATE_HIDDEN:
 			self.showFirstInfoBar()
@@ -440,20 +440,20 @@ class NumberZap(Screen):
 	def keyOK(self):
 		self.Timer.stop()
 		self.close(self.service, self.bouquet)
-		
+
 	def handleServiceName(self):
 		if self.searchNumber:
 			self.service, self.bouquet = self.searchNumber(int(self["number"].getText()))
 			self["servicename"].text = self["servicename_summary"].text = ServiceReference(self.service).getServiceName()
 			if not self.startBouquet:
 				self.startBouquet = self.bouquet
-	
+
 	def handlePicon(self):
 		if self.service is not None:
 			sname = self.service.toString()
 			pngname = getPiconName(sname)
 			self["picon"].instance.setPixmapFromFile(pngname)
-			
+
 	def keyBlue(self):
 		self.startTimer()
 		if self.searchNumber:
@@ -470,7 +470,7 @@ class NumberZap(Screen):
 
 		self.handleServiceName()
 		self.handlePicon()
-		
+
 		if len(self.numberString) >= 5:
 			self.keyOK()
 
@@ -632,7 +632,7 @@ class InfoBarChannelSelection:
 		self["ChannelSelectActions"] = HelpableActionMap(self, "InfobarChannelSelection",
 			{
 				"keyUp": (self.keyUpCheck, self.getKeyUpHelptext),
-				"keyDown": (self.keyDownCheck, self.getKeyDownHelptext),
+				"keyDown": (self.keyDownCheck, self.getKeyDownHelpText),
 				"keyLeft": (self.keyLeftCheck, self.getKeyLeftHelptext),
 				"keyRight": (self.keyRightCheck, self.getKeyRightHelptext),
 				"historyBack": (self.historyBack, _("Switch to previous channel in history")),
@@ -730,7 +730,7 @@ class InfoBarChannelSelection:
 					value += " " + _("and select previous channel")
 		return value
 
-	def getKeyDownHelptext(self):
+	def getKeyDownHelpText(self):
 		if config.usage.oldstyle_zap_controls.value:
 			value = _("Switch to previous channel")
 		else:
@@ -966,14 +966,6 @@ class InfoBarEPG:
 			pluginlist.append((_("Show EPG for current channel..."), self.openSingleServiceEPG, "current_channel"))
 		pluginlist.append((_("Multi EPG"), self.openMultiServiceEPG, "multi_epg"))
 		pluginlist.append((_("Current event EPG"), self.openEventView, "event_epg"))
-#		pluginlist.reverse()
-#		if pluginlist:
-#			from Components.ServiceEventTracker import InfoBarCount
-#			pluginlist.append((_("Current event EPG"), self.openEventView, "event_epg"))
-#			pluginlist.append((_("Multi EPG"), self.openMultiServiceEPG, "multi_epg"))
-#			if getAll or InfoBarCount == 1:
-#				pluginlist.append((_("Show EPG for current channel..."), self.openSingleServiceEPG, "current_channel"))
-#			pluginlist.reverse()
 		return pluginlist
 
 	def showEventInfoWhenNotVisible(self):
@@ -1345,7 +1337,11 @@ class InfoBarSeek:
 
 	def showAfterSeek(self):
 		if isinstance(self, InfoBarShowHide):
-			self.doShow()
+			if isStandardInfoBar(self) and self.timeshiftEnabled():
+				for c in self.onPlayStateChanged:
+					c(self.seekstate)
+			else:
+				self.doShow()
 
 	def up(self):
 		pass
@@ -1672,10 +1668,11 @@ class TimeshiftLive(Screen):
 
 class InfoBarTimeshiftState(InfoBarPVRState):
 	def __init__(self):
-		InfoBarPVRState.__init__(self, screen=TimeshiftState, force_show = True)
+		InfoBarPVRState.__init__(self, screen=TimeshiftState, force_show=True)
 		self.timeshiftLiveScreen = self.session.instantiateDialog(TimeshiftLive)
 		self.onHide.append(self.timeshiftLiveScreen.hide)
 		self.secondInfoBarScreen and self.secondInfoBarScreen.onShow.append(self.timeshiftLiveScreen.hide)
+		self.secondInfoBarScreenSimple and self.secondInfoBarScreenSimple.onShow.append(self.timeshiftLiveScreen.hide)
 		self.timeshiftLiveScreen.hide()
 		self.__hideTimer = eTimer()
 		self.__hideTimer.callback.append(self.__hideTimeshiftState)
@@ -1685,6 +1682,8 @@ class InfoBarTimeshiftState(InfoBarPVRState):
 		if self.timeshiftEnabled():
 			if self.secondInfoBarScreen and self.secondInfoBarScreen.shown:
 				self.secondInfoBarScreen.hide()
+			if self.secondInfoBarScreenSimple and self.secondInfoBarScreenSimple.shown:
+				self.secondInfoBarScreenSimple.hide()
 			if self.timeshiftActivated():
 				self.pvrStateDialog.show()
 				self.timeshiftLiveScreen.hide()
@@ -2205,7 +2204,7 @@ class InfoBarPiP:
 			if self.session.pipshown:
 				lastPiPServiceTimeout = int(config.usage.pip_last_service_timeout.value)
 				if lastPiPServiceTimeout >= 0:
-					self.lastPiPService = self.session.pip.getCurrentServiceReference()
+					self.lastPiPService = self.session.pip.getCurrentService()
 					if lastPiPServiceTimeout:
 						self.lastPiPServiceTimeoutTimer.startLongTimer(lastPiPServiceTimeout)
 				del self.session.pip
@@ -2215,12 +2214,12 @@ class InfoBarPiP:
 		else:
 			self.session.pip = self.session.instantiateDialog(PictureInPicture)
 			self.session.pip.show()
-			newservice = self.lastPiPService or self.session.nav.getCurrentlyPlayingServiceReference() or (slist and slist.servicelist.getCurrent())
+			newservice = self.lastPiPService or self.session.nav.getCurrentlyPlayingServiceOrGroup() or (slist and slist.servicelist.getCurrent())
 			if self.session.pip.playService(newservice):
 				self.session.pipshown = True
 				self.session.pip.servicePath = slist and slist.getCurrentServicePath()
 			else:
-				newservice = self.session.nav.getCurrentlyPlayingServiceReference() or (slist and slist.servicelist.getCurrent())
+				newservice = self.session.nav.getCurrentlyPlayingServiceOrGroup() or (slist and slist.servicelist.getCurrent())
 				if self.session.pip.playService(newservice):
 					self.session.pipshown = True
 					self.session.pip.servicePath = slist and slist.getCurrentServicePath()
@@ -2264,7 +2263,6 @@ class InfoBarPiP:
 					self.session.pip.servicePath = currentServicePath
 					self.session.pip.servicePath[1] = currentBouquet
 				if slist and slist.dopipzap:
-					# This unfortunately won't work with subservices
 					slist.setCurrentSelection(self.session.pip.getCurrentService())
 
 	def movePiP(self):
@@ -2811,7 +2809,7 @@ class VideoMode(Screen):
 		policy.value = policy.choices[idx]
 		self["videomode"].setText(policy.value)
 		self.close()
-		
+
 	def isWideScreen(self):
 		from Components.Converter.ServiceInfo import WIDESCREEN
 		service = self.session.nav.getCurrentService()
@@ -3227,7 +3225,7 @@ class InfoBarSubtitleSupport(object):
 	def __updatedInfo(self):
 		if not self.selected_subtitle:
 			subtitle = self.getCurrentServiceSubtitle()
-			cachedsubtitle = subtitle.getCachedSubtitle()
+			cachedsubtitle = subtitle and subtitle.getCachedSubtitle()
 			if cachedsubtitle:
 				self.enableSubtitle(cachedsubtitle)
 
@@ -3382,6 +3380,26 @@ class InfoBarPowersaver:
 			print "[InfoBarPowersaver] goto standby"
 			self.session.open(Screens.Standby.Standby)
 
+class InfoBarHDMI:
+	def HDMIIn(self):
+		slist = self.servicelist
+		if slist.dopipzap:
+			curref = self.session.pip.getCurrentService()
+			if curref and curref.type != 8192:
+				self.session.pip.playService(eServiceReference('8192:0:1:0:0:0:0:0:0:0:'))
+			else:
+				self.session.pip.playService(slist.servicelist.getCurrent())
+		else:
+			curref = self.session.nav.getCurrentlyPlayingServiceOrGroup()
+			if curref and curref.type != 8192:
+				if curref and curref.type != -1 and os.path.splitext(curref.toString().split(":")[10])[1].lower() in AUDIO_EXTENSIONS.union(MOVIE_EXTENSIONS, DVD_EXTENSIONS):
+					setResumePoint(self.session)
+				self.session.nav.playService(eServiceReference('8192:0:1:0:0:0:0:0:0:0:'))
+			elif isStandardInfoBar(self):
+				self.session.nav.playService(slist.servicelist.getCurrent())
+			else:
+				self.session.nav.playService(self.cur_service)
+
 class InfoBarAspectSelection:
 	def __init__(self):
 		self["AspectSelectionAction"] = HelpableActionMap(self, "InfobarAspectSelectionActions",
@@ -3518,23 +3536,3 @@ class InfoBarSleepTimer:
 	def showSleepTimerSetup(self):
 		from Screens.SleepTimerEdit import SleepTimerEdit
 		self.session.open(SleepTimerEdit)
-
-class InfoBarHDMI:
-	def HDMIIn(self):
-		slist = self.servicelist
-		if slist.dopipzap:
-			curref = self.session.pip.getCurrentService()
-			if curref and curref.type != 8192:
-				self.session.pip.playService(eServiceReference('8192:0:1:0:0:0:0:0:0:0:'))
-			else:
-				self.session.pip.playService(slist.servicelist.getCurrent())
-		else:
-			curref = self.session.nav.getCurrentlyPlayingServiceOrGroup()
-			if curref and curref.type != 8192:
-				if curref and curref.type != -1 and os.path.splitext(curref.toString().split(":")[10])[1].lower() in AUDIO_EXTENSIONS.union(MOVIE_EXTENSIONS, DVD_EXTENSIONS):
-					setResumePoint(self.session)
-				self.session.nav.playService(eServiceReference('8192:0:1:0:0:0:0:0:0:0:'))
-			elif isStandardInfoBar(self):
-				self.session.nav.playService(slist.servicelist.getCurrent())
-			else:
-				self.session.nav.playService(self.cur_service)

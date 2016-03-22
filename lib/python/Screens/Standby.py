@@ -45,8 +45,8 @@ class Standby(Screen):
 
 		print "[Standby] enter standby"
 
-		if os.path.exists("/usr/script/standby_enter.sh"):
-			Console().ePopen("/usr/script/standby_enter.sh")
+		if os.path.exists("/etc/sysconfig/user_scripts/standby_enter.sh"):
+			Console().ePopen("/etc/sysconfig/user_scripts/standby_enter.sh")
 
 		self["actions"] = ActionMap( [ "StandbyActions" ],
 		{
@@ -125,8 +125,8 @@ class Standby(Screen):
 		if RecordTimer.RecordTimerEntry.receiveRecordEvents:
 			RecordTimer.RecordTimerEntry.stopTryQuitMainloop()
 		self.avswitch.setInput("ENCODER")
-		if os.path.exists("/usr/script/standby_leave.sh"):
-			Console().ePopen("/usr/script/standby_leave.sh")
+		if os.path.exists("/etc/sysconfig/user_scripts/standby_leave.sh"):
+			Console().ePopen("/etc/sysconfig/user_scripts/standby_leave.sh")
 
 	def __onFirstExecBegin(self):
 		global inStandby
@@ -256,8 +256,8 @@ class TryQuitMainloop(MessageBox):
 			self.hide()
 			if self.retval == 1:
 				config.misc.DeepStandby.value = True
-				if os.path.exists("/usr/script/standby_enter.sh"):
-					Console().ePopen("/usr/script/standby_enter.sh")
+				if os.path.exists("/etc/sysconfig/user_scripts/standby_enter.sh"):
+					Console().ePopen("/etc/sysconfig/user_scripts/standby_enter.sh")
 			elif not inStandby:
 				config.misc.RestartUI.value = True
 				config.misc.RestartUI.save()
