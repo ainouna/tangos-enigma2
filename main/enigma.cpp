@@ -298,9 +298,6 @@ int main(int argc, char **argv)
 	/* start at full size */
 	eVideoWidget::setFullsize(true);
 
-//	j00zek, let's start TV 20seconds earlier
-	system("/usr/bin/bootTV &");
-	
 //	python.execute("mytest", "__main__");
 	python.execFile(eEnv::resolve("${libdir}/enigma2/python/mytest.py").c_str());
 
