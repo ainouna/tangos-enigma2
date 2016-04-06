@@ -217,7 +217,6 @@ int main(int argc, char **argv)
 
 	// get enigma2 debug level
 	debugLvl = getenv("ENIGMA_DEBUG_LVL") ? atoi(getenv("ENIGMA_DEBUG_LVL")) : atoi(getConfigString("config.usage.e2_debug_level", "4").c_str());
-
 	if (debugLvl < 0)
 		debugLvl = 0;
 	printf("ENIGMA2_DEBUG settings: Level=%d\n", debugLvl);
