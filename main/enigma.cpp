@@ -374,7 +374,7 @@ const char *getBoxType()
 
 const char *getGStreamerVersionString()
 {
-	return gst_version_string();
+	return "ePlayer3";
 }
 
 #include <malloc.h>
