@@ -6,6 +6,7 @@ from Components.NimManager import nimmanager
 from Components.Harddisk import harddiskmanager
 from Components.ServiceList import refreshServiceList
 from SystemInfo import SystemInfo
+from gettext import ngettext
 import os
 import time
 
