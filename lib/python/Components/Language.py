@@ -3,14 +3,11 @@ import gettext
 import locale
 import os
 
-from Tools.Directories import SCOPE_LANGUAGE, resolveFilename, pathExists, SCOPE_GOSLANGUAGE
+from Tools.Directories import SCOPE_LANGUAGE, resolveFilename, pathExists
 
 class Language:
     def __init__(self):
-        if pathExists(resolveFilename(SCOPE_GOSLANGUAGE, "en/LC_MESSAGES/enigma2.mo")):
-            gettext.install('enigma2', resolveFilename(SCOPE_GOSLANGUAGE, ""), unicode=0, codeset="utf-8")
-        else:
-            gettext.install('enigma2', resolveFilename(SCOPE_LANGUAGE, ""), unicode=0, codeset="utf-8")
+        gettext.install('enigma2', resolveFilename(SCOPE_LANGUAGE, ""), unicode=0, codeset="utf-8")
         self.activeLanguage = 0
         self.catalog = None
         self.lang = {}
@@ -60,8 +57,7 @@ class Language:
         self.callbacks = []
 
     def addLanguage(self, name, lang, country, encoding):
-        if pathExists(resolveFilename(SCOPE_LANGUAGE, "%s/LC_MESSAGES/enigma2.mo") % str(lang)) is True or \
-            pathExists(resolveFilename(SCOPE_GOSLANGUAGE, "%s/LC_MESSAGES/enigma2.mo") % str(lang)) is True:
+        if pathExists(resolveFilename(SCOPE_LANGUAGE, "%s/LC_MESSAGES/enigma2.mo") % str(lang)) is True:
             try:
                 self.lang[str(lang + "_" + country)] = ((name, lang, country, encoding))
                 self.langlist.append(str(lang + "_" + country))
@@ -73,10 +69,7 @@ class Language:
         try:
             lang = self.lang[index]
             print "Activating language " + lang[0]
-            if pathExists(resolveFilename(SCOPE_GOSLANGUAGE, "%s/LC_MESSAGES/enigma2.mo") % str(lang[1]) ):
-                self.catalog = gettext.translation('enigma2', resolveFilename(SCOPE_GOSLANGUAGE, ""), languages=[index])
-            else:
-                self.catalog = gettext.translation('enigma2', resolveFilename(SCOPE_LANGUAGE, ""), languages=[index])
+            self.catalog = gettext.translation('enigma2', resolveFilename(SCOPE_LANGUAGE, ""), languages=[index])
             self.catalog.install(names=("ngettext", "pgettext"))
             self.activeLanguage = index
             for x in self.callbacks:
