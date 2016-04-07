@@ -1,11 +1,9 @@
 # the implementation here is a bit crappy.
 import time
 from Directories import resolveFilename, SCOPE_CONFIG, fileExists
-from GOSHardwareInfo import GOSHardwareInfo
+from ExtHardwareInfo import ExtHardwareInfo
 
-vfdSIZE = GOSHardwareInfo().get_vfdsize()
-if GOSHardwareInfo().get_rcstype() == 'UHD88':
-    vfdSIZE += 1
+vfdSIZE = ExtHardwareInfo().get_vfdsize()
 
 
 PERCENTAGE_START = 20
@@ -51,16 +49,16 @@ def profile(id):
 			perc = t * (PERCENTAGE_END - PERCENTAGE_START) / total_time + PERCENTAGE_START
 			if perc > LAST_PERCENTAGE:
 				if vfdSIZE == 4:
-					CurrentText = "E2-%d" % (perc - 1)
+					CurrentText = "TC-%d" % (perc - 1)
 					CurrentText = CurrentText[0:4]
 				if vfdSIZE == 5:
-					CurrentText = "E2:%d" % (perc - 1)
+					CurrentText = "TC:%d" % (perc - 1)
 					CurrentText = CurrentText[0:5]
 				elif vfdSIZE == 8:
-					CurrentText = "GOS-%d" % (perc)
+					CurrentText = "TC-%d" % (perc)
 					CurrentText = CurrentText[0:8]
 				else:  
-					CurrentText = "Start GOS-%d" % (perc)
+					CurrentText = "Start TC-E2-%d" % (perc)
 					CurrentText = CurrentText[0:14]
 				try:
 					open("/proc/progress", "w").write("%d \n" % perc)
