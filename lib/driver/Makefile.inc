@@ -6,6 +6,7 @@ driver_libenigma_driver_a_SOURCES = \
 	driver/avswitch.cpp \
 	driver/etimezone.cpp \
 	driver/misc_options.cpp \
+	driver/rc_init.cpp \
 	driver/rc.cpp \
 	driver/rcinput.cpp \
 	driver/rfmod.cpp \
@@ -19,6 +20,7 @@ driverinclude_HEADERS = \
 	driver/input_fake.h \
 	driver/misc_options.h \
 	driver/rc.h \
+	driver/rc_init.h \
 	driver/rcconsole.h \
 	driver/rcdbox.h \
 	driver/rcdreambox2.h \

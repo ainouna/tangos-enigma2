@@ -12,6 +12,7 @@
 #include <lib/base/init.h>
 #include <lib/base/init_num.h>
 #include <lib/driver/input_fake.h>
+#include <lib/driver/rc_init.h>
 
 void eRCDeviceInputDev::handleCode(long rccode)
 {
@@ -165,16 +166,8 @@ public:
 	{
 		int i = 0;
 		consoleFd = ::open("/dev/tty0", O_RDWR);
-		while (1)
-		{
-			char filename[32];
-			sprintf(filename, "/dev/input/nevis_ir");
-			//sprintf(filename, "/dev/input/event%d", i);
-			if (::access(filename, R_OK) < 0)
-				break;
-			add(filename);
-			++i;
-		}
+		init_rc_api();
+		add("/dev/input/nevis_ir");
 		eDebug("[eInputDeviceInit] Found %d input devices.", i);
 	}
 
@@ -185,6 +178,8 @@ public:
 
 		if (consoleFd >= 0)
 			::close(consoleFd);
+
+		shutdown_rc_api();
 	}
 
 	void add(const char* filename)
