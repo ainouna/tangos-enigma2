@@ -168,7 +168,8 @@ public:
 		while (1)
 		{
 			char filename[32];
-			sprintf(filename, "/dev/input/event%d", i);
+			sprintf(filename, "/dev/input/nevis_ir");
+			//sprintf(filename, "/dev/input/event%d", i);
 			if (::access(filename, R_OK) < 0)
 				break;
 			add(filename);
