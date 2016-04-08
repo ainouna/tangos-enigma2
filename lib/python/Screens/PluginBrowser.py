@@ -63,21 +63,13 @@ class PluginBrowser(Screen, ProtectedScreen):
 			"menu": self.exit,
 		})
 
-		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/J00zekOPKGmgr/GOSopkg.pyo")):
-			self["key_red"] = self["red"] = Label(_("Manage extensions"))
-			self["key_green"] = self["green"] = Label("")
-			self["PluginDownloadActions"] = ActionMap(["ColorActions"],
+		self["key_red"] = self["red"] = Label(_("Remove plugins"))
+		self["key_green"] = self["green"] = Label(_("Download plugins"))
+		self["PluginDownloadActions"] = ActionMap(["ColorActions"],
 			{
-				"red": self.openGOSopkg
+				"red": self.delete,
+				"green": self.download
 			})
-		else:
-			self["key_red"] = self["red"] = Label(_("Remove plugins"))
-			self["key_green"] = self["green"] = Label(_("Download plugins"))
-			self["PluginDownloadActions"] = ActionMap(["ColorActions"],
-				{
-					"red": self.delete,
-					"green": self.download
-				})
 
 		self["DirectionActions"] = ActionMap(["DirectionActions"],
 		{
@@ -218,15 +210,6 @@ class PluginBrowser(Screen, ProtectedScreen):
 				self.session.open(MessageBox, _("The software management extension is not installed!\nPlease install it."), type = MessageBox.TYPE_INFO,timeout = 10 )
 			else:
 				self.session.openWithCallback(self.PluginDownloadBrowserClosed, PluginManager)
-
-	def openGOSopkg(self):
-		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/J00zekOPKGmgr/GOSopkg.pyo")):
-			try:
-				from Plugins.Extensions.J00zekOPKGmgr.GOSopkg import GOSopkg
-			except ImportError:
-				self.session.open(MessageBox, _("J00zekOPKGmgr*is not installed!\nPlease install it."), type = MessageBox.TYPE_INFO,timeout = 10 )
-			else:
-				self.session.openWithCallback(self.PluginDownloadBrowserClosed, GOSopkg, self)
 
 class PluginDownloadBrowser(Screen):
 	DOWNLOAD = 0

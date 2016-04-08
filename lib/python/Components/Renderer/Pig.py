@@ -7,8 +7,8 @@ from Screens.PictureInPicture import PipPigMode
 
 PIGenabled=True
 try:
-	from Tools.GOSHardwareInfo import GOSHardwareInfo
-	if GOSHardwareInfo().get_rcstype() == 'ADB5800' or GOSHardwareInfo().get_rcstype() == 'ADB2850':
+	from Tools.ExtHardwareInfo import ExtHardwareInfo
+	if ExtHardwareInfo().get_rcstype() == 'ADB5800' or ExtHardwareInfo().get_rcstype() == 'ADB2850':
 		print 'PIG disabled'
 		PIGenabled=False
 except:
