@@ -7,17 +7,13 @@
 #include <lib/dvb/subtitle.h>
 #include <lib/dvb/teletext.h>
 
-#include <common.h>
-#include <subtitle.h>
 #define gint int
 #define gint64 int64_t
-extern OutputHandler_t		OutputHandler;
-extern PlaybackHandler_t	PlaybackHandler;
-extern ContainerHandler_t	ContainerHandler;
-extern ManagerHandler_t	ManagerHandler;
 
 /* for subtitles */
 #include <lib/gui/esubtitle.h>
+
+class Player;
 
 class eStaticServiceEPlayer3Info;
 
@@ -102,7 +98,6 @@ class eServiceEPlayer3: public iPlayableService, public iPauseableService,
 	DECLARE_REF(eServiceEPlayer3);
 public:
 	virtual ~eServiceEPlayer3();
-
 		// iPlayableService
 	RESULT connectEvent(const Slot2<void,iPlayableService*,int> &event, ePtr<eConnection> &connection);
 	RESULT start();
@@ -224,6 +219,7 @@ public:
 	};
 
 private:
+	Player *player;
 	static int pcm_delay;
 	static int ac3_delay;
 	int m_currentAudioStream;
@@ -250,8 +246,6 @@ private:
 		stIdle, stRunning, stStopped,
 	};
 	int m_state;
-
-	Context_t * player;
 
 	struct Message
 	{

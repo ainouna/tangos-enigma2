@@ -50,8 +50,14 @@ enigma2_LDADD = \
 	-ltuxtxt -ltuxtxt32bpp -lcrypt -lrt
 
 if ENABLE_LIBEPLAYER3
+enigma2_LDADD_WHOLE += \
+	$(top_builddir)/lib/libeplayer3/libeplayer3.a
 enigma2_LDADD += \
-	-leplayer3
+	@AVFORMAT_LIBS@ \
+	@AVUTIL_LIBS@ \
+	@AVCODEC_LIBS@ \
+	@SWSCALE_LIBS@ \
+	@SWRESAMPLE_LIBS@
 endif
 
 if HAVE_GRAPHLCD

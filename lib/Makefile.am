@@ -5,11 +5,13 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-include Python.h \
-	-include $(top_builddir)/enigma2_config.h
+	-include $(top_builddir)/enigma2_config.h \
+	-D__STDC_CONSTANT_MACROS \
+	-D__STDC_FORMAT_MACROS
 
 if ENABLE_LIBEPLAYER3
 AM_CPPFLAGS += \
-	-I$(top_srcdir)/../../apps/tools/libeplayer3/include
+	-I$(top_builddir)/lib/libeplayer3/include
 endif
 
 # initialize these, to be filled with targets in the included files
@@ -36,4 +38,4 @@ include network/Makefile.inc
 include python/Makefile.inc
 
 # Build the subdirs without parallellism
-SUBDIRS = python
+SUBDIRS = python libeplayer3

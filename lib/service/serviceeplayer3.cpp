@@ -16,6 +16,8 @@
 #include <string>
 #include <sys/stat.h>
 
+#include <player.h>
+
 #define HTTP_TIMEOUT 60
 
 typedef enum
@@ -336,25 +338,9 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 	if (!ext)
 		ext = filename + strlen(filename);
 
-	player = (Context_t*) malloc(sizeof(Context_t));
+	player = new Player();
 
-	if (player)
-	{
-		player->playback  = &PlaybackHandler;
-		player->output    = &OutputHandler;
-		player->container = &ContainerHandler;
-		player->manager   = &ManagerHandler;
-		printf("%s\n", player->output->Name);
-	}
-
-	//Registration of output devices
-	if (player && player->output)
-	{
-		player->output->Command(player,OUTPUT_ADD, (void*)"audio");
-		player->output->Command(player,OUTPUT_ADD, (void*)"video");
-		player->output->Command(player,OUTPUT_ADD, (void*)"subtitle");
-	}
-
+/*
 	if (player && player->output && player->output->subtitle)
 	{
 		fbClass *fb = fbClass::getInstance();
@@ -368,7 +354,7 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 		out.framebufferBlit = ep3Blit;
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*) &out);
 	}
-
+*/
 	//create playback path
 	char file[800] = {""};
 
@@ -399,15 +385,17 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 	strcat(file, m_ref.path.c_str());
 
 	//try to open file
-	if (player && player->playback && player->playback->Command(player, PLAYBACK_OPEN, file) >= 0)
+	if (player->Open(file))
 	{
 		//VIDEO
 		//We dont have to register video tracks, or do we ?
 		//AUDIO
-		if (player && player->manager && player->manager->audio)
+		if (player)
 		{
-			char ** TrackList = NULL;
-			player->manager->audio->Command(player, MANAGER_LIST, &TrackList);
+			std::vector<Track> tracks = player->manager.getAudioTracks();
+
+			
+/*
 			if (TrackList != NULL)
 			{
 				printf("AudioTrack List\n");
@@ -446,10 +434,10 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 			}
 		}
 		//SUB
-		if (player && player->manager && player->manager->subtitle)
+		if (player)
 		{
 			char ** TrackList = NULL;
-			player->manager->subtitle->Command(player, MANAGER_LIST, &TrackList);
+			TrackList = player->manager.getSubtitleTracks();
 			if (TrackList != NULL)
 			{
 				printf("SubtitleTrack List\n");
@@ -477,29 +465,18 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 					free(TrackList[i+1]);
 				}
 				free(TrackList);
-			}
+			}*/
 		}
+		m_state = stRunning;
 		m_event(this, evStart);
 	}
 	else
 	{
-		//Creation failed, no playback support for insert file, so delete playback context
-		//FIXME: How to tell e2 that we failed?
-		if (player && player->output)
-		{
-			player->output->Command(player,OUTPUT_DEL, (void*)"audio");
-			player->output->Command(player,OUTPUT_DEL, (void*)"video");
-			player->output->Command(player,OUTPUT_DEL, (void*)"subtitle");
-		}
-
-		if (player && player->playback)
-			player->playback->Command(player,PLAYBACK_CLOSE, NULL);
-
-		if (player)
-			free(player);
-		player = NULL;
+		player->Stop();
+		player->output.Close();
+		player->Close();
+		m_state = stStopped;
 	}
-	//m_state = stRunning;
 	eDebug("eServiceEPlayer3-<\n");
 }
 
@@ -510,6 +487,7 @@ eServiceEPlayer3::~eServiceEPlayer3()
 
 	if (m_state == stRunning)
 		stop();
+	delete player;
 }
 
 DEFINE_REF(eServiceEPlayer3);
@@ -531,10 +509,10 @@ RESULT eServiceEPlayer3::start()
 
 	m_state = stRunning;
 
-	if (player && player->output && player->playback)
+	if (player)
 	{
-		player->output->Command(player, OUTPUT_OPEN, NULL);
-		player->playback->Command(player, PLAYBACK_PLAY, NULL);
+		player->output.Open();
+		player->Play();
 	}
 
 	m_event(this, evStart);
@@ -561,27 +539,12 @@ RESULT eServiceEPlayer3::stop()
 
 	eDebug("eServiceEPlayer3::stop %s", m_ref.path.c_str());
 
-	if (player && player->playback && player->output)
-	{
-		player->playback->Command(player, PLAYBACK_STOP, NULL);
-		player->output->Command(player, OUTPUT_CLOSE, NULL);
-	}
-
-	if (player && player->output)
-	{
-		player->output->Command(player,OUTPUT_DEL, (void*)"audio");
-		player->output->Command(player,OUTPUT_DEL, (void*)"video");
-		player->output->Command(player,OUTPUT_DEL, (void*)"subtitle");
-	}
-
-	if (player && player->playback)
-		player->playback->Command(player,PLAYBACK_CLOSE, NULL);
-
 	if (player)
-		free(player);
-
-	if (player != NULL)
-		player = NULL;
+	{
+		player->Stop();
+		player->output.Close();
+		player->Close();
+	}
 
 	m_state = stStopped;
 
@@ -635,11 +598,11 @@ RESULT eServiceEPlayer3::setSlowMotion(int ratio)
 {
 // konfetti: in libeplayer3 we changed this because I dont like application specific stuff in a library
 	int speed = getSpeed(ratio);
-	if (player && player->playback && (speed != -1))
+	if (player && (speed != -1))
 	{
 		int result = 0;
 		if (ratio > 1)
-			result = player->playback->Command(player, PLAYBACK_SLOWMOTION, (void*)&speed);
+			result = player->SlowMotion(speed);
 
 		if (result != 0)
 			return -1;
@@ -651,18 +614,18 @@ RESULT eServiceEPlayer3::setFastForward(int ratio)
 {
 // konfetti: in libeplayer3 we changed this because I dont like application specific stuff in a library
 	int speed = getSpeed(ratio);
-	if (player && player->playback && (speed != -1))
+	if (player && (speed != -1))
 	{
 		int result = 0;
 		if (ratio > 1)
-			result = player->playback->Command(player, PLAYBACK_FASTFORWARD, (void*)&speed);
+			result = player->FastForward(speed);
 		else if (ratio < -1)
 		{
 			//speed = speed * -1;
-			result = player->playback->Command(player, PLAYBACK_FASTBACKWARD, (void*)&speed);
+			result = player->FastBackward(speed);
 		}
 		else
-			result = player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
+			result = player->Continue();
 
 		if (result != 0)
 			return -1;
@@ -673,16 +636,16 @@ RESULT eServiceEPlayer3::setFastForward(int ratio)
 		// iPausableService
 RESULT eServiceEPlayer3::pause()
 {
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_PAUSE, NULL);
+	if (player)
+		player->Pause();
 
 	return 0;
 }
 
 RESULT eServiceEPlayer3::unpause()
 {
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
+	if (player)
+		player->Continue();
 
 	return 0;
 }
@@ -696,10 +659,10 @@ RESULT eServiceEPlayer3::seek(ePtr<iSeekableService> &ptr)
 
 RESULT eServiceEPlayer3::getLength(pts_t &pts)
 {
-	double length = 0;
+	int64_t length = 0;
 
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_LENGTH, &length);
+	if (player)
+		player->GetDuration(length);
 
 	if (length <= 0)
 		return -1;
@@ -718,8 +681,8 @@ RESULT eServiceEPlayer3::seekTo(pts_t to)
 	RESULT ret = -1;
 
 	float pos = (to/90000.0)-10;
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_SEEK, (void*)&pos);
+	if (player)
+		player->Seek(pos,true);
 
 	ret =0;
 	return ret;
@@ -734,15 +697,15 @@ RESULT eServiceEPlayer3::seekRelative(int direction, pts_t to)
 		ppos = 0;
 
 	float pos = direction*(to/90000.0);
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_SEEK, (void*)&pos);
+	if (player)
+		player->Seek(pos,true);
 
 	return 0;
 }
 
 RESULT eServiceEPlayer3::getPlayPosition(pts_t &pts)
 {
-	if (player && player->playback && !player->playback->isPlaying)
+	if (player && !player->isPlaying)
 	{
 		eDebug("eServiceEPlayer3::%s !!!!EOF!!!! < -1", __func__);
 		if(m_state == stRunning)
@@ -751,15 +714,8 @@ RESULT eServiceEPlayer3::getPlayPosition(pts_t &pts)
 		return -1;
 	}
 
-	unsigned long long int vpts = 0;
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_PTS, &vpts);
-
-	if (vpts<=0)
-		return -1;
-
-	/* len is in nanoseconds. we have 90 000 pts per second. */
-	pts = vpts>0?vpts:pts;;
+	if (player)
+		player->GetPts((int64_t &) pts);
 
 	return 0;
 }
@@ -860,6 +816,8 @@ std::string eServiceEPlayer3::getInfoString(int w)
 {
 	char * tag = NULL;
 	char * res_str = NULL;
+	std::vector<std::string> keys, values;
+	std::string res = "";
 	switch (w)
 	{
 	case sTagTitle:
@@ -893,30 +851,17 @@ std::string eServiceEPlayer3::getInfoString(int w)
 		return "";
 	}
 
-	if (player && player->playback)
-	{
-		/*Hellmaster1024: we need to save the adress of tag to free the strduped mem
-		  the command will retun a new adress for a new strduped string.
-		  Both Strings need to be freed! */
-		res_str = tag;
-		player->playback->Command(player, PLAYBACK_INFO, &res_str);
-		/* Hellmaster1024: in case something went wrong maybe no new adress is returned */
-		if (tag != res_str)
-		{
-			std::string res = res_str;
-			free(tag);
-			free(res_str);
-			return res;
-		}
-		else
-		{
-			free(tag);
-			return "";
-		}
-	}
+	if (player)
+		player->input.GetMetadata(keys, values);
+
+	for(int i=0; i < keys.size(); i++){
+		if ( tag == keys[i])
+			res = values[i];
+	}	
+
 	free(tag);
 
-	return "";
+	return res;
 }
 
 RESULT eServiceEPlayer3::audioChannel(ePtr<iAudioChannelSelection> &ptr)
@@ -964,8 +909,8 @@ int eServiceEPlayer3::selectAudioStream(int i)
 {
 	if (i != m_currentAudioStream)
 	{
-		if (player && player->playback)
-			player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&i);
+		if (player)
+			player->SwitchAudio(i);
 		m_currentAudioStream = i;
 		return 0;
 	}
@@ -1046,8 +991,8 @@ RESULT eServiceEPlayer3::enableSubtitles(iSubtitleUser *user, struct SubtitleTra
 
 	}
 
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&track.pid);
+	if (player)
+		player->SwitchSubtitle(track.pid);
 
 	return 0;
 }
@@ -1064,8 +1009,8 @@ RESULT eServiceEPlayer3::disableSubtitles()
 	m_subtitle_widget = 0;
 
 	int pid = -1;
-	if (player && player->playback)
-		player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&pid);
+	if (player)
+		player->SwitchSubtitle(pid);
 
 	return 0;
 }

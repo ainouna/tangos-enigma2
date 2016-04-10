@@ -232,6 +232,12 @@ if test x"$with_amlogic" = xyes ; then
 	PKG_CHECK_MODULES(DVBCSA, libdvbcsa)
 fi
 
+PKG_CHECK_MODULES([AVFORMAT], [libavformat >= 53.21.1])
+PKG_CHECK_MODULES([AVCODEC], [libavcodec >= 54.28.0])
+# don't know which version is exactly needed here...
+PKG_CHECK_MODULES([AVUTIL], [libavutil])
+PKG_CHECK_MODULES([SWSCALE], [libswscale])
+PKG_CHECK_MODULES([SWRESAMPLE], [libswresample])
 
 ENIGMA2_CFLAGS="-fno-rtti -fno-exceptions"
 AC_SUBST(ENIGMA2_CFLAGS)
@@ -257,6 +263,7 @@ data/skin_default/LCDIcons/Makefile
 include/Makefile
 lib/Makefile
 lib/base/eenv.cpp
+lib/libeplayer3/Makefile
 lib/python/Makefile
 lib/python/Components/Makefile
 lib/python/Components/Converter/Makefile
