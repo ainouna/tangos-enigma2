@@ -48,7 +48,7 @@ class CECSetup(ConfigListScreen, Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.title = _("Konfiguracja CEC")
+		self.title = _("Configuration CEC")
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.KeySave,
@@ -58,11 +58,11 @@ class CECSetup(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self.list = []
-		self.list.append(getConfigListEntry(_("Interfejs aktywny"), config.plugins.CEC.Enable))
-		self.list.append(getConfigListEntry(_("Aktywne wejście TV"), config.plugins.CEC.ActiveSource))
-		self.list.append(getConfigListEntry(_("Opóźnienie wysłania danych [ms]"), config.plugins.CEC.Delay))
-		self.list.append(getConfigListEntry(_("Powtarzaj wysyłanie danych "), config.plugins.CEC.Counter))
-		self.list.append(getConfigListEntry(_("Przerwa między powtórzeniami [ms]"), config.plugins.CEC.DelayCounter))
+		self.list.append(getConfigListEntry(_("CEC Enable"), config.plugins.CEC.Enable))
+		self.list.append(getConfigListEntry(_("CEC Source"), config.plugins.CEC.ActiveSource))
+		self.list.append(getConfigListEntry(_("CEC Delay [ms]"), config.plugins.CEC.Delay))
+		self.list.append(getConfigListEntry(_("CEC Repeat "), config.plugins.CEC.Counter))
+		self.list.append(getConfigListEntry(_("CEC Repeat Delay [ms]"), config.plugins.CEC.DelayCounter))
 		ConfigListScreen.__init__(self, self.list, session)
 
 	def KeySave(self):
