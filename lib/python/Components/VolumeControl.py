@@ -4,6 +4,7 @@ from Screens.Volume import Volume
 from Screens.Mute import Mute
 from GlobalActions import globalActionMap
 from config import config, ConfigSubsection, ConfigInteger
+from Components.Console import Console
 
 profile("VolumeControl")
 #TODO .. move this to a own .py file
@@ -86,10 +87,12 @@ class VolumeControl:
 				self.volumeDialog.setValue(0)
 #+++>
 				self.volctrl.setVolume(0,0)
+				Console().ePopen('/bin/fp_control -i 8 1')
 #+++<
 			else:
 				self.muteDialog.hide()
 				self.volumeDialog.setValue(vol)
 #+++>
 				self.volctrl.setVolume(vol, vol)
+				Console().ePopen('/bin/fp_control -i 8 0')
 #+++<

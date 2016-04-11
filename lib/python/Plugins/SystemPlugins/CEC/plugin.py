@@ -34,7 +34,7 @@ CEC_DelayCounter = 100
 
 class CECSetup(ConfigListScreen, Screen):
 	skin = """
-		<screen name="Konfiguracja CEC" position="center,center" size="550,400">
+		<screen name="Configuration CEC" position="center,center" size="550,400">
 			<widget name="config" position="20,10" size="520,330" scrollbarMode="showOnDemand" />
 			<ePixmap position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
