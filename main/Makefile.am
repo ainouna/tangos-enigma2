@@ -76,7 +76,7 @@ GIT = git --git-dir=$(GIT_DIR)
 #else
 ENIGMA2_COMMIT_DATE = `$(GIT) log --no-color -n 1 --pretty=format:%cd --date=short`
 ENIGMA2_BRANCH = `$(GIT) branch --no-color 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-ENIGMA2_REV = `$(GIT) describe --abbrev=0 --always --tags`
+ENIGMA2_REV = `$(GIT) log | grep "^commit" | wc -l`
 endif
 #endif
 
