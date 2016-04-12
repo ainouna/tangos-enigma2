@@ -65,6 +65,12 @@ def getPiconName(serviceName):
 	sname = '_'.join(GetWithAlternative(serviceName).split(':', 10)[:10])
 	pngname = findPicon(sname)
 	if not pngname:
+		fields = sname.split('_')
+		n_picon = fields[4]+str.format('{:04X}', int(fields[5], 16))+str.format('{:04X}', int(fields[3], 16))
+		pngname = findPicon(n_picon.lower())
+		if not pngname:
+			pngname = findPicon(n_picon.upper())
+	if not pngname:
 		fields = sname.split('_', 3)
 		if len(fields) > 2 and fields[2] != '2':
 			#fallback to 1 for tv services with nonstandard servicetypes
@@ -97,6 +103,9 @@ class Picon(Renderer):
 		self.lastPath = None
 		pngname = findPicon("picon_default")
 		self.defaultpngname = None
+		global searchPaths
+		searchPaths.append('/var/logos/')
+		searchPaths.append('/usr/share/tuxbox/neutrino/icons/logo/')
 		if not pngname:
 			tmp = resolveFilename(SCOPE_CURRENT_SKIN, "picon_default.png")
 			if pathExists(tmp):
