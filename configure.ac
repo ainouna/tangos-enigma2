@@ -38,17 +38,9 @@ AC_ARG_ENABLE(libeplayer3,
 	[  --enable-libeplayer3          enable TDT libeplayer3 as player engine supportt],
 	[AC_DEFINE(ENABLE_LIBEPLAYER3,1,[enable TDT libeplayer3 as player engine support])])
 
-AC_ARG_WITH(eplayer-includes,
-	[  --with-eplayer-includes=PATH  path for eplayer includes [[NONE]]],
-	[EPLAYER_INC="$withval"],[EPLAYER_INC=""])
-
 AM_CONDITIONAL(ENABLE_LIBEPLAYER3,test "$enable_libeplayer3" = "yes")
 if test "$enable_libeplayer3" = "yes"; then
 	AC_DEFINE(ENABLE_LIBEPLAYER3,1,[include TDT libeplayer3 as player engine support])
-	if test "$EPLAYER_INC" = ""; then
-		AC_MSG_ERROR([need eplayer includes path with --with-eplayer-includes=...])
-	fi
-	EPLAYER_CFLAGS="-I$EPLAYER_INC"
 fi
 
 AC_ARG_ENABLE(mediafwgstreamer,
