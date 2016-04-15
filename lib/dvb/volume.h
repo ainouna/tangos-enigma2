@@ -25,6 +25,7 @@ private:
 
 	bool muted;
 	int leftVol, rightVol;
+	long min, max;
 
 	int checkVolume(int vol);
 

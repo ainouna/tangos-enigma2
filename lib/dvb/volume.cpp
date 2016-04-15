@@ -21,10 +21,10 @@
 
 #ifdef HAVE_ALSA
 # ifndef ALSA_VOLUME_MIXER
-#  define ALSA_VOLUME_MIXER "Master"
+#  define ALSA_VOLUME_MIXER "HDMI"
 # endif
 # ifndef ALSA_CARD
-#  define ALSA_CARD "default"
+#  define ALSA_CARD "1"
 # endif
 #endif
 
@@ -56,6 +56,12 @@ int eDVBVolumecontrol::openMixer()
 	{
 		int err;
 		char *card = ALSA_CARD;
+		char cardId[10];
+		min = 0;
+		max = 100;
+		
+		int cx = snd_card_get_index(card);
+		snprintf(cardId, sizeof(cardId), "hw:%i", cx);
 
 		eDebug("[eDVBVolumecontrol] Setup ALSA Mixer %s - %s", ALSA_CARD, ALSA_VOLUME_MIXER);
 		/* Perform the necessary pre-amble to start up ALSA Mixer */
@@ -65,7 +71,7 @@ int eDVBVolumecontrol::openMixer()
 			eDebug("[eDVBVolumecontrol] Mixer %s open error: %s", card, snd_strerror(err));
 			return err;
 		}
-		err = snd_mixer_attach(alsaMixerHandle, card);
+		err = snd_mixer_attach(alsaMixerHandle, cardId);
 		if (err < 0)
 		{
 			eDebug("[eDVBVolumecontrol] Mixer attach %s error: %s", card, snd_strerror(err));
@@ -93,9 +99,14 @@ int eDVBVolumecontrol::openMixer()
 		/* Set up Decoder 0 as the main volume control. */
 		snd_mixer_selem_id_t *sid;
 		snd_mixer_selem_id_alloca(&sid);
-		snd_mixer_selem_id_set_name(sid, ALSA_VOLUME_MIXER);
 		snd_mixer_selem_id_set_index(sid, 0);
+		snd_mixer_selem_id_set_name(sid, ALSA_VOLUME_MIXER);
 		mainVolume = snd_mixer_find_selem(alsaMixerHandle, sid);
+		if (mainVolume) {
+			snd_mixer_selem_get_playback_volume_range(mainVolume, &min, &max);
+		setVolume(leftVol,rightVol);
+	}
+
 	}
 	return mainVolume ? 0 : -1;
 #else
@@ -140,7 +151,7 @@ void eDVBVolumecontrol::setVolume(int left, int right)
 #ifdef HAVE_ALSA
 	eDebug("[eDVBVolumecontrol] Setvolume: ALSA leftVol=%d", leftVol);
 	if (mainVolume)
-		snd_mixer_selem_set_playback_volume_all(mainVolume, muted ? 0 : leftVol);
+		snd_mixer_selem_set_playback_volume_all(mainVolume, min + leftVol * (max - min)/100);
 #else
 		/* convert to -1dB steps */
 	left = 63 - leftVol * 63 / 100;
@@ -190,7 +201,7 @@ void eDVBVolumecontrol::volumeMute()
 #ifdef HAVE_ALSA
 	eDebug("[eDVBVolumecontrol] Setvolume: ALSA Mute");
 	if (mainVolume)
-		snd_mixer_selem_set_playback_volume_all(mainVolume, 0);
+		setVolume(0,0);
 	muted = true;
 #else
 	int fd = openMixer();
@@ -213,7 +224,7 @@ void eDVBVolumecontrol::volumeUnMute()
 #ifdef HAVE_ALSA
 	eDebug("[eDVBVolumecontrol] Setvolume: ALSA unMute to %d", leftVol);
 	if (mainVolume)
-		snd_mixer_selem_set_playback_volume_all(mainVolume, leftVol);
+		setVolume(rightVol, leftVol);
 	muted = false;
 #else
 	int fd = openMixer();
