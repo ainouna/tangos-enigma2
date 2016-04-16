@@ -1,7 +1,7 @@
 import os
 
 rcstype = None
-vfdsize = 4
+vfdsize = 8
 boxtype = None 
 if os.path.exists("/var/grun/grcstype"):
     with open ("/var/grun/grcstype", "r") as myconfigfile:
