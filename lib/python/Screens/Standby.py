@@ -202,6 +202,9 @@ inTryQuitMainloop = False
 class TryQuitMainloop(MessageBox):
 	def __init__(self, session, retvalue=1, timeout=-1, default_yes = False):
 		self.retval = retvalue
+		if (self.retval == 33):
+			os.remove("/var/etc/.e2")
+			self.retval = self.retval - 30
 		recordings = session.nav.getRecordings()
 		jobs = len(job_manager.getPendingJobs())
 		self.connected = False
