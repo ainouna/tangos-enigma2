@@ -36,6 +36,7 @@ class VFDIcons():
         self.mp3Available = False
         self.dolbyAvailable = False
         self.DTSAvailable = False
+	Console().ePopen('fp_control -l 0 0')
         tm = localtime()
         fp_time = strftime('%H:%M:%S %d-%m-%Y', tm)
         Console().ePopen('fp_control -s '+fp_time)
