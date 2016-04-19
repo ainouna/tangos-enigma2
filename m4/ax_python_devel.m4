@@ -235,7 +235,7 @@ EOD`
 			  "from distutils.sysconfig import get_python_lib as f; \
 			  import os; \
 			  print (os.path.join(f(plat_specific=1, standard_lib=1), 'config'));"`
-			PYTHON_LDFLAGS="-L$PY_PATH/include/python$PYTHON_VERSION -lpython$ac_python_version"
+			PYTHON_LDFLAGS="-L$PY_PATH/lib/python$PYTHON_VERSION -lpython$ac_python_version"
 #			PYTHON_LDFLAGS="-L$ac_python_libdir -lpython$ac_python_version"
 		fi
 
