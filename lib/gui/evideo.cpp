@@ -15,7 +15,11 @@ eVideoWidget::eVideoWidget(eWidget *parent)
 	if (!fullsizeTimer)
 	{
 		fullsizeTimer = eTimer::create(eApp);
+#ifdef ENABLE_SIGC2
+		fullsizeTimer->timeout.connect(bind(sigc::ptr_fun(eVideoWidget::setFullsize), false));
+#else
 		fullsizeTimer->timeout.connect(bind(slot(eVideoWidget::setFullsize), false));
+#endif
 	}
 	parent->setPositionNotifyChild(1);
 }

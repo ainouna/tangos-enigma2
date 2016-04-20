@@ -30,27 +30,34 @@ inline PyObject *PyFrom(const char *c)
 }
 
 template <class R>
-class PSignal0: public PSignal, public Signal0<R>
+class PSignal0; //not implemented
+
+template <>
+class PSignal0<void>: public PSignal, public Signal0<void>
 {
 public:
-	R operator()()
+	void operator()()
 	{
+		Signal0<void>::operator()();
 		if (m_list)
 		{
 			PyObject *pArgs = PyTuple_New(0);
 			callPython(pArgs);
 			Org_Py_DECREF(pArgs);
 		}
-		return Signal0<R>::operator()();
 	}
 };
 
 template <class R, class V0>
-class PSignal1: public PSignal, public Signal1<R,V0>
+class PSignal1; //not implemented
+
+template <class V0>
+class PSignal1<void, V0>: public PSignal, public Signal1<void,V0>
 {
 public:
-	R operator()(V0 a0)
+	void operator()(V0 a0)
 	{
+		Signal1<void,V0>::operator()(a0);
 		if (m_list)
 		{
 			PyObject *pArgs = PyTuple_New(1);
@@ -58,16 +65,19 @@ public:
 			callPython(pArgs);
 			Org_Py_DECREF(pArgs);
 		}
-		return Signal1<R,V0>::operator()(a0);
 	}
 };
 
 template <class R, class V0, class V1>
-class PSignal2: public PSignal, public Signal2<R,V0,V1>
+class PSignal2; //not implemented
+
+template <class V0, class V1>
+class PSignal2<void, V0, V1>: public PSignal, public Signal2<void,V0,V1>
 {
 public:
-	R operator()(V0 a0, V1 a1)
+	void operator()(V0 a0, V1 a1)
 	{
+		Signal2<void,V0,V1>::operator()(a0, a1);
 		if (m_list)
 		{
 			PyObject *pArgs = PyTuple_New(2);
@@ -76,16 +86,19 @@ public:
 			callPython(pArgs);
 			Org_Py_DECREF(pArgs);
 		}
-		return Signal2<R,V0,V1>::operator()(a0, a1);
 	}
 };
 
 template <class R, class V0, class V1, class V2>
-class PSignal3: public PSignal, public Signal3<R,V0,V1,V2>
+class PSignal3; //not implemented
+
+template <class V0, class V1, class V2>
+class PSignal3<void, V0, V1, V2>: public PSignal, public Signal3<void,V0,V1,V2>
 {
 public:
-	R operator()(V0 a0, V1 a1, V2 a2)
+	void operator()(V0 a0, V1 a1, V2 a2)
 	{
+		Signal3<void,V0,V1,V2>::operator()(a0, a1, a2);
 		if (m_list)
 		{
 			PyObject *pArgs = PyTuple_New(3);
@@ -95,7 +108,6 @@ public:
 			callPython(pArgs);
 			Org_Py_DECREF(pArgs);
 		}
-		return Signal3<R,V0,V1,V2>::operator()(a0, a1, a2);
 	}
 };
 

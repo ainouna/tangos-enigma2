@@ -303,7 +303,11 @@ int main(int argc, char **argv)
 
 	gRC::getInstance()->setSpinnerDC(my_dc);
 
+#ifdef ENABLE_SIGC2
+	eRCInput::getInstance()->keyEvent.connect(sigc::ptr_fun(keyEvent));
+#else
 	eRCInput::getInstance()->keyEvent.connect(slot(keyEvent));
+#endif
 
 #if defined(__sh__) // initialise the vfd class
 	evfd * vfd = new evfd;

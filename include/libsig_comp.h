@@ -8,6 +8,25 @@
 using namespace SigC;
 #endif
 
+#ifdef ENABLE_SIGC2
+
+typedef sigc::trackable  Object;
+typedef sigc::connection Connection;
+
+#define Signal0          sigc::signal0
+#define Signal1          sigc::signal1
+#define Signal2          sigc::signal2
+#define Signal3          sigc::signal3
+#define Signal4          sigc::signal4
+
+#define Slot0            sigc::slot0
+#define Slot1            sigc::slot1
+#define Slot2            sigc::slot2
+
+#define slot(x, y)       sigc::mem_fun(x, y)
+
+#define CONNECT(SENDER, EMPFAENGER) SENDER.connect(sigc::mem_fun(*this, &EMPFAENGER))
+#else
 #define CONNECT(SENDER, EMPFAENGER) SENDER.connect(slot(*this, &EMPFAENGER))
 // use this Makro to connect with a method
 // void bla::foo(int x);
@@ -16,6 +35,7 @@ using namespace SigC;
 //
 // CONNECT(testSig, bla::foo);
 // signal and method (slot) must have the same signature
+#endif //SIGC2
 
 #define CONNECT_1_0(SENDER, EMPFAENGER, PARAM) SENDER.connect( bind( slot(*this, &EMPFAENGER) ,PARAM ) )
 // use this for connect with a method
