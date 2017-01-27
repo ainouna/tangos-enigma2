@@ -1,12 +1,10 @@
 #pragma once
 
-#ifndef SWIG
-class eMainloop;
+#include "ebase.h"
 
 /* Initialization and shutdown */
 void e2avahi_init(eMainloop* reactor);
 void e2avahi_close();
-#endif
 
 /* Offer a service. There's currently no way to withdraw it. Leave
  * service_name NULL or blank to use avahi's local hostname as service

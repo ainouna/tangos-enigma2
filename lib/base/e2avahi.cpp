@@ -1,17 +1,24 @@
 #include "e2avahi.h"
-#include "ebase.h"
+#include <avahi-common/simple-watch.h>
 #include <avahi-common/error.h>
 #include <avahi-client/client.h>
 #include <avahi-client/publish.h>
 #include <avahi-client/lookup.h>
 #include <avahi-common/malloc.h>
+<<<<<<< HEAD
 #include <avahi-common/timeval.h>
 #include <list>
 #include <algorithm>
+=======
+>>>>>>> parent of 3b7ea08... e2avahi: Integrate Avahi interface to Enigma2 main event loop
 
+/* For now, instantiate a poll that we'll never actually start. To
+ * be replaced with the E2 mainloop */
+static AvahiSimplePoll *avahi_poll = NULL;
 /* Our link to avahi */
 static AvahiClient *avahi_client = NULL;
 
+<<<<<<< HEAD
 /* API to the E2 event loop */
 static AvahiPoll avahi_poll_api;
 
@@ -81,6 +88,11 @@ inline bool operator==(const AvahiServiceEntry& lhs, const AvahiServiceEntry& rh
 {
 	return (lhs.service_type == rhs.service_type) &&
 			(lhs.port_num == rhs.port_num); 
+=======
+static void avahi_client_callback(AvahiClient *client, AvahiClientState state, void *d)
+{
+	eDebug("[Avahi] client state: %d\n", state);
+>>>>>>> parent of 3b7ea08... e2avahi: Integrate Avahi interface to Enigma2 main event loop
 }
 inline bool operator!=(const AvahiServiceEntry& lhs, const AvahiServiceEntry& rhs)
 { return !(lhs == rhs); }
@@ -116,6 +128,7 @@ static void avahi_group_callback(AvahiEntryGroup *group,
 {
 }
 
+<<<<<<< HEAD
 static void avahi_service_try_register(AvahiServiceEntry *entry)
 {
 	if (entry->group)
@@ -384,18 +397,17 @@ void avahi_timeout_free(AvahiTimeout *t)
 
 
 /* Connect the mainloop to avahi... */
+=======
+/* In future, this will connect the mainloop to avahi... */
+>>>>>>> parent of 3b7ea08... e2avahi: Integrate Avahi interface to Enigma2 main event loop
 void e2avahi_init(eMainloop* reactor)
 {
-	avahi_poll_api.userdata = reactor;
-	avahi_poll_api.watch_new = avahi_watch_new;
-	avahi_poll_api.watch_update = avahi_watch_update;
-	avahi_poll_api.watch_get_events = avahi_watch_get_events;
-	avahi_poll_api.watch_free = avahi_watch_free;
-	avahi_poll_api.timeout_new = avahi_timeout_new;
-	avahi_poll_api.timeout_update = avahi_timeout_update;
-	avahi_poll_api.timeout_free = avahi_timeout_free;
-
-	avahi_client = avahi_client_new(&avahi_poll_api,
+	avahi_poll = avahi_simple_poll_new();
+	if (!avahi_poll) {
+		eDebug("avahi_simple_poll_new failed\n");
+		return;
+	}
+	avahi_client = avahi_client_new(avahi_simple_poll_get(avahi_poll),
 		AVAHI_CLIENT_NO_FAIL, avahi_client_callback, NULL, NULL);
 }
 
