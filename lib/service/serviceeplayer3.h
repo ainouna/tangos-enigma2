@@ -102,7 +102,7 @@ public:
 	RESULT connectEvent(const Slot2<void,iPlayableService*,int> &event, ePtr<eConnection> &connection);
 	RESULT start();
 	RESULT stop();
-	RESULT setTarget(int target);
+	RESULT setTarget(int target, bool noaudio = false) { return -1; };
 	
 	RESULT pause(ePtr<iPauseableService> &ptr);
 	RESULT setSlowMotion(int ratio);

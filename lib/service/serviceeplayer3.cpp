@@ -551,11 +551,6 @@ RESULT eServiceEPlayer3::stop()
 	return 0;
 }
 
-RESULT eServiceEPlayer3::setTarget(int target)
-{
-	return -1;
-}
-
 RESULT eServiceEPlayer3::pause(ePtr<iPauseableService> &ptr)
 {
 	ptr=this;
