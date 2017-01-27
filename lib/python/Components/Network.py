@@ -401,7 +401,7 @@ class Network:
 		self.commands.append("killall -9 udhcpc")
 		self.commands.append("rm /var/run/udhcpc*")
 		self.commands.append("rm /var/run/ifstate*")
-		self.commands.append("/etc/init.d/network start")
+		self.commands.append("/etc/init.d/networking start")
 		self.commands.append("/etc/init.d/avahi-daemon start")
 		self.restartConsole.eBatch(self.commands, self.restartNetworkFinished, callback, debug=True)
 
