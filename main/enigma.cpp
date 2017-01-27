@@ -29,7 +29,6 @@
 #include <lib/python/connections.h>
 #include <lib/python/python.h>
 #include <lib/python/pythonconfig.h>
-#include <lib/service/servicepeer.h>
 
 #include <fstream>
 #include <sstream>
