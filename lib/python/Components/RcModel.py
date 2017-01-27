@@ -4,7 +4,7 @@ from Tools.ExtHardwareInfo import ExtHardwareInfo
 from Tools.Directories import SCOPE_SKIN, resolveFilename
 
 class RcModel:
-        RcModels = {}
+	RcModels = {}
 
 	def __init__(self):
 		self.model = ExtHardwareInfo().get_rcstype()
