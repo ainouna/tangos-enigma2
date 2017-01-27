@@ -318,7 +318,6 @@ class Network:
 
 	def resetNetworkConfig(self, mode='lan', callback = None):
 		self.commands = []
-		self.commands.append("/etc/init.d/avahi-daemon stop")
 		for iface in self.ifaces.keys():
 			if iface != 'eth0' or not self.onRemoteRootFS():
 				self.commands.append("/sbin/ip addr flush dev " + iface + " scope global")
@@ -362,7 +361,6 @@ class Network:
 			self.commands.append("/sbin/ifconfig eth0 up")
 			self.commands.append("/sbin/ifconfig wlan0 down")
 			self.commands.append("/sbin/ifconfig ath0 down")
-		self.commands.append("/etc/init.d/avahi-daemon start")
 		self.resetNetworkConsole.eBatch(self.commands, self.resetNetworkFinished, [mode,callback], debug=True)
 
 	def resetNetworkFinished(self, extra_args):
@@ -392,7 +390,6 @@ class Network:
 		self.config_ready = False
 		self.msgPlugins()
 		self.commands = []
-		self.commands.append("/etc/init.d/avahi-daemon stop")
 		for iface in self.ifaces.keys():
 			if iface != 'eth0' or not self.onRemoteRootFS():
 				self.commands.append(("/sbin/ifdown", "/sbin/ifdown", iface))
@@ -402,7 +399,6 @@ class Network:
 		self.commands.append("rm /var/run/udhcpc*")
 		self.commands.append("rm /var/run/ifstate*")
 		self.commands.append("/etc/init.d/networking start")
-		self.commands.append("/etc/init.d/avahi-daemon start")
 		self.restartConsole.eBatch(self.commands, self.restartNetworkFinished, callback, debug=True)
 
 	def restartNetworkFinished(self,extra_args):
