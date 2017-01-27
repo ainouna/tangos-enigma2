@@ -298,6 +298,7 @@ class AdapterSetup(Screen, ConfigListScreen, HelpableScreen):
 	def __init__(self, session, networkinfo, essid=None):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
+		self.setTitle(_("Network setup"))
 		self.session = session
 		if isinstance(networkinfo, (list, tuple)):
 			self.iface = networkinfo[0]
@@ -363,7 +364,6 @@ class AdapterSetup(Screen, ConfigListScreen, HelpableScreen):
 		self["HelpWindow"].hide()
 
 	def layoutFinished(self):
-		self.setTitle(_("Network setup"))
 		self["DNS1"].setText(self.primaryDNS.getText())
 		self["DNS2"].setText(self.secondaryDNS.getText())
 		if self.ipConfigEntry.getText() is not None:
@@ -413,7 +413,8 @@ class AdapterSetup(Screen, ConfigListScreen, HelpableScreen):
 			self.encryptionlist.append(("Unencrypted", _("Unencrypted")))
 			self.encryptionlist.append(("WEP", _("WEP")))
 			self.encryptionlist.append(("WPA", _("WPA")))
-			self.encryptionlist.append(("WPA/WPA2", _("WPA or WPA2")))
+			if not os.path.exists("/tmp/bcm/" + self.iface):
+				self.encryptionlist.append(("WPA/WPA2", _("WPA or WPA2")))
 			self.encryptionlist.append(("WPA2", _("WPA2")))
 			self.weplist = []
 			self.weplist.append("ASCII")
@@ -468,20 +469,22 @@ class AdapterSetup(Screen, ConfigListScreen, HelpableScreen):
 						self.extended = callFnc
 						if p.__call__.has_key("configStrings"):
 							self.configStrings = p.__call__["configStrings"]
-
-						self.hiddenSSID = getConfigListEntry(_("Hidden network"), config.plugins.wlan.hiddenessid)
-						self.list.append(self.hiddenSSID)
+						isExistBcmWifi = os.path.exists("/tmp/bcm/" + self.iface)
+						if not isExistBcmWifi:
+							self.hiddenSSID = getConfigListEntry(_("Hidden network"), config.plugins.wlan.hiddenessid)
+							self.list.append(self.hiddenSSID)
 						self.wlanSSID = getConfigListEntry(_("Network name (SSID)"), config.plugins.wlan.essid)
 						self.list.append(self.wlanSSID)
 						self.encryption = getConfigListEntry(_("Encryption"), config.plugins.wlan.encryption)
 						self.list.append(self.encryption)
-
-						self.encryptionType = getConfigListEntry(_("Encryption key type"), config.plugins.wlan.wepkeytype)
+						if not isExistBcmWifi:
+							self.encryptionType = getConfigListEntry(_("Encryption key type"), config.plugins.wlan.wepkeytype)
 						self.encryptionKey = getConfigListEntry(_("Encryption key"), config.plugins.wlan.psk)
 
 						if config.plugins.wlan.encryption.value != "Unencrypted":
 							if config.plugins.wlan.encryption.value == 'WEP':
-								self.list.append(self.encryptionType)
+								if not isExistBcmWifi:
+									self.list.append(self.encryptionType)
 							self.list.append(self.encryptionKey)
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
@@ -653,6 +656,7 @@ class AdapterSetupConfiguration(Screen, HelpableScreen):
 	def __init__(self, session,iface):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
+		self.setTitle(_("Network configuration"))
 		self.session = session
 		self.iface = iface
 		self.restartLanRef = None
@@ -791,7 +795,6 @@ class AdapterSetupConfiguration(Screen, HelpableScreen):
 		self.loadDescription()
 
 	def layoutFinished(self):
-		self.setTitle(_("Network configuration"))
 		idx = 0
 		self["menulist"].moveToIndex(idx)
 		self.loadDescription()
@@ -981,6 +984,7 @@ class NetworkAdapterTest(Screen):
 	def __init__(self, session,iface):
 		Screen.__init__(self, session)
 		self.iface = iface
+		self.setTitle(_("Network test: ") + iNetwork.getFriendlyAdapterName(self.iface))
 		self.oldInterfaceState = iNetwork.getAdapterAttribute(self.iface, "up")
 		self.setLabels()
 		self.onClose.append(self.cleanup)
@@ -1247,7 +1251,6 @@ class NetworkAdapterTest(Screen):
 		self.nextStepTimer.stop()
 
 	def layoutFinished(self):
-		self.setTitle(_("Network test: ") + iNetwork.getFriendlyAdapterName(self.iface) )
 		self["shortcutsyellow"].setEnabled(False)
 		self["AdapterInfo_OK"].hide()
 		self["NetworkInfo_Check"].hide()

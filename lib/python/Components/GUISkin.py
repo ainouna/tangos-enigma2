@@ -1,17 +1,27 @@
 from GUIComponent import GUIComponent
+from config import config
 from skin import applyAllAttributes
 from Tools.CList import CList
 from Sources.StaticText import StaticText
+
+class screenPath():
+	def __init__(self):
+		self.path = []
+		self.lastself = None
+screen = screenPath()
 
 class GUISkin:
 	__module__ = __name__
 
 	def __init__(self):
 		self["Title"] = StaticText()
+		self["screen_path"] = StaticText()
+		self.skin_title = ""
 		self.onLayoutFinish = [ ]
 		self.summaries = CList()
 		self.instance = None
 		self.desktop = None
+		self.screenPathMode = False
 
 	def createGUIScreen(self, parent, desktop, updateonly = False):
 		for val in self.renderer:
@@ -65,14 +75,40 @@ class GUISkin:
 		if summary is not None:
 			self.summaries.remove(summary)
 
+	def clearScreenPath(self):
+		screen.path = []
+		screen.lastself = None
+
+	def removeScreenPath(self):
+		screen.path = screen.path and screen.path[:-1]
+		screen.lastself = None
+
+	def setScreenPathMode(self, mode):
+		self.screenPathMode = mode
+
 	def setTitle(self, title):
+		path_text = ""
+		self.skin_title = title
+		if self.screenPathMode is not None and title and config.usage.menu_path.value != "off":
+			if self.screenPathMode and not screen.path or screen.path and screen.path[-1] != title:
+				self.onClose.append(self.removeScreenPath)
+				if screen.lastself != self:
+					screen.path.append(title)
+					screen.lastself = self
+				elif screen.path:
+					screen.path[-1] = title
+			if config.usage.menu_path.value == "small":
+				path_text = len(screen.path) > 1 and " > ".join(screen.path[:-1]) + " >" or ""
+			else:
+				title = screen.path and " > ".join(screen.path) or title
 		if self.instance:
 			self.instance.setTitle(title)
 		self["Title"].text = title
+		self["screen_path"].text = path_text
 		self.summaries.setTitle(title)
 
 	def getTitle(self):
-		return self["Title"].text
+		return self.skin_title
 
 	def getSkinTitle(self):
 		return hasattr(self, "skin_title") and self.skin_title or ""
@@ -83,7 +119,6 @@ class GUISkin:
 		self.desktop = desktop
 
 	def applySkin(self):
-		self.skin_title = ""
 		z = 0
 		baseres = (720, 576) # FIXME: a skin might have set another resolution, which should be the base res
 		idx = 0

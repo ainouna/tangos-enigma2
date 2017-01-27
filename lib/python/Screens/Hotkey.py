@@ -34,6 +34,8 @@ def getHotkeys():
 		("Radio" + " " + _("long"), "radio_long", ""),
 		("TV", "showTv", ""),
 		("TV" + " " + _("long"), "showTv_long", SystemInfo["LcdLiveTV"] and "Infobar/ToggleLCDLiveTV" or ""),
+		("TV2", "toggleTvRadio", ""),
+		("TV2" + " " + _("long"), "toggleTvRadio_long", SystemInfo["LcdLiveTV"] and "Infobar/ToggleLCDLiveTV" or ""),
 		("Teletext", "text", ""),
 		("Help", "displayHelp", ""),
 		("Help" + " " + _("long"), "displayHelp_long", ""),
@@ -58,6 +60,10 @@ def getHotkeys():
 		("Ok", "ok", ""),
 		("Channel up", "channelup", ""),
 		("Channel down", "channeldown", ""),
+		("Page up", "pageUp", ""),
+		("Page up"  + " " + _("long"), "pageUp_long", ""),
+		("Page down", "pageDown", ""),
+		("Page down" + " " + _("long"), "pageDown_long", ""),
 		("Next", "next", ""),
 		("Previous", "previous", ""),
 		("Audio", "audio", ""),
@@ -101,8 +107,8 @@ def getHotkeys():
 		("Star" + " " + _("long"), "star_long", ""),
 		("@", "monkey", ""),
 		("@" + " " + _("long"), "monkey_long", ""),
-		("Power", "power", ""),
-		("Power" + " " + _("long"), "power_long", ""),
+		("Power", "power", "Module/Screens.Standby/Standby"),
+		("Power" + " " + _("long"), "power_long", "Menu/shutdown"),
 		("HDMIin", "HDMIin", "Infobar/HDMIIn"),
 		("HDMIin" + " " + _("long"), "HDMIin_long", "")]
 
@@ -158,7 +164,7 @@ def getHotkeyFunctions():
 	hotkeyFunctions.append((_("Show Audioselection"), "Infobar/audioSelection", "InfoBar"))
 	hotkeyFunctions.append((_("Switch to radio mode"), "Infobar/showRadio", "InfoBar"))
 	hotkeyFunctions.append((_("Switch to TV mode"), "Infobar/showTv", "InfoBar"))
-	hotkeyFunctions.append((_("Switch between TV and Radio"), "Infobar/toogleTvRadio", "InfoBar"))
+	hotkeyFunctions.append((_("Toggle TV/RADIO mode"), "Infobar/toggleTvRadio", "InfoBar"))
 	hotkeyFunctions.append((_("Show movies"), "Infobar/showMovies", "InfoBar"))
 	hotkeyFunctions.append((_("Instant record"), "Infobar/instantRecord", "InfoBar"))
 	hotkeyFunctions.append((_("Start instant recording"), "Infobar/startInstantRecording", "InfoBar"))
@@ -185,6 +191,7 @@ def getHotkeyFunctions():
 	hotkeyFunctions.append((_("Toggle HDMI In"), "Infobar/HDMIIn", "InfoBar"))
 	if SystemInfo["LcdLiveTV"]:
 		hotkeyFunctions.append((_("Toggle LCD LiveTV"), "Infobar/ToggleLCDLiveTV", "InfoBar"))
+	hotkeyFunctions.append((_("Toggle dashed flickering line for this service"), "Infobar/ToggleHideVBI", "InfoBar"))
 	hotkeyFunctions.append((_("Do nothing"), "Void", "InfoBar"))
 	hotkeyFunctions.append((_("HotKey Setup"), "Module/Screens.Hotkey/HotkeySetup", "Setup"))
 	hotkeyFunctions.append((_("Software update"), "Module/Screens.SoftwareUpdate/UpdatePlugin", "Setup"))
@@ -203,6 +210,7 @@ def getHotkeyFunctions():
 	for plugin in plugins.getPluginsForMenu("system"):
 		if plugin[2]:
 			hotkeyFunctions.append((plugin[0], "MenuPlugin/system/" + plugin[2], "Setup"))
+	hotkeyFunctions.append((_("PowerMenu"), "Menu/shutdown", "Power"))
 	hotkeyFunctions.append((_("Standby"), "Module/Screens.Standby/Standby", "Power"))
 	hotkeyFunctions.append((_("Restart"), "Module/Screens.Standby/TryQuitMainloop/2", "Power"))
 	hotkeyFunctions.append((_("Restart enigma"), "Module/Screens.Standby/TryQuitMainloop/3", "Power"))
@@ -257,7 +265,6 @@ class HotkeySetup(Screen):
 			"0": self.keyNumberGlobal
 		})
 		self["HotkeyButtonActions"] = hotkeyActionMap(["HotkeyActions"], dict((x[1], self.hotkeyGlobal) for x in self.hotkeys))
-		self.longkeyPressed = False
 		self.onLayoutFinish.append(self.__layoutFinished)
 		self.onExecBegin.append(self.getFunctions)
 
@@ -265,18 +272,13 @@ class HotkeySetup(Screen):
 		self["choosen"].selectionEnabled(0)
 
 	def hotkeyGlobal(self, key):
-		if self.longkeyPressed:
-			self.longkeyPressed = False
-		else:
-			index = 0
-			for x in self.list[:config.misc.hotkey.additional_keys.value and len(self.hotkeys) or 10]:
-				if key == x[0][1]:
-					self["list"].moveToIndex(index)
-					if key.endswith("_long"):
-						self.longkeyPressed = True
-					break
-				index += 1
-			self.getFunctions()
+		index = 0
+		for x in self.list[:config.misc.hotkey.additional_keys.value and len(self.hotkeys) or 10]:
+			if key == x[0][1]:
+				self["list"].moveToIndex(index)
+				break
+			index += 1
+		self.getFunctions()
 
 	def keyOk(self):
 		self.session.openWithCallback(self.HotkeySetupSelectCallback, HotkeySetupSelect, self["list"].l.getCurrentSelection())
@@ -515,10 +517,6 @@ class InfoBarHotkey():
 		self.hotkeys = getHotkeys()
 		self["HotkeyButtonActions"] = helpableHotkeyActionMap(self, "HotkeyActions",
 			dict((x[1],(self.hotkeyGlobal, boundFunction(self.getHelpText, x[1]))) for x in self.hotkeys), -10)
-		self.onExecBegin.append(self.clearLongkeyPressed)
-
-	def clearLongkeyPressed(self):
-		self.longkeyPressed = False
 
 	def getKeyFunctions(self, key):
 		if key in ("play", "playpause", "Stop", "stop", "pause", "rewind", "next", "previous", "fastforward", "skip_back", "skip_forward", "red", "green", "yellow", "blue", "cross_left", "cross_right", "cross_up", "cross_down", "ok") and (self.__class__.__name__ == "MoviePlayer" or hasattr(self, "timeshiftActivated") and self.timeshiftActivated()):
@@ -546,18 +544,14 @@ class InfoBarHotkey():
 			return _("Hotkey") + " " + tuple(x[0] for x in self.hotkeys if x[1] == key)[0]
 
 	def hotkeyGlobal(self, key):
-		if self.longkeyPressed:
-			self.longkeyPressed = False
+		selected = self.getKeyFunctions(key)
+		if not selected:
+			return 0
+		elif len(selected) == 1:
+			return self.execHotkey(selected[0])
 		else:
-			selected = self.getKeyFunctions(key)
-			if not selected:
-				return 0
-			elif len(selected) == 1:
-				self.longkeyPressed = key.endswith("_long")
-				return self.execHotkey(selected[0])
-			else:
-				key = tuple(x[0] for x in self.hotkeys if x[1] == key)[0]
-				self.session.openWithCallback(self.execHotkey, ChoiceBox, _("Hotkey") + " " + key, selected)
+			key = tuple(x[0] for x in self.hotkeys if x[1] == key)[0]
+			self.session.openWithCallback(self.execHotkey, ChoiceBox, _("Hotkey") + " " + key, selected)
 
 	def execHotkey(self, selected):
 		if selected:
@@ -629,10 +623,20 @@ class InfoBarHotkey():
 					from Plugins.Extensions.PPanel.ppanel import PPanel
 					self.session.open(PPanel, name=selected[1] + ' PPanel', node=None, filename=ppanelFileName, deletenode=None)
 			elif selected[0] == "Shellscript":
-				command = '/etc/sysconfig/user_scripts/' + selected[1] + ".sh"
-				if os.path.isfile(command):
-					from Screens.Console import Console
-					self.session.open(Console, selected[1], [command], closeOnSuccess = True)
+				command = '/usr/script/' + selected[1] + ".sh"
+				if os.path.isfile(command) and os.path.isdir('/usr/lib/enigma2/python/Plugins/Extensions/PPanel'):
+					from Plugins.Extensions.PPanel.ppanel import Execute
+					self.session.open(Execute, selected[1] + " shellscript", None, command)
+			elif selected[0] == "Menu":
+				from Screens.Menu import MainMenu, mdom
+				root = mdom.getroot()
+				for x in root.findall("menu"):
+					y = x.find("id")
+					if y is not None:
+						id = y.get("val")
+						if id and id == selected[1]:
+							menu_screen = self.session.open(MainMenu, x)
+							break
 
 	def showServiceListOrMovies(self):
 		if hasattr(self, "openServiceList"):

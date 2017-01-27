@@ -14,9 +14,10 @@ class VolumeControl:
 	a corresponding dialog"""
 	def __init__(self, session):
 		global globalActionMap
-		globalActionMap.actions["volumeUp"]=self.volUp
-		globalActionMap.actions["volumeDown"]=self.volDown
-		globalActionMap.actions["volumeMute"]=self.volMute
+		globalActionMap.actions["volumeUp"] = self.volUp
+		globalActionMap.actions["volumeDown"] = self.volDown
+		globalActionMap.actions["volumeMute"] = self.volMute
+		globalActionMap.actions["volumeMuteLong"] = self.volMuteLong
 
 		assert not VolumeControl.instance, "only one VolumeControl instance is allowed!"
 		VolumeControl.instance = self
@@ -96,3 +97,6 @@ class VolumeControl:
 				self.volctrl.setVolume(vol, vol)
 				Console().ePopen('/bin/fp_control -i 8 0')
 #+++<
+
+	def volMuteLong(self):
+		self.muteDialog.hide()

@@ -348,21 +348,14 @@ class ConfigSelection(ConfigElement):
 		self.value = self.choices[(i + 1) % nchoices]
 
 	def getText(self):
-		if self._descr is not None:
-			return self._descr
-		descr = self._descr = self.description[self.value]
-		if descr:
-			return _(descr)
-		return descr
+		if self._descr is None:
+			self._descr = self.description[self.value]
+		return self._descr
 
 	def getMulti(self, selected):
-		if self._descr is not None:
-			descr = self._descr
-		else:
-			descr = self._descr = self.description[self.value]
-		if descr:
-			return ("text", _(descr))
-		return ("text", descr)
+		if self._descr is None:
+			self._descr = self.description[self.value]
+		return ("text", self._descr)
 
 	# HTML
 	def getHTML(self, id):
@@ -387,9 +380,8 @@ class ConfigSelection(ConfigElement):
 # several customized versions exist for different
 # descriptions.
 #
-boolean_descriptions = {False: _("false"), True: _("true")}
 class ConfigBoolean(ConfigElement):
-	def __init__(self, default = False, descriptions = boolean_descriptions):
+	def __init__(self, default = False, descriptions = {False: _("false"), True: _("true")}):
 		ConfigElement.__init__(self)
 		self.descriptions = descriptions
 		self.value = self.last_value = self.default = default
@@ -403,16 +395,10 @@ class ConfigBoolean(ConfigElement):
 			self.value = True
 
 	def getText(self):
-		descr = self.descriptions[self.value]
-		if descr:
-			return _(descr)
-		return descr
+		return self.descriptions[self.value]
 
 	def getMulti(self, selected):
-		descr = self.descriptions[self.value]
-		if descr:
-			return ("text", _(descr))
-		return ("text", descr)
+		return ("text", self.descriptions[self.value])
 
 	def tostring(self, value):
 		if not value:
@@ -445,20 +431,17 @@ class ConfigBoolean(ConfigElement):
 			self.changedFinal()
 			self.last_value = self.value
 
-yes_no_descriptions = {False: _("no"), True: _("yes")}
 class ConfigYesNo(ConfigBoolean):
 	def __init__(self, default = False):
-		ConfigBoolean.__init__(self, default = default, descriptions = yes_no_descriptions)
+		ConfigBoolean.__init__(self, default = default, descriptions = {False: _("no"), True: _("yes")})
 
-on_off_descriptions = {False: _("off"), True: _("on")}
 class ConfigOnOff(ConfigBoolean):
 	def __init__(self, default = False):
-		ConfigBoolean.__init__(self, default = default, descriptions = on_off_descriptions)
+		ConfigBoolean.__init__(self, default = default, descriptions = {False: _("off"), True: _("on")})
 
-enable_disable_descriptions = {False: _("disable"), True: _("enable")}
 class ConfigEnableDisable(ConfigBoolean):
 	def __init__(self, default = False):
-		ConfigBoolean.__init__(self, default = default, descriptions = enable_disable_descriptions)
+		ConfigBoolean.__init__(self, default = default, descriptions = {False: _("disable"), True: _("enable")})
 
 class ConfigDateTime(ConfigElement):
 	def __init__(self, default, formatstring, increment = 86400):
@@ -642,7 +625,8 @@ class ConfigSequence(ConfigElement):
 		return str(v)
 
 	def fromstring(self, value):
-		return [int(x) for x in value.split(self.seperator)]
+		ret = [int(x) for x in value.split(self.seperator)]
+		return ret + [int(x[0]) for x in self.limits[len(ret):]]
 
 	def onDeselect(self, session):
 		if self.last_value != self._value:
@@ -813,6 +797,15 @@ class ConfigFloat(ConfigSequence):
 		return float(self.value[1] / float(self.limits[1][1] + 1) + self.value[0])
 
 	float = property(getFloat)
+
+	def getFloatInt(self):
+		return int(self.value[0] * float(self.limits[1][1] + 1) + self.value[1])
+
+	def setFloatInt(self, val):
+		self.value[0] = val / float(self.limits[1][1] + 1)
+		self.value[1] = val % float(self.limits[1][1] + 1)
+
+	floatint = property(getFloatInt, setFloatInt)
 
 # an editable text...
 class ConfigText(ConfigElement, NumericalTextInput):
@@ -1291,6 +1284,76 @@ class ConfigSet(ConfigElement):
 
 	description = property(lambda self: descriptionList(self.choices.choices, choicesList.LIST_TYPE_LIST))
 
+class ConfigDictionarySet(ConfigElement):
+	def __init__(self, default = {}):
+		ConfigElement.__init__(self)
+		self.default = default
+		self.dirs = {}
+		self.value = self.default
+
+	def getKeys(self):
+		return self.dir_pathes
+
+	def setValue(self, value):
+		if isinstance(value, dict):
+			self.dirs = value
+			self.changed()
+
+	def getValue(self):
+		return self.dirs
+
+	value = property(getValue, setValue)
+
+	def tostring(self, value):
+		return str(value)
+
+	def fromstring(self, val):
+		return eval(val)
+
+	def load(self):
+		sv = self.saved_value
+		if sv is None:
+			tmp = self.default
+		else:
+			tmp = self.fromstring(sv)
+		self.dirs = tmp
+
+	def changeConfigValue(self, value, config_key, config_value):
+		if isinstance(value, str) and isinstance(config_key, str):
+			if value in self.dirs:
+				self.dirs[value][config_key] = config_value
+			else:
+				self.dirs[value] = {config_key : config_value}
+			self.changed()
+
+	def getConfigValue(self, value, config_key):
+		if isinstance(value, str) and isinstance(config_key, str):
+			if value in self.dirs and config_key in self.dirs[value]:
+				return self.dirs[value][config_key]
+		return None
+
+	def removeConfigValue(self, value, config_key):
+		if isinstance(value, str) and isinstance(config_key, str):
+			if value in self.dirs and config_key in self.dirs[value]:
+				try:
+					del self.dirs[value][config_key]
+				except KeyError:
+					pass
+				self.changed()
+
+	def save(self):
+		del_keys = []
+		for key in self.dirs:
+			if not len(self.dirs[key]):
+				del_keys.append(key)
+		for del_key in del_keys:
+			try:
+				del self.dirs[del_key]
+			except KeyError:
+				pass
+			self.changed()
+		self.saved_value = self.tostring(self.dirs)
+
 class ConfigLocations(ConfigElement):
 	def __init__(self, default = [], visible_width = False):
 		ConfigElement.__init__(self)
@@ -1622,7 +1685,7 @@ class Config(ConfigSubsection):
 		ConfigSubsection.__init__(self)
 
 	def pickle_this(self, prefix, topickle, result):
-		for (key, val) in topickle.items():
+		for (key, val) in sorted(topickle.items(), key=lambda x: int(x[0]) if x[0].isdigit() else x[0].lower()):
 			name = '.'.join((prefix, key))
 			if isinstance(val, dict):
 				self.pickle_this(name, val, result)

@@ -3,6 +3,7 @@ import time
 from os import system, listdir, statvfs, popen, makedirs, stat, major, minor, path, access
 from Tools.Directories import SCOPE_HDD, resolveFilename, pathExists
 from Tools.CList import CList
+from Tools.HardwareInfo import HardwareInfo
 from SystemInfo import SystemInfo
 from Components.Console import Console
 import Task
@@ -892,75 +893,84 @@ class UnmountTask(Task.LoggingTask):
 
 
 class MountTask(Task.LoggingTask):
-
-    def __init__(self, job, hdd):
-        Task.LoggingTask.__init__(self, job, _('Mount'))
-        self.hdd = hdd
-
-    def prepare(self):
-        try:
-            dev = self.hdd.disk_path.split('/')[-1]
-            os.unlink('/dev/nomount.%s' % dev)
-        except Exception as e:
-            print 'ERROR: Failed to remove /dev/nomount file:', e
-
-        if self.hdd.mount_device is None:
-            dev = self.hdd.partitionPath('1')
-        else:
-            dev = self.hdd.mount_device
-        fstab = open('/etc/fstab')
-        lines = fstab.readlines()
-        fstab.close()
-        for line in lines:
-            parts = line.strip().split(' ')
-            fspath = path.realpath(parts[0])
-            if path.realpath(fspath) == dev:
-                self.setCmdline('mount -t ext3 ' + fspath)
-                self.postconditions.append(Task.ReturncodePostcondition())
-                return
-
-        if self.hdd.type == DEVTYPE_UDEV:
-            self.setCmdline('sleep 2; sfdisk -R ' + self.hdd.disk_path)
-            self.postconditions.append(Task.ReturncodePostcondition())
-        return
+	def __init__(self, job, hdd):
+		Task.LoggingTask.__init__(self, job, _("Mount"))
+		self.hdd = hdd
+	def prepare(self):
+		try:
+			dev = self.hdd.disk_path.split('/')[-1]
+			os.unlink('/dev/nomount.%s' % dev)
+		except Exception, e:
+			print "ERROR: Failed to remove /dev/nomount file:", e
+		# try mounting through fstab first
+		if self.hdd.mount_device is None:
+			dev = self.hdd.partitionPath("1")
+		else:
+			# if previously mounted, use the same spot
+			dev = self.hdd.mount_device
+		fstab = open("/etc/fstab")
+		lines = fstab.readlines()
+		fstab.close()
+		for line in lines:
+			parts = line.strip().split(" ")
+			fspath = os.path.realpath(parts[0])
+			if os.path.realpath(fspath) == dev:
+				self.setCmdline("mount -t auto " + fspath)
+				self.postconditions.append(Task.ReturncodePostcondition())
+				return
+		# device is not in fstab
+		if self.hdd.type == DEVTYPE_UDEV:
+			# we can let udev do the job, re-read the partition table
+			# Sorry for the sleep 2 hack...
+			self.setCmdline('sleep 2; hdparm -z ' + self.hdd.disk_path)
+			self.postconditions.append(Task.ReturncodePostcondition())
 
 
 class MkfsTask(Task.LoggingTask):
-
-    def prepare(self):
-        self.fsck_state = None
-        return
-
-    def processOutput(self, data):
-        print '[Mkfs]', data
-        if 'Writing inode tables:' in data:
-            self.fsck_state = 'inode'
-        elif 'Creating journal' in data:
-            self.fsck_state = 'journal'
-            self.setProgress(80)
-        elif 'Writing superblocks ' in data:
-            self.setProgress(95)
-        elif self.fsck_state == 'inode':
-            if '/' in data:
-                try:
-                    d = data.strip(' \x08\r\n').split('/', 1)
-                    if '\x08' in d[1]:
-                        d[1] = d[1].split('\x08', 1)[0]
-                    self.setProgress(80 * int(d[0]) / int(d[1]))
-                except Exception as e:
-                    print '[Mkfs] E:', e
-
-                return
-        self.log.append(data)
+	def prepare(self):
+		self.fsck_state = None
+	def processOutput(self, data):
+		print "[Mkfs]", data
+		if 'Writing inode tables:' in data:
+			self.fsck_state = 'inode'
+		elif 'Creating journal' in data:
+			self.fsck_state = 'journal'
+			self.setProgress(80)
+		elif 'Writing superblocks ' in data:
+			self.setProgress(95)
+		elif self.fsck_state == 'inode':
+			if '/' in data:
+				try:
+					d = data.strip(' \x08\r\n').split('/',1)
+					if '\x08' in d[1]:
+						d[1] = d[1].split('\x08',1)[0]
+					self.setProgress(80*int(d[0])/int(d[1]))
+				except Exception, e:
+					print "[Mkfs] E:", e
+				return # don't log the progess
+		self.log.append(data)
 
 
 harddiskmanager = HarddiskManager()
 
-def internalHDDNotSleeping():
-    if harddiskmanager.HDDCount():
-	for hdd in harddiskmanager.HDDList():
-	    if ("pci" in hdd[1].phys_path or "ahci" in hdd[1].phys_path) and hdd[1].max_idle_time and not hdd[1].isSleeping():
+def isSleepStateDevice(device):
+	ret = os.popen("hdparm -C %s" % device).read()
+	if 'SG_IO' in ret or 'HDIO_DRIVE_CMD' in ret:
+		return None
+	if 'drive state is:  standby' in ret or 'drive state is:  idle' in ret:
 		return True
-    return False
+	elif 'drive state is:  active/idle' in ret:
+		return False
+	return None
 
-SystemInfo['ext4'] = isFileSystemSupported('ext4')
+def internalHDDNotSleeping(external=False):
+	state = False
+	if harddiskmanager.HDDCount():
+		for hdd in harddiskmanager.HDDList():
+			if hdd[1].internal or external:
+				if hdd[1].idle_running and hdd[1].max_idle_time and not hdd[1].isSleeping():
+					state = True
+	return state
+
+SystemInfo["ext4"] = isFileSystemSupported("ext4")
+

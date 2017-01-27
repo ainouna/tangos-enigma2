@@ -8,6 +8,8 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Screens.InfoBar import InfoBar
 from Screens.Rc import Rc
+from Screens.MessageBox import MessageBox
+from Screens.Standby import TryQuitMainloop
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_LANGUAGE
 from Tools.LoadPixmap import LoadPixmap
 import enigma
@@ -24,7 +26,7 @@ def LanguageEntryComponent(file, name, index):
 class LanguageSelection(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
-
+		self.setTitle(_("Language selection"))
 		self.oldActiveLanguage = language.getActiveLanguage()
 
 		self.list = []
@@ -40,7 +42,6 @@ class LanguageSelection(Screen):
 		}, -1)
 
 	def selectActiveLanguage(self):
-		self.setTitle(_("Language selection"))
 		pos = 0
 		for pos, x in enumerate(self.list):
 			if x[0] == self.oldActiveLanguage:
@@ -50,9 +51,12 @@ class LanguageSelection(Screen):
 	def save(self):
 		self.commit(self.run())
 		if InfoBar.instance and self.oldActiveLanguage != config.osd.language.value:
-			self.close(True)
+			self.session.openWithCallback(self.restartGUI, MessageBox,_("GUI needs a restart to apply a new language\nDo you want to restart the GUI now?"), MessageBox.TYPE_YESNO, title=_("Restart GUI now?"))
 		else:
 			self.close()
+
+	def restartGUI(self, answer):
+		answer and self.session.open(TryQuitMainloop, 3)
 
 	def cancel(self):
 		language.activateLanguage(self.oldActiveLanguage)

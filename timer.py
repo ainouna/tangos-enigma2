@@ -105,6 +105,10 @@ class TimerEntry:
 
 	# check if a timer entry must be skipped
 	def shouldSkip(self):
+		if self.disabled and not self.repeated:
+			if self.end <= time():
+				self.disabled = False
+			return True
 		return self.end <= time() and self.state == TimerEntry.StateWaiting
 
 	def abort(self):
@@ -118,7 +122,7 @@ class TimerEntry:
 		self.cancelled = True
 
 	# must be overridden!
-	def getNextActivation():
+	def getNextActivation(self):
 		pass
 
 	def disable(self):
@@ -157,6 +161,11 @@ class Timer:
 	def cleanup(self):
 		self.processed_timers = [entry for entry in self.processed_timers if entry.disabled]
 
+	def cleanupDisabled(self):
+		disabled_timers = [entry for entry in self.processed_timers if entry.disabled]
+		for timer in disabled_timers:
+			timer.shouldSkip()
+
 	def cleanupDaily(self, days):
 		limit = time() - (days * 3600 * 24)
 		self.processed_timers = [entry for entry in self.processed_timers if (entry.disabled and entry.repeated) or (entry.end and (entry.end > limit))]
@@ -168,10 +177,12 @@ class Timer:
 		# don't go trough waiting/running/end-states, but sort it
 		# right into the processedTimers.
 		if entry.shouldSkip() or entry.state == TimerEntry.StateEnded or (entry.state == TimerEntry.StateWaiting and entry.disabled):
-			insort(self.processed_timers, entry)
+			if entry not in self.processed_timers:
+				insort(self.processed_timers, entry)
 			entry.state = TimerEntry.StateEnded
 		else:
-			insort(self.timer_list, entry)
+			if entry not in self.timer_list:
+				insort(self.timer_list, entry)
 			if not noRecalc:
 				self.calcNextActivation()
 
@@ -217,9 +228,12 @@ class Timer:
 
 		min = int(now) + self.MaxWaitTime
 
+		self.timer_list and self.timer_list.sort() #  resort/refresh list, try to fix hanging timers
+
 		# calculate next activation point
-		if self.timer_list:
-			w = self.timer_list[0].getNextActivation()
+		timer_list = [ t for t in self.timer_list if not t.disabled ]
+		if timer_list:
+			w = timer_list[0].getNextActivation()
 			if w < min:
 				min = w
 
@@ -233,7 +247,8 @@ class Timer:
 		print "time changed"
 		timer.timeChanged()
 		if timer.state == TimerEntry.StateEnded:
-			self.processed_timers.remove(timer)
+			if timer in self.processed_timers:
+				self.processed_timers.remove(timer)
 		else:
 			try:
 				self.timer_list.remove(timer)
@@ -270,12 +285,17 @@ class Timer:
 				w.state = TimerEntry.StateWaiting
 				self.addTimerEntry(w)
 			else:
-				insort(self.processed_timers, w)
+				if w not in self.processed_timers:
+					insort(self.processed_timers, w)
 
 		self.stateChanged(w)
 
 	def processActivation(self):
 		t = int(time()) + 1
 		# we keep on processing the first entry until it goes into the future.
-		while self.timer_list and self.timer_list[0].getNextActivation() < t:
-			self.doActivate(self.timer_list[0])
+		while True:
+			timer_list = [ tmr for tmr in self.timer_list if not tmr.disabled ]
+			if timer_list and timer_list[0].getNextActivation() < t:
+				self.doActivate(timer_list[0])
+			else:
+				break

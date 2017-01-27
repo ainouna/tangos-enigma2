@@ -2,6 +2,7 @@ import os
 from time import time, localtime
 
 import RecordTimer
+import Components.ParentalControl
 from Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.config import config
@@ -57,12 +58,15 @@ class Standby(Screen):
 		globalActionMap.setEnabled(False)
 
 		from Screens.InfoBar import InfoBar
+		from Screens.SleepTimerEdit import isNextWakeupTime
 		self.infoBarInstance = InfoBar.instance
 		self.StandbyCounterIncrease = StandbyCounterIncrease
 		self.standbyTimeoutTimer = eTimer()
 		self.standbyTimeoutTimer.callback.append(self.standbyTimeout)
 		self.standbyStopServiceTimer = eTimer()
 		self.standbyStopServiceTimer.callback.append(self.stopService)
+		self.standbyWakeupTimer = eTimer()
+		self.standbyWakeupTimer.callback.append(self.standbyWakeup)
 		self.timeHandler = None
 
 		self.setMute()
@@ -70,6 +74,8 @@ class Standby(Screen):
 		self.paused_service = self.paused_action = False
 
 		self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceOrGroup()
+		if Components.ParentalControl.parentalControl.isProtected(self.prev_running_service):
+			self.prev_running_service = eServiceReference(config.tv.lastservice.value)
 		service = self.prev_running_service and self.prev_running_service.toString()
 		if service:
 			if service.rsplit(":", 1)[1].startswith("/"):
@@ -101,6 +107,14 @@ class Standby(Screen):
 		if gotoShutdownTime:
 			self.standbyTimeoutTimer.startLongTimer(gotoShutdownTime)
 
+		gotoWakeupTime = isNextWakeupTime(True)
+		if gotoWakeupTime != -1:
+			curtime = localtime(time())
+			if curtime.tm_year > 1970:
+				wakeup_time = int(gotoWakeupTime - time())
+				if wakeup_time > 0:
+					self.standbyWakeupTimer.startLongTimer(wakeup_time)
+
 		self.onFirstExecBegin.append(self.__onFirstExecBegin)
 		self.onClose.append(self.__onClose)
 
@@ -109,6 +123,7 @@ class Standby(Screen):
 		inStandby = None
 		self.standbyTimeoutTimer.stop()
 		self.standbyStopServiceTimer.stop()
+		self.standbyWakeupTimer.stop()
 		self.timeHandler and self.timeHandler.m_timeUpdated.get().remove(self.stopService)
 		if self.paused_service:
 			self.paused_action and self.paused_service.unPauseService()
@@ -137,6 +152,8 @@ class Standby(Screen):
 
 	def stopService(self):
 		self.prev_running_service = self.session.nav.getCurrentlyPlayingServiceOrGroup()
+		if Components.ParentalControl.parentalControl.isProtected(self.prev_running_service):
+			self.prev_running_service = eServiceReference(config.tv.lastservice.value)
 		self.session.nav.stopService()
 
 	def createSummary(self):
@@ -162,6 +179,8 @@ class Standby(Screen):
 			from RecordTimer import RecordTimerEntry
 			RecordTimerEntry.TryQuitMainloop()
 
+	def standbyWakeup(self):
+		self.Power()
 
 class StandbySummary(Screen):
 	skin = """

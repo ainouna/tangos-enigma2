@@ -103,6 +103,12 @@ int eDVBPMTParser::getProgramInfo(program &program)
 						video.type = videoStream::vtH265_HEVC;
 						isvideo = 1;
 					}
+				case 0x42: // CAVS
+					if (!isvideo)
+					{
+						video.type = videoStream::vtCAVS;
+						isvideo = 1;
+					}
 				case 0x10: // MPEG 4 Part 2
 					if (!isvideo)
 					{
@@ -160,6 +166,13 @@ int eDVBPMTParser::getProgramInfo(program &program)
 					{
 						isaudio = 1;
 						audio.type = audioStream::atDTS;
+					}
+				case 0x84: // DDP (blueray)
+				case 0x87: // DDP (ATSC)
+					if (!isvideo && !isaudio)
+					{
+						isaudio = 1;
+						audio.type = audioStream::atDDP;
 					}
 				case 0x85: // bluray DTS-HD HRA(dvb user private...)
 				case 0x86: // bluray DTS-HD MA(dvb user private...)

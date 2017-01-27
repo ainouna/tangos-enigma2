@@ -68,7 +68,11 @@ def getCPUInfoString():
 			try:
 				cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) / 1000
 			except:
-				cpu_speed = "-"
+				try:
+					import binascii
+					cpu_speed = int(int(binascii.hexlify(open('/sys/firmware/devicetree/base/cpus/cpu@0/clock-frequency', 'rb').read()), 16) / 100000000) * 100
+				except:
+					cpu_speed = "-"
 		if os.path.isfile('/proc/stb/fp/temp_sensor_avs'):
 			temperature = open("/proc/stb/fp/temp_sensor_avs").readline().replace('\n','')
 			return "%s %s MHz (%s) %s°C" % (processor, cpu_speed, ngettext("%d core", "%d cores", cpu_count) % cpu_count, temperature)
@@ -79,8 +83,12 @@ def getCPUInfoString():
 def getDriverInstalledDate():
 	try:
 		from glob import glob
-		driver = [x.split("-")[-2:-1][0][-8:] for x in open(glob("/var/lib/opkg/info/*-dvb-modules-*.control")[0], "r") if x.startswith("Version:")][0]
-		return  "%s-%s-%s" % (driver[:4], driver[4:6], driver[6:])
+		try:
+			driver = [x.split("-")[-2:-1][0][-8:] for x in open(glob("/var/lib/opkg/info/*-dvb-modules-*.control")[0], "r") if x.startswith("Version:")][0]
+			return  "%s-%s-%s" % (driver[:4], driver[4:6], driver[6:])
+		except:
+			driver = [x.split("Version:") for x in open(glob("/var/lib/opkg/info/*-dvb-proxy-*.control")[0], "r") if x.startswith("Version:")][0]
+			return  "%s" % driver[1].replace("\n","")
 	except:
 		return _("unknown")
 
@@ -91,6 +99,35 @@ def getPythonVersionString():
 		return output.split(' ')[1]
 	except:
 		return _("unknown")
+
+def GetIPsFromNetworkInterfaces():
+	import socket, fcntl, struct, array, sys
+	is_64bits = sys.maxsize > 2**32
+	struct_size = 40 if is_64bits else 32
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	max_possible = 8 # initial value
+	while True:
+		_bytes = max_possible * struct_size
+		names = array.array('B')
+		for i in range(0, _bytes):
+			names.append(0)
+		outbytes = struct.unpack('iL', fcntl.ioctl(
+			s.fileno(),
+			0x8912,  # SIOCGIFCONF
+			struct.pack('iL', _bytes, names.buffer_info()[0])
+		))[0]
+		if outbytes == _bytes:
+			max_possible *= 2
+		else:
+			break
+	namestr = names.tostring()
+	ifaces = []
+	for i in range(0, outbytes, struct_size):
+		iface_name = bytes.decode(namestr[i:i+16]).split('\0', 1)[0].encode('ascii')
+		if iface_name != 'lo':
+			iface_addr = socket.inet_ntoa(namestr[i+20:i+24])
+			ifaces.append((iface_name, iface_addr))
+	return ifaces
 
 # For modules that do "from About import about"
 about = sys.modules[__name__]
