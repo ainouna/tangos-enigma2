@@ -65,9 +65,9 @@ int64_t Input::calcPts(AVStream * stream, int64_t pts)
 	if (pts == AV_NOPTS_VALUE)
 		return INVALID_PTS_VALUE;
 
-	pts = av_rescale(90000ll * stream->time_base.num, pts, stream->time_base.den);
+	pts = 90000 * (double)pts * stream->time_base.num / stream->time_base.den;
 	if (avfc->start_time != AV_NOPTS_VALUE)
-		pts -= av_rescale(90000ll, avfc->start_time, AV_TIME_BASE);
+		pts -= 90000 * avfc->start_time / AV_TIME_BASE;
 
 	if (pts < 0)
 		return INVALID_PTS_VALUE;
@@ -154,16 +154,16 @@ bool Input::Play()
 				seek_target = seek_avts_abs;
 			}
 			seek_avts_abs = INT64_MIN;
-		} else if (player->isBackWard && av_gettime() >= showtime) {
+		} else if (player->isBackWard && av_gettime_relative() >= showtime) {
 			player->output.ClearVideo();
 
 			if (bof) {
-				showtime = av_gettime();
+				showtime = av_gettime_relative();
 				usleep(100000);
 				continue;
 			}
 			seek_avts_rel = player->Speed * AV_TIME_BASE;
-			showtime = av_gettime() + 300000;	//jump back every 300ms
+			showtime = av_gettime_relative() + 300000;	//jump back every 300ms
 			continue;
 		} else {
 			bof = false;
@@ -194,7 +194,11 @@ bool Input::Play()
 
 		int err = av_read_frame(avfc, &packet);
 		if (err == AVERROR(EAGAIN)) {
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+			av_packet_unref(&packet);
+#else
 			av_free_packet(&packet);
+#endif
 			continue;
 		}
 		if (averror(err, av_read_frame)) // EOF?
@@ -211,7 +215,7 @@ bool Input::Play()
 		if (_videoTrack && (_videoTrack->stream == stream)) {
 			int64_t pts = calcPts(stream, packet.pts);
 			if (audioSeen && !player->output.Write(stream, &packet, pts))
-				logprintf("writing data to %s device failed\n", "video");
+				logprintf("writing data to video device failed\n");
 		} else if (_audioTrack && (_audioTrack->stream == stream)) {
 			if (restart_audio_resampling) {
 				restart_audio_resampling = false;
@@ -220,7 +224,7 @@ bool Input::Play()
 			if (!player->isBackWard) {
 				int64_t pts = calcPts(stream, packet.pts);
 				if (!player->output.Write(stream, &packet, _videoTrack ? pts : 0))
-					logprintf("writing data to %s device failed\n", "audio");
+				logprintf("writing data to audio device failed\n");
 			}
 			audioSeen = true;
 		}/* else if (_subtitleTrack && (_subtitleTrack->stream == stream)) {
@@ -254,7 +258,11 @@ bool Input::Play()
 				teletext_write(_teletextTrack->pid, packet.data + 1, packet.size - 1);
 		}*/
 
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+		av_packet_unref(&packet);
+#else
 		av_free_packet(&packet);
+#endif
 	} /* while */
 
 	if (player->abortRequested)
@@ -346,8 +354,12 @@ bool Input::ReadSubtitle(const char *filename, const char *format, int pid)
 		int got_sub = 0;
 		avcodec_decode_subtitle2(c, &sub, &got_sub, &packet);
 		//if (got_sub)
-		//	dvbsub_ass_write(c, &sub, pid);
+			//dvbsub_ass_write(c, &sub, pid);
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+		av_packet_unref(&packet);
+#else
 		av_free_packet(&packet);
+#endif
 	}
 	avcodec_close(c);
 	avformat_close_input(&subavfc);
@@ -439,10 +451,11 @@ again:
 
 	avfc->iformat->flags |= AVFMT_SEEK_TO_PTS;
 	avfc->flags = AVFMT_FLAG_GENPTS;
-	if (player->noprobe || player->isHttp) {
+	if (player->noprobe) {
 #if (LIBAVFORMAT_VERSION_MAJOR <  55) || \
     (LIBAVFORMAT_VERSION_MAJOR == 55 && LIBAVFORMAT_VERSION_MINOR <  43) || \
-    (LIBAVFORMAT_VERSION_MAJOR == 55 && LIBAVFORMAT_VERSION_MINOR == 43 && LIBAVFORMAT_VERSION_MICRO < 100)
+    (LIBAVFORMAT_VERSION_MAJOR == 55 && LIBAVFORMAT_VERSION_MINOR == 43 && LIBAVFORMAT_VERSION_MICRO < 100) || \
+    (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
 		avfc->max_analyze_duration = 1;
 #else
 		avfc->max_analyze_duration2 = 1;
@@ -450,6 +463,7 @@ again:
 		avfc->probesize = 131072;
 	}
 
+#if 0
 	if (!player->isHttp)
 	{
 		for (unsigned int i = 0; i < avfc->nb_streams; i++) {
@@ -457,6 +471,7 @@ again:
 				find_info = false;
 		}
 	}
+#endif
 	if (find_info)
 		err = avformat_find_stream_info(avfc, NULL);
 
@@ -479,9 +494,9 @@ again:
 	}
 
 	if (videoTrack)
-		player->output.SwitchVideo(videoTrack->stream);
+		player->output.SwitchVideo(videoTrack);
 	if (audioTrack)
-		player->output.SwitchAudio(audioTrack->stream);
+		player->output.SwitchAudio(audioTrack);
 
 	ReadSubtitles(filename);
 
@@ -530,6 +545,7 @@ bool Input::UpdateTracks()
 			}
 
 		track.pid = use_index_as_pid ? n + 1: stream->id;
+			track.ac3flags = 0;
 
 		switch (stream->codec->codec_type) {
 			case AVMEDIA_TYPE_VIDEO:
@@ -539,26 +555,43 @@ bool Input::UpdateTracks()
 				break;
 			case AVMEDIA_TYPE_AUDIO:
 				switch(stream->codec->codec_id) {
-					case AV_CODEC_ID_MP2:
-						track.ac3flags = 9;
-						break;
-					case AV_CODEC_ID_MP3:
-						track.ac3flags = 4;
-						break;
-					case AV_CODEC_ID_AC3:
-						track.ac3flags = 1;
-						break;
-					case AV_CODEC_ID_EAC3:
-						track.ac3flags = 7;
-						break;
-					case AV_CODEC_ID_DTS:
-						track.ac3flags = 6;
-						break;
-					case AV_CODEC_ID_AAC:
-						track.ac3flags = 5;
-						break;
+			case AV_CODEC_ID_MP2:
+				track.ac3flags = 1;
+				break;
+			case AV_CODEC_ID_MP3:
+				track.ac3flags = 2;
+				break;
+			case AV_CODEC_ID_AC3:
+				track.ac3flags = 3;
+				break;
+			case AV_CODEC_ID_DTS:
+				track.ac3flags = 4;
+				break;
+			case AV_CODEC_ID_AAC: {
+				unsigned int extradata_size = stream->codec->extradata_size;
+				unsigned int object_type = 2;
+                        if(extradata_size >= 2)
+				object_type = stream->codec->extradata[0] >> 3;
+                        if (extradata_size <= 1 || object_type == 1 || object_type == 5) {
+				fprintf(stderr, "use resampling for AAC\n");
+				track.ac3flags = 6;
+			}
+			else
+				track.ac3flags = 5;
+				break;
+                    }
+			case AV_CODEC_ID_FLAC:
+				track.ac3flags = 8;
+				break;
+			case AV_CODEC_ID_WMAV1:
+			case AV_CODEC_ID_WMAV2:
+			case AV_CODEC_ID_WMAVOICE:
+			case AV_CODEC_ID_WMAPRO:
+			case AV_CODEC_ID_WMALOSSLESS:
+				track.ac3flags = 9;
+				break;
 					default:
-						track.ac3flags = 0;
+				track.ac3flags = 0;
 				}
 				player->manager.addAudioTrack(track);
 				if (!audioTrack)
@@ -672,7 +705,7 @@ bool Input::GetDuration(int64_t &duration)
 bool Input::SwitchAudio(Track *track)
 {
 	audioTrack = track;
-	player->output.SwitchAudio(track ? track->stream : NULL);
+	player->output.SwitchAudio(track ? track : NULL);
 	// player->Seek(-5000, false);
 	return true;
 }
@@ -692,7 +725,7 @@ bool Input::SwitchTeletext(Track *track)
 bool Input::SwitchVideo(Track *track)
 {
 	videoTrack = track;
-	player->output.SwitchVideo(track ? track->stream : NULL);
+	player->output.SwitchVideo(track ? track : NULL);
 	return true;
 }
 
@@ -731,7 +764,11 @@ bool Input::GetMetadata(std::vector<std::string> &keys, std::vector<std::string>
 				fwrite(pkt->data, pkt->size, 1, cover_art);
 				fclose(cover_art);
 			}
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+			av_packet_unref(pkt);
+#else
 			av_free_packet(pkt);
+#endif
 			break;
 			}
 		}
