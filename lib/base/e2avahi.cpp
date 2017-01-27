@@ -7,10 +7,13 @@
 #include <avahi-common/malloc.h>
 <<<<<<< HEAD
 #include <avahi-common/timeval.h>
+<<<<<<< HEAD
 #include <list>
 #include <algorithm>
 =======
 >>>>>>> parent of 3b7ea08... e2avahi: Integrate Avahi interface to Enigma2 main event loop
+=======
+>>>>>>> parent of 298a2e8... e2avahi: Implement connection states for services
 
 /* For now, instantiate a poll that we'll never actually start. To
  * be replaced with the E2 mainloop */
@@ -67,8 +70,9 @@ struct AvahiWatch: public Object
 	}
 };
 
-struct AvahiServiceEntry
+static void avahi_client_callback(AvahiClient *client, AvahiClientState state, void *d)
 {
+<<<<<<< HEAD
 	AvahiEntryGroup *group;
 	const char* service_name;
 	const char* service_type;
@@ -98,6 +102,10 @@ inline bool operator!=(const AvahiServiceEntry& lhs, const AvahiServiceEntry& rh
 { return !(lhs == rhs); }
 typedef std::list<AvahiServiceEntry> AvahiServiceEntryList;
 static AvahiServiceEntryList avahi_services;
+=======
+	eDebug("[Avahi] client state: %d", state);
+}
+>>>>>>> parent of 298a2e8... e2avahi: Implement connection states for services
 
 struct AvahiBrowserEntry
 {
@@ -128,6 +136,7 @@ static void avahi_group_callback(AvahiEntryGroup *group,
 {
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 static void avahi_service_try_register(AvahiServiceEntry *entry)
 {
@@ -318,6 +327,8 @@ static void avahi_client_callback(AvahiClient *client, AvahiClientState state, v
 	}
 }
 
+=======
+>>>>>>> parent of 298a2e8... e2avahi: Implement connection states for services
 /** Create a new watch for the specified file descriptor and for
  * the specified events. The API will call the callback function
  * whenever any of the events happens. */
@@ -396,10 +407,14 @@ void avahi_timeout_free(AvahiTimeout *t)
 }
 
 
+<<<<<<< HEAD
 /* Connect the mainloop to avahi... */
 =======
 /* In future, this will connect the mainloop to avahi... */
 >>>>>>> parent of 3b7ea08... e2avahi: Integrate Avahi interface to Enigma2 main event loop
+=======
+/* In future, this will connect the mainloop to avahi... */
+>>>>>>> parent of 298a2e8... e2avahi: Implement connection states for services
 void e2avahi_init(eMainloop* reactor)
 {
 	avahi_poll = avahi_simple_poll_new();
@@ -417,18 +432,13 @@ void e2avahi_close()
 	{
 		avahi_client_free(avahi_client);
 		avahi_client = NULL;
-		/* Remove all group entries */
-		for (AvahiServiceEntryList::iterator it = avahi_services.begin();
-			it != avahi_services.end(); ++it)
-		{
-			it->group = NULL;
-		}
 	}
 }
 
 
 void e2avahi_announce(const char* service_name, const char* service_type, unsigned short port_num)
 {
+<<<<<<< HEAD
 	avahi_services.push_back(AvahiServiceEntry(service_name, service_type, port_num));
 	avahi_service_try_register(&avahi_services.back());
 }
@@ -453,4 +463,28 @@ void e2avahi_resolve_cancel(const char* service_type, E2AvahiResolveCallback cal
 		it->browser = NULL;
 	}
 	avahi_browsers.erase(it);
+=======
+	AvahiEntryGroup *group;
+
+	if ((!avahi_client) || (avahi_client_get_state(avahi_client) != AVAHI_CLIENT_S_RUNNING))
+	{
+		eDebug("[Avahi] Not running yet, cannot register.\n");
+		return;
+	}
+
+	group = avahi_entry_group_new(avahi_client, avahi_group_callback, NULL);
+	if (group && !avahi_entry_group_add_service(group,
+			AVAHI_IF_UNSPEC, AVAHI_PROTO_UNSPEC,
+			(AvahiPublishFlags)0, service_name, service_type,
+			NULL, NULL, port_num, NULL))
+	{
+		avahi_entry_group_commit(group);
+		eDebug("[Avahi] Registered %s (%s) on %s:%u\n",
+			service_name, service_type, 
+			avahi_client_get_host_name(avahi_client), port_num);
+	}
+	/* NOTE: group is freed by avahi_client_free */
+
+	return;
+>>>>>>> parent of 298a2e8... e2avahi: Implement connection states for services
 }
