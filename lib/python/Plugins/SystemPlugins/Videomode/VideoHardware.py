@@ -14,11 +14,13 @@ class VideoHardware:
 
 	modes = { }  # a list of (high-level) modes for a certain port.
 
-	rates["PAL"] =			{ "50Hz":	{ 50: "pal" } }
+	rates["PAL"] =			{ "50Hz":	{ 50: "pal" },
+								"60Hz":		{ 60: "pal60" },
+								"multi":	{ 50: "pal", 60: "pal60" } }
 
-	rates["576i"] =			{ "50Hz":	{ 50: "576i50" } }
+	rates["NTSC"] =			{ "60Hz": 	{ 60: "ntsc" } }
 
-	rates["576p"] =			{ "50Hz":	{ 50: "576p50" } }
+	rates["Multi"] =		{ "multi": 	{ 50: "pal", 60: "ntsc" } }
 
 	rates["480i"] =			{ "60Hz": 	{ 60: "480i" } }
 
@@ -66,8 +68,8 @@ class VideoHardware:
 #	modes["DVI-PC"] = ["PC"]
 	modes["Scart"] = ["PAL", "NTSC", "Multi"]
 	modes["YPbPr"] = ["720p", "1080i", "576p", "480p", "576i", "480i"]
-	modes["DVI"] = ["720p", "1080p", "2160p", "2160p30", "1080i", "576p", "480p", "576i", "480i"]
-	modes["DVI-PC"] = ["PC"]
+	modes["HDMI"] = ["720p", "1080p", "2160p", "2160p30", "1080i", "576p", "480p", "576i", "480i"]
+	modes["HDMI-PC"] = ["PC"]
 
 	def getOutputAspect(self):
 		ret = (16,9)

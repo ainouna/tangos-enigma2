@@ -6,7 +6,7 @@ from pluginrunner import PluginRunner
 
 from os import listdir
 
-TUXBOX_PLUGINS_PATH = "/usr/lib/tuxbox/plugins/"
+TUXBOX_PLUGINS_PATH = "/var/tuxbox/plugins/"
 
 def getPlugins():
 	pluginlist = []

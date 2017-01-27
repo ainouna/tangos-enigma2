@@ -226,7 +226,7 @@ def main(session, **kwargs):
 def startSetup(menuid):
 	if menuid != "system":
 		return []
-	return [(_("Konfiguracja CEC"), main, "Konfiguracja CEC", None)]
+	return [(_("Configuration CEC"), main, "Configuration CEC", None)]
 
 def Plugins(**kwargs):
 	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart), 
