@@ -289,6 +289,13 @@ data/skin_default/icons/Makefile
 data/skin_default/buttons/Makefile
 data/skin_default/spinner/Makefile
 data/skin_default/LCDIcons/Makefile
+data/Neutrino-Like.HD/Makefile
+data/Neutrino-Like.HD/images/Makefile
+data/Neutrino-Like.HD/images/mst/Makefile
+data/Neutrino-Like.HD/images/mst/dark/Makefile
+data/Neutrino-Like.HD/skin_default/Makefile
+data/Neutrino-Like.HD/skin_default/buttons/Makefile
+data/Neutrino-Like.HD/skin_default/icons/Makefile
 include/Makefile
 lib/Makefile
 lib/base/eenv.cpp

@@ -1,0 +1,2029 @@
+<themes>
+	<colortheme name="Original" value="active">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00001838" />
+			<color name="neutrino2ndFG" value="#00e8a800" />
+			<color name="neutrinoBG" value="#20002057" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#003888f8" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<colortheme name="Lime" value="inactive">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00001838" />
+			<color name="neutrino2ndFG" value="#00a4d700" />
+			<color name="neutrinoBG" value="#20002057" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#00a4d700" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<colortheme name="Red" value="inactive">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00001838" />
+			<color name="neutrino2ndFG" value="#00d70000" />
+			<color name="neutrinoBG" value="#20002057" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#00d70000" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<colortheme name="Green" value="inactive">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00001838" />
+			<color name="neutrino2ndFG" value="#0000d756" />
+			<color name="neutrinoBG" value="#20002057" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#0000d756" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<colortheme name="Pink" value="inactive">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00001838" />
+			<color name="neutrino2ndFG" value="#00d700b1" />
+			<color name="neutrinoBG" value="#20002057" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#00d700b1" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<colortheme name="Dark" value="inactive">
+		<colors>
+			<color name="background" value="#20252525" />
+			<color name="black" value="#00000000" />
+			<color name="blue" value="#000064c7" />
+			<color name="dark" value="#20062748" />
+			<color name="foreground" value="#00ffffff" />
+			<color name="green" value="#00389416" />
+			<color name="grey" value="#00888888" />
+			<color name="grey2" value="#00292929" />
+			<color name="grey3" value="#001b1b1b" />
+			<color name="menu" value="#20062748" />
+			<color name="neutrino2ndBG" value="#00000000" />
+			<color name="neutrino2ndFG" value="#00fe8b00" />
+			<color name="neutrinoBG" value="#20252525" />
+			<color name="neutrinoFG" value="#00ffffff" />
+			<color name="neutrinoLCD" value="#0099ff33" />
+			<color name="neutrinoSel" value="#00fe8b00" />
+			<color name="red" value="#00f23d21" />
+			<color name="transparent" value="#ff000000" />
+			<color name="transpBlack" value="#15000000" />
+			<color name="transpWhite" value="#80ffffff" />
+			<color name="white" value="#00ffffff" />
+			<color name="yellow" value="#00bab329" />
+		</colors>
+	</colortheme>
+	<fonttheme name="Original" value="active">
+		<fonts>
+			<font filename="/usr/share/enigma2/Neutrino-Like.HD/arial.ttf" name="Regular" scale="100" />
+			<font filename="nmsbd.ttf" name="Regular2" scale="100" />
+			<font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
+			<font filename="lcd.ttf" name="LCD" scale="100" />
+			<font filename="tuxtxt.ttf" name="Console" scale="100" />
+		</fonts>
+	</fonttheme>
+	<fonttheme name="elegance.HD" value="inactive">
+		<fonts>
+			<font filename="/usr/share/enigma2/Neutrino-Like.HD/TitanType_0.ttf" name="Regular" scale="100" />
+			<font filename="nmsbd.ttf" name="Regular2" scale="100" />
+			<font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
+			<font filename="lcd.ttf" name="LCD" scale="100" />
+			<font filename="tuxtxt.ttf" name="Console" scale="100" />
+		</fonts>
+	</fonttheme>
+	<fonttheme name="DMM-Default" value="inactive">
+		<fonts>
+			<font filename="nmsbd.ttf" name="Regular" scale="100" />
+			<font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
+			<font filename="lcd.ttf" name="LCD" scale="100" />
+			<font filename="tuxtxt.ttf" name="Console" scale="100" />
+		</fonts>
+	</fonttheme>
+	<fonttheme name="LoSoS" value="inactive">
+		<fonts>
+			<font filename="/usr/share/enigma2/Neutrino-Like.HD/LoSoS.ttf" name="Regular" scale="100" />
+			<font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
+			<font filename="lcd.ttf" name="LCD" scale="100" />
+			<font filename="tuxtxt.ttf" name="Console" scale="100" />
+		</fonts>
+	</fonttheme>
+	<bordersettheme name="Original" value="active">
+		<borderset name="bsWindow">
+			<pixmap filename="Neutrino-Like.HD/images/oben_links.png" pos="bpTopLeft" />
+			<pixmap filename="Neutrino-Like.HD/images/oben.png" pos="bpTop" />
+			<pixmap filename="Neutrino-Like.HD/images/oben_rechts.png" pos="bpTopRight" />
+			<pixmap filename="Neutrino-Like.HD/images/unten_links.png" pos="bpBottomLeft" />
+			<pixmap filename="Neutrino-Like.HD/images/unten.png" pos="bpBottom" />
+			<pixmap filename="Neutrino-Like.HD/images/unten_rechts.png" pos="bpBottomRight" />
+		</borderset>
+    </bordersettheme>
+	<bordersettheme name="Dark" value="inactive">
+		<borderset name="bsWindow">
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/oben_links.png" pos="bpTopLeft" />
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/oben.png" pos="bpTop" />
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/oben_rechts.png" pos="bpTopRight" />
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/unten_links.png" pos="bpBottomLeft" />
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/unten.png" pos="bpBottom" />
+			<pixmap filename="Neutrino-Like.HD/images/mst/dark/unten_rechts.png" pos="bpBottomRight" />
+		</borderset>
+    </bordersettheme>
+	<windowstylescrollbartheme name="Original" value="active">
+	    <value name="BackgroundPixmapTopHeight" value="2" />
+		<value name="BackgroundPixmapBottomHeight" value="2" />
+		<value name="ValuePixmapTopHeight" value="0" />
+		<value name="ValuePixmapBottomHeight" value="0" />
+		<value name="ScrollbarWidth" value="20" />
+		<value name="ScrollbarBorderWidth" value="0" />
+		<pixmap filename="Neutrino-Like.HD/images/scrollbarbackground.png" name="BackgroundPixmap" />
+		<pixmap filename="Neutrino-Like.HD/images/scrollbarslider.png" name="ValuePixmap" />
+	</windowstylescrollbartheme>
+	<windowstylescrollbartheme name="Dark" value="inactive">
+	    <value name="BackgroundPixmapTopHeight" value="2" />
+		<value name="BackgroundPixmapBottomHeight" value="2" />
+		<value name="ValuePixmapTopHeight" value="0" />
+		<value name="ValuePixmapBottomHeight" value="0" />
+		<value name="ScrollbarWidth" value="20" />
+		<value name="ScrollbarBorderWidth" value="0" />
+		<pixmap filename="Neutrino-Like.HD/images/mst/dark/scrollbarbackground.png" name="BackgroundPixmap" />
+		<pixmap filename="Neutrino-Like.HD/images/mst/dark/scrollbarslider.png" name="ValuePixmap" />
+	</windowstylescrollbartheme>
+	<windowstylescrollbartheme name="Thin" value="inactive">
+		<value name="BackgroundPixmapTopHeight" value="0" />
+		<value name="BackgroundPixmapBottomHeight" value="0" />
+		<value name="ValuePixmapTopHeight" value="0" />
+		<value name="ValuePixmapBottomHeight" value="0" />
+		<value name="ScrollbarWidth" value="7" />
+		<value name="ScrollbarBorderWidth" value="0" />
+		<pixmap name="BackgroundPixmap" filename="Neutrino-Like.HD/images/mst/scrollbarbackground.png" />
+		<pixmap name="ValuePixmap" filename="Neutrino-Like.HD/images/mst/scrollbarslider.png" />
+	</windowstylescrollbartheme>
+	<screenthemes>
+		<screens name="InfoBar">
+			<screentheme name="Original (Picon 100x60)" value="active">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="75,595" render="Picon" size="100,60" source="session.CurrentService" transparent="1" zPosition="1">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" noWrap="1" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="center" noWrap="1" position="40,660" render="Label" size="170,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Provider</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+						<eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" noWrap="1" position="1119,655" size="50,30" text="BER:" transparent="1" valign="top" />
+						<widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" noWrap="1" position="1169,655" render="Label" size="80,30" source="session.FrontendStatus" transparent="1" valign="top">
+						  <convert type="FrontendInfo">BER</convert>
+						</widget>
+						<widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="right" position="65,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+						  <convert type="ServiceInfo">VideoWidth</convert>
+						</widget>
+						<eLabel backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="115,690" size="20,30" text="x" transparent="1" valign="top" />
+						<widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" position="135,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+						  <convert type="ServiceInfo">VideoHeight</convert>
+						</widget>
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1169,631" size="15,25" text="A" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1185,631" size="15,25" text="B" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1201,631" size="15,25" text="C" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1217,631" size="15,25" text="D" transparent="1" valign="top" zPosition="1" />
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="A" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="B" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="C" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">4</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="D" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">8</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="A" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">0,0</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="B" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">1,1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="C" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">2,2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="D" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">3,3</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+						  <convert type="ConditionalShowHide">Blink</convert>
+						</widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,631" size="50,30" text="TUN:" transparent="1" valign="top" />
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+</screen>
+			</screentheme>
+			<screentheme name="Original (Picon 220x132)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="15,579" render="Picon" size="220,132" source="session.CurrentService" transparent="1" zPosition="1">
+  <convert type="ServiceName">Reference</convert>
+</widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" noWrap="1" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" noWrap="1" position="250,690" render="Label" size="300,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Provider</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" noWrap="1" position="1119,655" size="50,30" text="BER:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" noWrap="1" position="1169,655" render="Label" size="80,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">BER</convert>
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="right" position="1124,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceInfo">VideoWidth</convert>
+  </widget>
+  <eLabel backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="1174,690" size="20,30" text="x" transparent="1" valign="top" />
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" position="1194,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceInfo">VideoHeight</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1169,631" size="15,25" text="A" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1185,631" size="15,25" text="B" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1201,631" size="15,25" text="C" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1217,631" size="15,25" text="D" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="A" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="B" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="C" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="D" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="A" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="B" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="C" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="D" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,631" size="50,30" text="TUN:" transparent="1" valign="top" />
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+</screen>
+			</screentheme>
+			<screentheme name="Gemini Plugin 3 (Picon 100x60)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="75,595" render="Picon" size="100,60" source="session.CurrentService" transparent="1" zPosition="1">
+    <convert type="ServiceName">Reference</convert>
+  </widget> 
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="center" noWrap="1" position="40,660" render="Label" size="170,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Provider</convert>
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="right" position="65,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceInfo">VideoWidth</convert>
+  </widget>
+  <eLabel backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="115,690" size="20,30" text="x" transparent="1" valign="top" />
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" position="135,690" render="Label" size="50,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceInfo">VideoHeight</convert>
+  </widget>
+  
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="165,580" render="Label" size="75,80" source="global.gChannelNr" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" position="250,580" render="Label" size="740,80" source="global.gServiceInfos" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="250,690" render="Label" size="520,30" source="global.gSensorData0" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,583" render="Label" size="150,30" source="global.gSensorData1" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,607" render="Label" size="150,30" source="global.gSensorData2" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,631" render="Label" size="150,30" source="global.gSensorData3" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,655" render="Label" size="150,30" source="global.gSensorData4" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,690" render="Label" size="150,30" source="global.gSensorData5" transparent="1" valign="top" />
+</screen>
+			</screentheme>
+			<screentheme name="Gemini Plugin 3 (Picon 220x132)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="15,579" render="Picon" size="220,132" source="session.CurrentService" transparent="1" zPosition="1">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="825,690" render="Label" size="45,30" source="global.gChannelNr" transparent="1" valign="top" zPosition="4" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" position="250,580" render="Label" size="740,80" source="global.gServiceInfos" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="250,690" render="Label" size="520,30" source="global.gSensorData0" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,583" render="Label" size="150,30" source="global.gSensorData1" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,607" render="Label" size="150,30" source="global.gSensorData2" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,631" render="Label" size="150,30" source="global.gSensorData3" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,655" render="Label" size="150,30" source="global.gSensorData4" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1119,690" render="Label" size="150,30" source="global.gSensorData5" transparent="1" valign="top" />
+</screen>
+			</screentheme>
+			<screentheme name="Merlin3 (Picon 100x60)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="75,595" render="Picon" size="100,60" source="session.CurrentService" transparent="1" zPosition="1">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="center" noWrap="1" position="0,660" render="Label" size="250,30" source="session.CurrentService" transparent="1" valign="top">
+    <convert type="ServiceName">Provider</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+						<eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" noWrap="1" position="1119,655" size="50,30" text="BER:" transparent="1" valign="top" />
+						<widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" noWrap="1" position="1169,655" render="Label" size="80,30" source="session.FrontendStatus" transparent="1" valign="top">
+						  <convert type="FrontendInfo">BER</convert>
+						</widget>
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1169,631" size="15,25" text="A" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1185,631" size="15,25" text="B" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1201,631" size="15,25" text="C" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1217,631" size="15,25" text="D" transparent="1" valign="top" zPosition="1" />
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="A" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="B" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="C" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">4</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="D" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">8</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="A" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">0,0</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="B" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">1,1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="C" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">2,2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="D" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">3,3</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+						  <convert type="ConditionalShowHide">Blink</convert>
+						</widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,631" size="50,30" text="TUN:" transparent="1" valign="top" />
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+  
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="165,580" render="ChannelNumber" size="75,80" source="session.CurrentService" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="ServiceName">NameOrbital</convert>
+  </widget>
+  <widget alphatest="blend" backgroundColor="neutrino2ndBG" ecmColor="green" emmColor="grey" font="Regular;18" position="1119,690" render="Caids" size="160,30" source="session.CurrentService" zPosition="2">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="250,690" render="Label" size="610,30" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" noWrap="1" position="0,690" render="Label" size="250,30" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="CamdInfo">
+    </convert>
+  </widget>
+</screen>
+			</screentheme>
+			<screentheme name="Merlin3 (Picon 220x132)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="15,579" render="Picon" path="picon_220x132" size="220,132" source="session.CurrentService" transparent="1" zPosition="1">
+  <convert type="ServiceName">Reference</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,631" size="50,30" text="TUN:" transparent="1" valign="top" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1169,631" size="15,25" text="A" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1185,631" size="15,25" text="B" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1201,631" size="15,25" text="C" transparent="1" valign="top" zPosition="1" />
+						<eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1217,631" size="15,25" text="D" transparent="1" valign="top" zPosition="1" />
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="A" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="B" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="C" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">4</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="D" transparent="1" valign="top" zPosition="2">
+						  <convert type="TunerInfo">TunerUseMask</convert>
+						  <convert type="ValueBitTest">8</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="A" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">0,0</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="B" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">1,1</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="C" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">2,2</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+						<widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="D" transparent="1" valign="top" zPosition="3">
+						  <convert type="FrontendInfo">NUMBER</convert>
+						  <convert type="ValueRange">3,3</convert>
+						  <convert type="ConditionalShowHide" />
+						</widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+  
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="825,690" render="ChannelNumber" size="45,30" source="session.CurrentService" transparent="1" valign="top" zPosition="4" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="ServiceName">NameOrbital</convert>
+  </widget>
+  <widget alphatest="blend" backgroundColor="neutrino2ndBG" ecmColor="green" emmColor="grey" font="Regular;18" position="1119,690" render="Caids" size="160,30" source="session.CurrentService" zPosition="2">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="250,690" render="Label" size="560,30" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="1119,655" render="Label" size="150,30" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <convert type="CamdInfo">
+    </convert>
+  </widget>
+</screen>
+			</screentheme>
+			<screentheme name="Newnigma2 (Picon 100x60)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="75,595" render="Picon" size="100,60" source="session.CurrentService" transparent="1" zPosition="1">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" noWrap="1" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top">
+  <convert type="ServiceName">Name</convert>
+</widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" noWrap="1" position="1119,655" size="50,30" text="BER:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" noWrap="1" position="1169,655" render="Label" size="80,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">BER</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1169,631" size="15,25" text="A" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1185,631" size="15,25" text="B" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1201,631" size="15,25" text="C" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" position="1217,631" size="15,25" text="D" transparent="1" valign="top" zPosition="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="A" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="B" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="C" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="neutrino2ndFG" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.TunerInfo" text="D" transparent="1" valign="top" zPosition="2">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1169,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="A" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1185,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="B" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1201,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="C" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="green" halign="center" position="1217,631" render="FixedLabel" size="15,25" source="session.FrontendInfo" text="D" transparent="1" valign="top" zPosition="3">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,631" size="50,30" text="TUN:" transparent="1" valign="top" />
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+  
+  <widget backgroundColor="neutrinoBG" font="Regular;32" foregroundColor="white" halign="right" position="165,580" render="newnigma2ChNumber" size="75,80" source="session.CurrentService" transparent="1" valign="top" zPosition="4" />
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="250,690" render="Label" size="610,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget alphatest="blend" backgroundColor="neutrino2ndBG" ecmColor="green" emmColor="grey" font="Regular;18" position="1119,690" render="Caids" size="160,30" source="session.CurrentService" zPosition="2">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" noWrap="1" position="0,690" render="Label" size="250,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="EmuDisplay" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="center" noWrap="1" position="0,660" render="Label" size="250,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="SatPosDisplay" />
+  </widget>
+</screen>
+			</screentheme>
+			<screentheme name="Newnigma2 (Picon 220x132)" value="inactive">
+<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-9" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" halign="right" position="940,580" render="Label" size="140,80" source="global.CurrentTime" transparent="1" valign="top">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <widget alphatest="blend" position="15,579" render="Picon" size="220,132" source="session.CurrentService" transparent="1" zPosition="1">
+  <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular; 32" noWrap="1" position="250,580" render="Label" size="740,80" source="session.CurrentService" transparent="1" valign="top">
+  <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" position="250,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="327,620" render="Label" size="70,27" source="session.Event_Now" transparent="1" valign="center">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" noWrap="1" position="427,620" render="Label" size="520,27" source="session.Event_Now" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="neutrino2ndFG" halign="right" position="950,620" render="Label" size="130,27" source="session.Event_Now" transparent="1">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" foregroundColor="neutrino2ndFG" halign="center" position="314,620" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" position="250,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 24" halign="center" position="314,649" size="20,27" text="-" transparent="1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="327,649" render="Label" size="70,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" noWrap="1" position="427,649" render="Label" size="520,27" source="session.Event_Next" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;24" halign="right" position="950,649" render="Label" size="130,27" source="session.Event_Next" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" position="1119,583" size="50,30" text="SNR:" transparent="1" valign="top" />
+  <widget backgroundColor="neutrinoBG" font="Regular; 18" foregroundColor="grey" halign="left" position="1169,583" render="Label" size="100,30" source="session.FrontendStatus" transparent="1" valign="top">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/record.png" position="1087,585" render="Pixmap" size="25,25" source="session.RecordState" zPosition="1">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1007,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1007,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1048,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1048,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="967,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="967,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="927,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="887,690" size="30,20" zPosition="1" />
+  <widget alphatest="blend" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="887,690" render="Pixmap" size="30,20" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget> 
+  <ePixmap pixmap="Neutrino-Like.HD/images/snr_border.png" position="1119,610" size="120,13" />
+  <widget pixmap="Neutrino-Like.HD/images/snr_progress.png" position="1120,611" render="Progress" size="118,11" source="session.FrontendStatus" transparent="1" zPosition="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <eLabel backgroundColor="neutrinoBG" foregroundColor="neutrinoBG" name="snr_background" position="1120,611" size="118,11" />
+  
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="center" position="825,690" render="newnigma2ChNumber" size="45,30" source="session.CurrentService" transparent="1" valign="top" zPosition="4" />
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="250,690" render="Label" size="560,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget alphatest="blend" backgroundColor="neutrino2ndBG" ecmColor="green" emmColor="grey" font="Regular;18" position="1119,690" render="Caids" size="160,30" source="session.CurrentService" zPosition="2">
+    <convert type="CaidDisplay" />
+  </widget>
+  <widget backgroundColor="neutrino2ndBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="1119,655" render="Label" size="150,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="EmuDisplay" />
+  </widget>
+  <widget backgroundColor="neutrinoBG" font="Regular;18" foregroundColor="grey" halign="left" noWrap="1" position="1119,631" render="Label" size="150,30" source="session.CurrentService" transparent="1" valign="top" zPosition="3">
+    <convert type="SatPosDisplay" />
+  </widget>
+</screen>
+			</screentheme>
+		</screens>
+		<screens name="ChannelSelection">
+			<screentheme name="Original" value="active">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,432" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,537" render="Label" size="840,45" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="858,537" render="Label" size="60,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="1190,537" render="Label" size="75,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="935,543" render="Progress" size="240,12" source="ServiceEvent">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="1250,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,515" size="1250,1" />
+</screen>
+			</screentheme>
+			<screentheme name="Original with PiG" value="inactive">
+<screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" backgroundColor="neutrinoBG">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget font="Regular; 30" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG" />
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" alphatest="on" />
+  <widget name="key_red" position="40,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_green" position="295,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_yellow" position="550,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_blue" position="805,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget colorEventProgressbar="white" colorEventProgressbarSelected="black" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="15,60" enableWrapAround="1" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="1" />
+  <widget source="ServiceEvent" render="Label" position="15,440" size="440,50" font="Regular; 22" foregroundColor="neutrino2ndFG" valign="top" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="458,440" size="60,45" font="Regular; 22" halign="left" foregroundColor="neutrino2ndFG" valign="top" backgroundColor="neutrinoBG" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">
+    </convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="780,440" size="75,45" font="Regular; 22" foregroundColor="neutrino2ndFG" valign="top" halign="right" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Format: %H:%M</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Progress" position="535,446" size="240,12" borderWidth="1" borderColor="neutrino2ndFG" transparent="1">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="15,490" size="840,185" font="Regular; 20" valign="top" transparent="1">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <eLabel name="trennung" position="15,430" size="1250,1" backgroundColor="grey" foregroundColor="grey" />
+  <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+  <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+</screen>
+			</screentheme>
+			<screentheme name="Gemini Plugin 3" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,537" render="Label" size="840,45" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="858,537" render="Label" size="60,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="1190,537" render="Label" size="75,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="935,543" render="Progress" size="240,12" source="ServiceEvent">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="1250,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,515" size="1250,1" />
+  <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,440" size="1250,1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="white" halign="left" position="15,450" render="gNextEvent" size="1250,100" source="ServiceEvent" transparent="1" valign="top" />
+</screen>
+			</screentheme>
+			<screentheme name="Gemini Plugin 3 with PiG" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" backgroundColor="neutrinoBG">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="15,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="1" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,515" render="Label" size="440,50" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="458,515" render="Label" size="60,45" source="ServiceEvent" valign="top" transparent="1">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="780,515" render="Label" size="75,45" source="ServiceEvent" valign="top" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="535,521" render="Progress" size="240,12" source="ServiceEvent" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="840,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,505" size="840,1" />
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,430" size="1250,1" />
+    <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="white" halign="left" position="15,440" render="gNextEvent" size="840,55" source="ServiceEvent" transparent="1" valign="top" />
+    <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+    <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+</screen>
+			</screentheme>
+			<screentheme name="Merlin3" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,537" render="Label" size="840,45" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="858,537" render="Label" size="60,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="1190,537" render="Label" size="75,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="935,543" render="Progress" size="240,12" source="ServiceEvent">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="1250,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,515" size="1250,1" />
+  
+  <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="ChannelSelectionTitle" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,440" size="1250,1" />
+  <widget backgroundColor="neutrinoBG" column0="0,155,white,Regular,24,0,0" column1="160,800,white,Regular,24,0,1" position="15,446" primetimeoffset="0" render="EventListDisplay" rowHeight="30" size="1250,70" source="ServiceEvent" transparent="1">
+    <convert type="EventList">primetime=no,eventcount=2</convert>
+  </widget>
+</screen>
+			</screentheme>
+			<screentheme name="Merlin3 with PiG" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" backgroundColor="neutrinoBG">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,515" render="Label" size="440,50" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="458,515" render="Label" size="60,45" source="ServiceEvent" valign="top" transparent="1">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="780,515" render="Label" size="75,45" source="ServiceEvent" valign="top" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="535,521" render="Progress" size="240,12" source="ServiceEvent" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="840,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,505" size="840,1" />
+  
+  <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="ChannelSelectionTitle" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+  <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,430" size="1250,1" />
+  <widget backgroundColor="neutrinoBG" column0="0,155,white,Regular,24,0,0" column1="160,680,white,Regular,24,0,1" position="15,436" primetimeoffset="0" render="EventListDisplay" rowHeight="30" size="840,70" source="ServiceEvent" transparent="1">
+    <convert type="EventList">primetime=no,eventcount=2</convert>
+  </widget>
+  <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+  <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+  <!-- ### Merlin miniTV ### <widget position="880,448" render="MiniTV" size="373,211" source="ServiceEventReference" zPosition="-8">
+    <convert type="MiniTVDisplay" />
+  </widget> -->
+</screen>
+			</screentheme>
+			<screentheme name="Newnigma2" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,537" render="Label" size="840,45" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="858,537" render="Label" size="60,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="1190,537" render="Label" size="75,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="935,543" render="Progress" size="240,12" source="ServiceEvent">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="1250,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,515" size="1250,1" />
+  
+  <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,440" size="1250,1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="white" halign="left" position="15,450" render="newnigma2EventNext" size="1250,100" source="ServiceEvent" transparent="1" valign="top" />
+</screen>
+			</screentheme>
+			<screentheme name="Newnigma2 with PiG" value="inactive">
+<screen flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <eLabel backgroundColor="neutrino2ndBG" name="top" position="0, 0" size="1280, 40" zPosition="-10" />
+    <eLabel backgroundColor="neutrino2ndBG" name="bottom" position="0, 680" size="1280, 40" zPosition="-10" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular; 30" foregroundColor="neutrino2ndFG" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" />
+    <widget font="Regular; 20" halign="right" position="965,10" render="Label" size="300,60" source="global.CurrentTime" transparent="1" valign="top">
+      <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+    </widget>
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" />
+    <ePixmap alphatest="on" pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_red" position="40,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_green" position="295,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_yellow" position="550,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget backgroundColor="neutrino2ndBG" font="Regular;20" halign="left" name="key_blue" position="805,687" size="210,25" transparent="1" valign="center" zPosition="1" />
+    <widget colorEventProgressbar="white" colorEventProgressbarBorder="white" colorEventProgressbarBorderSelected="black" colorEventProgressbarSelected="black" colorServiceDescription="white" colorServiceDescriptionSelected="black" foregroundColor="white" foregroundColorSelected="black" foregroundColorServiceNotAvail="grey" itemHeight="36" name="list" position="center,60" scrollbarMode="showOnDemand" serviceInfoFont="Regular;24" serviceItemHeight="36" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="1250,360" transparent="0" />
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" position="15,515" render="Label" size="440,50" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="neutrinoBG" font="Regular; 22" foregroundColor="neutrino2ndFG" halign="left" position="458,515" render="Label" size="60,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget font="Regular; 22" foregroundColor="neutrino2ndFG" halign="right" position="780,515" render="Label" size="75,45" source="ServiceEvent" valign="top">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: %H:%M</convert>
+    </widget>
+    <widget borderColor="neutrino2ndFG" borderWidth="1" position="535,521" render="Progress" size="240,12" source="ServiceEvent">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget font="Regular; 20" position="15,570" render="Label" size="840,95" source="ServiceEvent" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,505" size="840,1" />
+  <eLabel backgroundColor="grey" foregroundColor="grey" name="trennung" position="15,430" size="1250,1" />
+  <widget backgroundColor="neutrinoBG" font="Regular;24" foregroundColor="white" halign="left" position="15,440" render="newnigma2EventNext" size="840,55" source="ServiceEvent" transparent="1" valign="top" />
+  <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+  <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+</screen>
+			</screentheme>
+		</screens>
+		<screens name="EventView">
+            <screentheme name="Original" value="active">
+<screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget font="Regular; 30" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG" />
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" alphatest="on" />
+  <widget name="key_red" position="40,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_green" position="295,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_yellow" position="550,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_blue" position="805,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="epg_description" position="15,60" size="1250,540" font="Regular; 22" />
+  <widget name="datetime" position="15,620" size="150,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+  <widget name="duration" position="185,620" size="150,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+  <widget name="channel" position="355,620" size="650,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+</screen>
+			</screentheme>
+            <screentheme name="with PiG" value="inactive">
+<screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget font="Regular; 30" position="15,3" render="Label" size="920,60" source="Title" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG" />
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" alphatest="on" />
+  <widget name="key_red" position="40,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_green" position="295,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_yellow" position="550,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_blue" position="805,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="epg_description" position="15,60" size="1250,360" font="Regular; 22" />
+  <widget name="datetime" position="15,440" size="150,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+  <widget name="duration" position="185,440" size="150,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+  <widget name="channel" position="15,487" size="650,27" font="Regular; 22" foregroundColor="neutrino2ndFG" />
+  <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+  <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+</screen>
+			</screentheme>
+        </screens>
+		<screens name="EPGSelection">
+            <screentheme name="Original" value="active">
+<screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget font="Regular; 30" position="15,3" render="Label" size="920,60" source="Service" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" alphatest="on" />
+  <widget name="key_red" position="40,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_green" position="295,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_yellow" position="550,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_blue" position="805,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="list" position="0,60" size="1280,432" itemHeight="36" enableWrapAround="1" scrollbarMode="showOnDemand" />
+  <eLabel name="trennung" position="15,515" size="1250,1" backgroundColor="grey" foregroundColor="grey" />
+  <widget source="Event" render="Label" position="15,530" size="1250,140" font="Regular; 20" transparent="1" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+</screen>
+			</screentheme>
+            <screentheme name="with PiG" value="inactive">
+<screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget font="Regular; 30" position="15,3" render="Label" size="920,60" source="Service" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_red.png" position="15,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_green.png" position="270,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_yellow.png" position="525,692" size="16,16" alphatest="on" />
+  <ePixmap pixmap="Neutrino-Like.HD/skin_default/buttons/button_blue.png" position="780,692" size="16,16" alphatest="on" />
+  <widget name="key_red" position="40,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_green" position="295,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_yellow" position="550,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="key_blue" position="805,687" size="210,25" zPosition="1" font="Regular;20" transparent="1" valign="center" halign="left" backgroundColor="neutrino2ndBG" />
+  <widget name="list" position="0,60" size="1280,360" itemHeight="36" enableWrapAround="1" scrollbarMode="showOnDemand" />
+  <eLabel name="trennung" position="15,430" size="1250,1" backgroundColor="grey" foregroundColor="grey" />
+  <widget source="Event" render="Label" position="15,440" size="840,230" font="Regular; 20" transparent="1" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="session.VideoPicture" render="Pig" position="880,448" zPosition="-8" size="373,211" />
+  <eLabel name="piglabel" position="865,440" zPosition="3" size="400,225" backgroundColor="transparent" />
+</screen>
+			</screentheme>
+        </screens>
+		<screens name="SecondInfoBar">
+            <screentheme name="Smart" value="active">
+<screen name="SecondInfoBar" position="0,0" size="1280,720" title="Second Infobar" flags="wfNoBorder" backgroundColor="transparent">
+  <eLabel name="background" position="0,570" size="1280,150" zPosition="-10" />
+  <widget font="Regular; 24" noWrap="1" position="15,580" render="Label" size="1100,30" source="session.Event_Now" transparent="1" zPosition="1" backgroundColor="neutrinoBG" valign="top" foregroundColor="neutrino2ndFG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="15,610" size="1249,102" font="Regular; 22" zPosition="1" transparent="1" halign="left" backgroundColor="neutrinoBG" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1117,580" size="70,30" font="Regular;24" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1195,580" size="70,30" font="Regular;24" halign="right" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel position="1181,580" size="20,30" text="-" font="Regular; 24" halign="center" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" />
+</screen>
+			</screentheme>
+            <screentheme name="Extended" value="inactive">
+<screen name="SecondInfoBar" position="70,70" size="1140,370" title="Second Infobar">
+  <widget font="Regular; 24" noWrap="1" position="15,20" render="Label" size="950,30" source="session.Event_Now" transparent="1" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrinoBG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="15,50" size="1110,127" font="Regular; 22" zPosition="1" transparent="1" halign="left" backgroundColor="neutrinoBG" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget font="Regular; 24" noWrap="1" position="15,200" render="Label" size="950,30" source="session.Event_Next" transparent="1" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="15,230" size="1110,127" font="Regular; 22" zPosition="1" transparent="1" backgroundColor="neutrinoBG" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="965,20" size="70,30" font="Regular;24" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1055,20" size="70,30" font="Regular;24" halign="right" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel position="1035,20" size="20,30" text="-" font="Regular; 24" halign="center" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" />
+  <widget source="session.Event_Next" render="Label" position="965,200" size="70,30" font="Regular;24" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="1055,200" size="70,30" font="Regular;24" halign="right" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel position="1035,200" size="20,30" text="-" font="Regular; 24" halign="center" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" />
+</screen>
+			</screentheme>
+            <screentheme name="Full" value="inactive">
+<screen name="SecondInfoBar" position="0,0" size="1280,720" title="Second Infobar" flags="wfNoBorder">
+  <eLabel name="top" position="0, 0" size="1280, 40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <eLabel name="bottom" position="0, 680" size="1280,40" backgroundColor="neutrino2ndBG" zPosition="-10" />
+  <widget source="session.CurrentService" render="Label" font="Regular; 30" position="15,3" size="920,60" transparent="1" valign="top" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="965,10" size="300,60" font="Regular; 20" halign="right" transparent="1" valign="top">
+    <convert type="ClockToText">Format: %a %d. %b - %H:%M</convert>
+  </widget>
+  <widget font="Regular; 24" noWrap="1" position="15,60" render="Label" size="1100,30" source="session.Event_Now" transparent="1" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrinoBG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="15,90" size="1250,252" font="Regular; 24" zPosition="1" transparent="1" halign="left" backgroundColor="neutrinoBG" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget font="Regular; 24" noWrap="1" position="15,360" render="Label" size="1100,30" source="session.Event_Next" transparent="1" zPosition="1" foregroundColor="neutrino2ndFG" backgroundColor="neutrino2ndBG">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="15,390" size="1250,252" font="Regular; 24" zPosition="1" transparent="1" backgroundColor="neutrinoBG" valign="top">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1118,60" size="70,30" font="Regular;24" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="1195,60" size="70,30" font="Regular;24" halign="right" transparent="1" valign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel position="1182,60" size="20,30" text="-" font="Regular; 24" halign="center" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" />
+  <widget source="session.Event_Next" render="Label" position="1117,360" size="70,30" font="Regular;24" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="1195,360" size="70,30" font="Regular;24" halign="right" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel position="1181,360" size="20,30" text="-" font="Regular; 24" halign="center" transparent="1" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" />
+  <ePixmap pixmap="Neutrino-Like.HD/images/ico_dolby_off.png" position="1194,690" size="30,20" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_dolby_on.png" position="1194,690" size="30,20" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/images/ico_txt_off.png" position="1235,690" size="30,20" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_txt_on.png" position="1235,690" size="30,20" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/images/ico_format_off.png" position="1154,690" size="30,20" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_format_on.png" position="1154,690" size="30,20" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_hd_off.png" position="1114,690" size="30,20" zPosition="1" alphatest="blend">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">0,720</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_hd_on.png" position="1114,690" size="30,20" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="Neutrino-Like.HD/images/ico_crypt_off.png" position="1074,690" size="30,20" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="Neutrino-Like.HD/images/ico_crypt_on.png" position="1074,690" size="30,20" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel text="SNR:" position="245,690" size="50,30" font="Regular; 18" transparent="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" valign="top" />
+  <widget source="session.FrontendStatus" render="Label" position="295,690" size="100,30" font="Regular; 18" transparent="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" valign="top" halign="left">
+    <convert type="FrontendInfo">SNRdB</convert>
+  </widget>
+  <eLabel text="BER:" position="415,690" size="50,30" font="Regular; 18" transparent="1" noWrap="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" valign="top" />
+  <widget source="session.FrontendStatus" render="Label" position="465,690" size="80,30" font="Regular; 18" transparent="1" noWrap="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" halign="left" valign="top">
+    <convert type="FrontendInfo">BER</convert>
+  </widget>
+  <eLabel position="830,690" size="50,30" text="TUN:" transparent="1" font="Regular; 18" foregroundColor="grey" valign="top" backgroundColor="neutrinoBG" />
+  <eLabel text="A" position="880,690" zPosition="1" size="15,25" font="Regular;18" halign="center" foregroundColor="grey" backgroundColor="neutrinoBG" transparent="1" valign="top" />
+  <eLabel text="B" position="896,690" zPosition="1" size="15,25" font="Regular;18" halign="center" foregroundColor="grey" backgroundColor="neutrinoBG" transparent="1" valign="top" />
+  <eLabel text="C" position="912,690" zPosition="1" size="15,25" font="Regular;18" halign="center" foregroundColor="grey" backgroundColor="neutrinoBG" transparent="1" valign="top" />
+  <eLabel text="D" position="927,690" zPosition="1" size="15,25" font="Regular;18" halign="center" foregroundColor="grey" backgroundColor="neutrinoBG" transparent="1" valign="top" />
+  <widget source="session.TunerInfo" render="FixedLabel" text="A" position="880,690" zPosition="2" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" transparent="1" valign="top">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="FixedLabel" text="B" position="896,690" zPosition="2" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" transparent="1" valign="top">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="FixedLabel" text="C" position="912,690" zPosition="2" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" transparent="1" valign="top">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="FixedLabel" text="D" position="927,690" zPosition="2" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="neutrino2ndFG" transparent="1" valign="top">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="FixedLabel" text="A" position="880,690" zPosition="3" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="green" transparent="1" valign="top">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="FixedLabel" text="B" position="896,690" zPosition="3" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="green" transparent="1" valign="top">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="FixedLabel" text="C" position="912,690" zPosition="3" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="green" transparent="1" valign="top">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="FixedLabel" text="D" position="927,690" zPosition="3" size="15,25" font="Regular;18" halign="center" backgroundColor="neutrinoBG" foregroundColor="green" transparent="1" valign="top">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="15,690" size="190,30" font="Regular; 18" valign="top" noWrap="1" transparent="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" halign="left">
+    <convert type="ServiceName">Provider</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="580,690" size="50,30" font="Regular;18" halign="right" transparent="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" valign="top">
+    <convert type="ServiceInfo">VideoWidth</convert>
+  </widget>
+  <eLabel text="x" position="630,690" size="20,30" font="Regular;18" halign="center" transparent="1" foregroundColor="grey" backgroundColor="neutrino2ndBG" valign="top" />
+  <widget source="session.CurrentService" render="Label" position="650,690" size="50,30" font="Regular;18" transparent="1" valign="top" foregroundColor="grey" backgroundColor="neutrino2ndBG">
+    <convert type="ServiceInfo">VideoHeight</convert>
+  </widget>
+</screen>			
+			</screentheme>
+		</screens>
+		<screens name="Mute">
+            <screentheme name="Logo" value="active">
+<screen name="Mute" position="615,50" size="50,50" zPosition="10" title="Mute" backgroundColor="transparent" flags="wfNoBorder">
+  <ePixmap position="0,0" size="50,50" pixmap="Neutrino-Like.HD/images/mute.png" alphatest="on" />
+</screen>
+            </screentheme>
+            <screentheme name="Text" value="inactive">
+<screen name="Mute" position="590,50" size="100,30" zPosition="10" title="Mute" backgroundColor="neutrinoBG" flags="wfNoBorder">
+  <eLabel text="Mute" position="0,0" size="100,30" valign="center" halign="center" font="Regular; 20" foregroundColor="neutrino2ndFG" />
+</screen>
+            </screentheme>
+        </screens>
+        <screens name="Volume">
+            <screentheme name="Small" value="active">
+<screen name="Volume" position="center,25" size="300,30" zPosition="10" title="Volume" flags="wfNoBorder">
+  <eLabel position="0,0" size="300,30" />
+  <widget name="Volume" position="10,10" size="280,10" zPosition="1" transparent="1" />
+</screen>
+            </screentheme>
+            <screentheme name="Big" value="inactive">
+<screen name="Volume" position="440,25" size="400,50" zPosition="10" title="Volume" flags="wfNoBorder">
+  <eLabel position="0,0" size="400,50" />
+  <widget name="Volume" position="10,10" size="380,30" zPosition="1" transparent="1" />
+</screen>
+            </screentheme>
+        </screens>
+	</screenthemes>
+	<lcdscreenthemes>
+		<screens name="InfoBarSummary">
+            <lcdscreentheme name="Orginal" value="active">
+<screen name="InfoBarSummary" position="0,0" size="132,64" id="1" flags="wfNoBorder">
+  <widget source="session.CurrentService" render="Label" position="3,18" size="129,30" font="Regular; 14" halign="left" valign="top" transparent="1">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Progress" position="3,52" size="82,12" borderWidth="1">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="40,49" size="90,32" font="Regular; 15" halign="right" valign="top" transparent="1">
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+  <eLabel position="0,0" size="132,30" text="Neutrino-Like.HD" transparent="1" valign="top" halign="center" font="Regular; 12" />
+</screen>
+			</lcdscreentheme>
+            <lcdscreentheme name="elegance.HD" value="inactive">
+<screen name="InfoBarSummary" position="0,0" size="132,64" id="1" flags="wfNoBorder">
+  <widget borderWidth="2" position="4,52" render="Progress" size="124,10" source="session.Event_Now">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget font="Regular; 34" halign="center" position="0,4" render="Label" size="132,44" source="global.CurrentTime">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+</screen>
+			</lcdscreentheme>
+		</screens>
+		<screens name="StandbySummary">
+            <lcdscreentheme name="Orginal" value="active">
+<screen name="StandbySummary" position="0,0" size="132,64" id="1" flags="wfNoBorder">
+  <widget source="global.CurrentTime" render="Label" position="0,0" size="132,44" font="Regular;40" halign="center" valign="center" transparent="1">
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="0,49" size="132,30" font="Regular; 15" halign="center" valign="top" transparent="1">
+    <convert type="ClockToText">Format:%d.%m.%Y</convert>
+  </widget>
+</screen>
+			</lcdscreentheme>
+            <lcdscreentheme name="elegance.HD" value="inactive">
+<screen name="StandbySummary" position="0,0" size="132,64" id="1" flags="wfNoBorder">
+  <widget font="Regular; 34" halign="center" position="0,4" render="Label" size="132,44" source="global.CurrentTime">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+  <eLabel text="Neutrino-Like.HD" position="4,48" size="124,14" font="Regular; 10" halign="center" />
+</screen>
+			</lcdscreentheme>
+		</screens>
+	</lcdscreenthemes>
+	<oledscreenthemes>
+		<screens name="InfoBarSummary">
+            <oledscreentheme name="Orginal" value="active">
+<screen name="InfoBarSummary" position="0,0" size="96,64" id="2" flags="wfNoBorder">
+  <eLabel position="0,0" size="96,30" text="Neutrino-Like.HD" transparent="1" valign="top" halign="center" font="Regular; 10" />
+  <widget source="session.CurrentService" render="Label" position="0,18" size="96,32" font="Regular; 14" halign="left" valign="top" transparent="1">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Progress" position="0,56" size="56,8" borderWidth="1" backgroundColor="black">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="46,52" size="50,26" font="Regular; 12" halign="right" valign="bottom" transparent="1">
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+</screen>
+			</oledscreentheme>
+            <oledscreentheme name="elegance.HD" value="inactive">
+<screen name="InfoBarSummary" position="0,0" size="96,64" id="2" flags="wfNoBorder">
+  <widget borderWidth="2" position="4,52" render="Progress" size="88,10" source="session.Event_Now">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget font="Regular; 30" halign="center" position="0,0" render="Label" size="96,44" source="global.CurrentTime">
+    <convert type="ClockToText">%H:%M</convert>
+  </widget>
+</screen>
+			</oledscreentheme>
+		</screens>
+		<screens name="StandbySummary">
+			<oledscreentheme name="Orginal" value="active">
+<screen name="StandbySummary" position="0,0" size="96,64" id="2" flags="wfNoBorder">
+  <widget source="global.CurrentTime" render="Label" position="0,0" size="96,44" font="Regular; 32" halign="center" valign="center">
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="0,49" size="96,30" font="Regular; 15" halign="center" valign="top" transparent="1">
+    <convert type="ClockToText">Format:%d.%m.%Y</convert>
+  </widget>
+</screen>
+			</oledscreentheme>
+            <oledscreentheme name="elegance.HD" value="inactive">
+<screen name="StandbySummary" position="0,0" size="96,64" id="2" flags="wfNoBorder">
+  <widget font="Regular; 30" halign="center" position="0,0" render="Label" size="96,44" source="global.CurrentTime" valign="center">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel text="Neutrino-Like.HD" position="0,48" size="96,14" font="Regular; 10" halign="center" />
+</screen>
+			</oledscreentheme>
+		</screens>
+	</oledscreenthemes>
+</themes>
