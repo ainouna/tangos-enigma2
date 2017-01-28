@@ -1,15 +1,18 @@
 installdir = $(pkgdatadir)/countries
 
-dist_install_DATA = \
+countries = \
+	de.png \
+	en.png \
+	missing.png
+
+countries_unmaintained = \
 	ad.png \
 	ae.png \
 	bg.png \
 	br.png \
 	cn.png \
 	cz.png \
-	de.png \
 	dk.png \
-	en.png \
 	es.png \
 	ee.png \
 	fi.png \
@@ -26,7 +29,6 @@ dist_install_DATA = \
 	ku.png \
 	lt.png \
 	lv.png \
-	missing.png \
 	nl.png \
 	no.png \
 	pl.png \
@@ -41,3 +43,6 @@ dist_install_DATA = \
 	ua.png \
 	fy_NL.png \
 	yu.png
+
+dist_install_DATA = $(countries)
+# dist_install_DATA += $(countries_unmaintained)
