@@ -261,24 +261,6 @@ void init_rc_api()
 	{
 		create_input_devices();
 		start_inmux_thread();
-
-		/* this is a strange hack: the drivers seem to only work correctly after
-		 * demux0 has been used once. After that, we can use demux1,2,... */
-		struct dmx_pes_filter_params p;
-		int dmx = open("/dev/dvb/adapter0/demux0", O_RDWR|O_CLOEXEC);
-		if (dmx < 0)
-			printf("%s: ERROR open /dev/dvb/adapter0/demux0 (%m)\n", __func__);
-		else
-		{
-			memset(&p, 0, sizeof(p));
-			p.output = DMX_OUT_DECODER;
-			p.input  = DMX_IN_FRONTEND;
-			p.flags  = DMX_IMMEDIATE_START;
-			p.pes_type = DMX_PES_VIDEO;
-			ioctl(dmx, DMX_SET_PES_FILTER, &p);
-			ioctl(dmx, DMX_STOP);
-			close(dmx);
-		}
 	}
 	else
 		reopen_input_devices();
