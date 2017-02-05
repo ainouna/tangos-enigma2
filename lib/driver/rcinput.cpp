@@ -166,8 +166,12 @@ public:
 	{
 		int i = 0;
 		consoleFd = ::open("/dev/tty0", O_RDWR);
+#ifdef SPARK_RC_WORKAROUND
 		init_rc_api();
 		add("/dev/input/nevis_ir");
+#else
+		add("/dev/input/event0");
+#endif
 		eDebug("[eInputDeviceInit] Found %d input devices.", i);
 	}
 
@@ -179,7 +183,9 @@ public:
 		if (consoleFd >= 0)
 			::close(consoleFd);
 
+#ifdef SPARK_RC_WORKAROUND
 		shutdown_rc_api();
+#end
 	}
 
 	void add(const char* filename)
