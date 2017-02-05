@@ -276,18 +276,10 @@ void eDVBAdapterLinux::scanDevices()
 		 * In that case, we cannot be sure the devicenodes are available yet.
 		 * So it is safer to scan for sys entries, than for device nodes
 		 */
-#ifdef __sh__
-		struct stat s;
-		char filename[128];
-		snprintf(filename, sizeof(filename), "/dev/dvb/adapter%d/frontend%d", m_nr, num_fe);
-		if (stat(filename, &s))
-			break;
-#else
 		char filename[128];
 		snprintf(filename, sizeof(filename), "/sys/class/dvb/dvb%d.frontend%d", m_nr, num_fe);
 		if (::access(filename, X_OK) < 0) break;
 		snprintf(filename, sizeof(filename), "/dev/dvb/adapter%d/frontend%d", m_nr, num_fe);
-#endif
 		eDVBFrontend *fe;
 		std::string name = filename;
 		std::map<std::string, std::string>::iterator it = mappedFrontendName.find(name);
@@ -1072,12 +1064,13 @@ RESULT eDVBResourceManager::allocateDemux(eDVBRegisteredFrontend *fe, ePtr<eDVBA
 	if (i == m_demux.end())
 		return -1;
 
-	iDVBAdapter *adapter = fe ? fe->m_adapter : m_adapter.begin();
-	int fesource = fe ? fe->m_frontend->getDVBID() : -1;
+//	iDVBAdapter *adapter = fe ? fe->m_adapter : m_adapter.begin();
+//	int fesource = fe ? fe->m_frontend->getDVBID() : -1;
 	ePtr<eDVBRegisteredDemux> unused;
 	uint8_t d, a;
 
-#ifdef HAVE_AMLOGIC
+#if not defined(__sh__)
+//#ifdef HAVE_AMLOGIC
 	// find first unused demux which is on same adapter as frontend
 	while (i != m_demux.end())
 	{
@@ -1105,52 +1098,49 @@ RESULT eDVBResourceManager::allocateDemux(eDVBRegisteredFrontend *fe, ePtr<eDVBA
 		}
 		i++;
 	}
-#else
-	/*
-	 * For pvr playback, start with the last demux.
-	 * On some hardware, there are less ca devices than demuxes, so try to leave
-	 * the first demuxes for live tv, and start with the last for pvr playback
-	 */
-	bool use_decode_demux = (fe || (cap & iDVBChannel::capDecode));
-
-	if (!use_decode_demux)
+#else // we use our own algo for demux detection
+	int n = 0;
+	for (; i != m_demux.end(); ++i, ++n)
 	{
-		i = m_demux.end();
-		--i;
-	}
-
-	while (i != m_demux.end())
-	{
-		if (i->m_adapter == adapter)
+		if(fe)
 		{
 			if (!i->m_inuse)
 			{
-				// mark the first unused demux and use that when no better match is found
 				if (!unused)
-					unused = i;
-			}
-			else
-			{
-				// demux is in use, see if it can be shared
-				if (fesource >= 0 && i->m_demux->getSource() == fesource)
 				{
-					i->m_demux->getCAAdapterID(a);
-					i->m_demux->getCADemuxID(d);
-					eDebug("[eDVBResourceManager] allocating shared demux adapter=%d, demux=%d, source=%d", a, d, i->m_demux->getSource());
-					demux = new eDVBAllocatedDemux(i);
-					return 0;
+					// take the first unused
+					//eDebug("\nallocate demux b = %d\n",n);
+					unused = i;
 				}
 			}
+			else if (i->m_adapter == fe->m_adapter && i->m_demux->getSource() == fe->m_frontend->getDVBID())
+			{
+				// take the demux allocated to the same
+				// frontend,  just create a new reference
+				demux = new eDVBAllocatedDemux(i);
+				//eDebug("\nallocate demux b = %d\n",n);
+				return 0;
+			}
 		}
-		if (use_decode_demux)
+		else if(n == ((int)m_demux.size() - 1))
 		{
-			++i;
-		}
-		else
-		{
-			if (i == m_demux.begin())
-				break;
-			--i;
+			// Always use the last demux for PVR
+			// it is assumed that the last demux is not
+			// attached to a frontend. That is, there
+			// should be one instance of dvr & demux
+			// devices more than of frontend devices.
+			// Otherwise, playback and timeshift might
+			// interfere recording.
+			if (i->m_inuse)
+			{
+				// just create a new reference
+				demux = new eDVBAllocatedDemux(i);
+				//eDebug("\nallocate demux c = %d\n",n);
+				return 0;
+			}
+			unused = i;
+			//eDebug("\nallocate demux d = %d\n", n);
+			break;
 		}
 	}
 #endif
@@ -1159,10 +1149,10 @@ RESULT eDVBResourceManager::allocateDemux(eDVBRegisteredFrontend *fe, ePtr<eDVBA
 	{
 		unused->m_demux->getCAAdapterID(a);
 		unused->m_demux->getCADemuxID(d);
-		eDebug("[eDVBResourceManager] allocating demux adapter=%d, demux=%d, source=%d fesource=%d", a, d, unused->m_demux->getSource(), fesource);
-		demux = new eDVBAllocatedDemux(unused);
+		eDebug("[eDVBResourceManager] allocating demux adapter=%d, demux=%d, source=%d fesource=%d", a, d, unused->m_demux->getSource(), fe ? fe->m_frontend->getDVBID() : -1);
+			demux = new eDVBAllocatedDemux(unused);
 		if (fe)
-			demux->get().setSourceFrontend(fesource);
+			demux->get().setSourceFrontend(fe->m_frontend->getDVBID());
 		else
 			demux->get().setSourcePVR(0);
 		return 0;
@@ -1202,14 +1192,14 @@ RESULT eDVBResourceManager::allocateChannel(const eDVBChannelID &channelid, eUse
 	if (!simulate && m_cached_channel)
 	{
 		eDVBChannel *cache_chan = (eDVBChannel*)&(*m_cached_channel);
-#ifndef HAVE_AMLOGIC
+//#ifndef HAVE_AMLOGIC
 		if(channelid==cache_chan->getChannelID())
 		{
 			eDebug("[eDVBResourceManager] use cached_channel");
 			channel = m_cached_channel;
 			return 0;
 		}
-#endif
+//#endif
 		m_cached_channel_state_changed_conn.disconnect();
 		m_cached_channel=0;
 		m_releaseCachedChannelTimer->stop();
