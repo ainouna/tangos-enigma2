@@ -185,7 +185,7 @@ public:
 
 #ifdef SPARK_RC_WORKAROUND
 		shutdown_rc_api();
-#end
+#endif
 	}
 
 	void add(const char* filename)
