@@ -2,8 +2,6 @@
 #define __smartptr_h
 
 #include "object.h"
-#include <stdio.h>
-#include <string.h>
 #include <lib/python/swig.h>
 
 inline void ptrAssert(void *p) { if (!p) *(unsigned long*)0=0; }
