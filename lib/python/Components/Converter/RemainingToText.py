@@ -59,6 +59,13 @@ class RemainingToText(Converter, object):
 					return "%s%d:%02d" % (prefix, hours, minutes)
 				elif self.type == self.IN_SECONDS:
 					return prefix+str(tsecs)
+#+++>
+				elif self.type == self.FOLLOW:
+					if remaining is not None:
+						return "in %d min" % (remaining / 60)
+					else:
+						return "%d min" % (duration / 60)
+#+++<
 				elif self.type == self.DEFAULT:
 					if remaining <= duration:
 						prefix = "+"
