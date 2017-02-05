@@ -18,6 +18,10 @@
 #define I2C_SLAVE_FORCE	0x0706
 #endif
 
+#ifndef SYS_DVBC_ANNEX_A
+#define SYS_DVBC_ANNEX_A SYS_DVBC_ANNEX_AC 
+#endif
+
 #define eDebugNoSimulate(x...) \
 	do { \
 		if (!m_simulate) \
@@ -670,11 +674,7 @@ int eDVBFrontend::openFrontend()
 		fe_info.frequency_max = 2200000;
 	}
 
-#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 6
 	m_multitype = m_delsys[SYS_DVBS] && (m_delsys[SYS_DVBT] || m_delsys[SYS_DVBC_ANNEX_A]);
-#else
-	m_multitype = m_delsys[SYS_DVBS] && (m_delsys[SYS_DVBT] || m_delsys[SYS_DVBC_ANNEX_AC]);
-#endif
 
 	if (!m_multitype)
 		m_type = feSatellite;
@@ -2757,11 +2757,7 @@ bool eDVBFrontend::setDeliverySystem(const char *type)
 	}
 	else if (!strcmp(type, "DVB-C"))
 	{
-#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 6
 		p[0].u.data = SYS_DVBC_ANNEX_A;
-#else
-		p[0].u.data = SYS_DVBC_ANNEX_AC;
-#endif
 		fetype = feCable;
 	}
 	else if (!strcmp(type, "ATSC"))
@@ -2891,15 +2887,11 @@ std::string eDVBFrontend::getCapabilities()
 		case SYS_ISDBS:		ss << " ISDBS"; break;
 		case SYS_ISDBT:		ss << " ISDBT"; break;
 		case SYS_UNDEFINED:	ss << " UNDEFINED"; break;
-#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 6
 		case SYS_DVBC_ANNEX_A:	ss << " DVBC_ANNEX_A"; break;
-		case SYS_DVBC_ANNEX_C:	ss << " DVBC_ANNEX_C"; break;
+//		case SYS_DVBC_ANNEX_C:	ss << " DVBC_ANNEX_C"; break;
 		case SYS_DVBT2:		ss << " DVBT2"; break;
-		case SYS_TURBO:		ss << " TURBO"; break;
-		case SYS_DTMB:		ss << " DTMB"; break;
-#else
-		case SYS_DVBC_ANNEX_AC:	ss << " DVBC_ANNEX_AC"; break;
-#endif
+//		case SYS_TURBO:		ss << " TURBO"; break;
+//		case SYS_DTMB:		ss << " DTMB"; break;
 		}
 	}
 
