@@ -1,7 +1,7 @@
 import os
 
 rcstype = None
-vfdsize = 8
+vfdsize = 16
 boxtype = None 
 if os.path.exists("/var/grun/grcstype"):
     with open ("/var/grun/grcstype", "r") as myconfigfile:
@@ -16,7 +16,10 @@ if os.path.exists("/var/grun/grcstype"):
 else:
     rcstype = open("/proc/stb/info/model").read().strip()
     boxtype = rcstype
-print "Detected: rcstype=%s, vfdsize=%d, boxtype=%s" % (rcstype,vfdsize,boxtype)
+    if os.path.exists("/proc/vfdlen"):
+        vfdsize = open("/proc/vfdlen").read().strip()
+
+print ">>Detected: rcstype=%s, vfdsize=%d, boxtype=%s" % (rcstype,vfdsize,boxtype)
 
 class ExtHardwareInfo:
     def get_rcstype(self):
