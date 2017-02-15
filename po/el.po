@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenPLI Enigma2 Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-28 01:27+0200\n"
+"POT-Creation-Date: 2017-02-14 20:04+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: MCelliot_g <mcelliot_g@hotmail.com>\n"
@@ -256,6 +256,10 @@ msgstr[1] "%d λεπτά"
 #, python-format
 msgid "%d minutes"
 msgstr "%d λεπτά"
+
+#, python-format
+msgid "%d ms"
+msgstr "%d ms"
 
 #, python-format
 msgid "%d pixel wide"
@@ -2675,6 +2679,9 @@ msgstr "Αρχικοποίηση συσκευής αποθήκευσης..."
 msgid "Input"
 msgstr "Μενού επιλογών"
 
+msgid "Input "
+msgstr "Εισαγωγή "
+
 msgid "Input device setup"
 msgstr "Ρύθμιση συσκευής εισόδου"
 
@@ -3835,6 +3842,15 @@ msgstr "Παρακαλώ περιμένετε, έλεγχος δικτύου..."
 msgid "Please wait while your network is restarting..."
 msgstr "Παρακαλώ περιμένετε, επανεκκίνηση δικτύου..."
 
+msgid "Please wait, restarting cardserver."
+msgstr "Παρακαλώ περιμένετε, επανεκκίνηση cardserver."
+
+msgid "Please wait, restarting softcam and cardserver."
+msgstr "Παρακαλώ περιμένετε, επανεκκίνηση softcam και cardserver."
+
+msgid "Please wait, restarting softcam."
+msgstr "Παρακαλώ περιμένετε, επανεκκίνηση softcam."
+
 msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε..."
 
@@ -4305,11 +4321,20 @@ msgstr "Επανεκκίνηση"
 msgid "Restart GUI now?"
 msgstr "Επανεκκίνηση της επιφάνειας χρήστη τώρα;"
 
+msgid "Restart both"
+msgstr "Επανεκκίνηση και των δύο"
+
+msgid "Restart cardserver"
+msgstr "Επανεκκίνηση cardserver"
+
 msgid "Restart enigma"
 msgstr "Επανεκκίνηση enigma"
 
 msgid "Restart network"
 msgstr "Eπανεκκίνηση δικτύου"
+
+msgid "Restart softcam"
+msgstr "Επανεκκίνηση softcam"
 
 msgid "Restart test"
 msgstr "Eπανεκκίνηση ελέγχου"
@@ -4600,8 +4625,14 @@ msgstr "Επιλογή"
 msgid "Select CAId"
 msgstr "Επιλογή CAId"
 
+msgid "Select Card Server"
+msgstr "Επιλογή Card Server"
+
 msgid "Select Channel"
 msgstr "Επιλογή Καναλιού"
+
+msgid "Select Softcam"
+msgstr "Επιλογή Softcam"
 
 msgid "Select a network adapter"
 msgstr "Επιλογή προσαρμογέα δικτύου"
@@ -5087,6 +5118,9 @@ msgstr "PIN έξυπνης κάρτας"
 
 msgid "Social/Political/Economics"
 msgstr "Κοινωνία/Πολιτική/Οικονομία"
+
+msgid "Softcam setup"
+msgstr "Ρυθμίσεις softcam"
 
 msgid "Softcam type"
 msgstr "Τύπος softcam"
@@ -5799,6 +5833,9 @@ msgstr ""
 "Αυτή η επιλογή επιτρέπει τη ρύθμιση του Χρωματικού Εύρους από το Αυτόματο σε "
 "RGB"
 
+msgid "This option can be useful for long HDMI cables."
+msgstr "Αυτή η επιλογή μπορεί να είναι χρήσιμη για μακριά καλώδια HDMI."
+
 msgid "This plugin is installed."
 msgstr "Αυτό το πρόσθετο είναι εγκατεστημένο."
 
@@ -6220,6 +6257,9 @@ msgstr "Χρήση"
 msgid "Use DHCP"
 msgstr "Χρήση DHCP"
 
+msgid "Use HDMI pre-emphasis"
+msgstr "Χρήση προέμφασης HDMI"
+
 msgid "Use TV remote control"
 msgstr "Χρήση τηλεχειριστηρίου TV"
 
@@ -6293,6 +6333,9 @@ msgstr "Χρήση σταθερής διεύθυνσης"
 #, python-format
 msgid "Using tuner %s"
 msgstr "Χρήση του tuner %s"
+
+msgid "VLAN connection"
+msgstr "Σύνδεση VLAN"
 
 msgid "VMGM (intro trailer)"
 msgstr "VMGM (εντός τρέιλερ)"
@@ -7327,6 +7370,9 @@ msgstr "χειροτεχνία"
 msgid "height"
 msgstr "ύψος"
 
+msgid "help..."
+msgstr "βοήθεια..."
+
 msgid "hide"
 msgstr "απόκρυψη"
 
@@ -7981,6 +8027,151 @@ msgstr "μετάβαση και εγγραφή"
 msgid "zapped"
 msgstr "έγινε μετάβαση"
 
+msgid "[REC]"
+msgstr "[ΕΓΓΡ]"
+
+msgid "Audio"
+msgstr "Ήχος"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "C"
+msgstr "C"
+
+msgid "D"
+msgstr "D"
+
+msgid "Extensions"
+msgstr "Επεκτάσεις"
+
+msgid "Info bar"
+msgstr "Μπάρα πληροφοριών"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "Timeshift"
+msgstr "Χρονομετατόπιση"
+
+msgid "REC"
+msgstr "ΕΓΓΡ"
+
+msgid "Check the internet connection"
+msgstr "Ελέγξτε τη σύνδεση στο διαδύκτιο"
+
+msgid "Check the internet connection again"
+msgstr "Ελέγξτε τη σύνδεση στο διαδίκτυο εκ νέου"
+
+msgid "Checking the internet connection"
+msgstr "Έλεγχος της σύνδεσης στο διαδίκτυο"
+
+msgid "Do you want to do a service scan?"
+msgstr "Θέλετε να γίνει ανίχνευση υπηρεσιών;"
+
+msgid "Do you want to do another manual service scan?"
+msgstr "Θέλετε να γίνει μία ακόμα χειροκίνητη ανίχνευση;"
+
+msgid "Do you want to install a channel list?"
+msgstr "Θέλετε να γίνει εγκατάσταση μιας λίστας καναλιών;"
+
+msgid "Exit the wizard"
+msgstr "Έξοδος από τον οδηγό"
+
+msgid "Please connect your receiver to the internet"
+msgstr "Παρακαλώ συνδέστε το δέκτη σας στο διαδίκτυο"
+
+msgid "Please set up tuner A"
+msgstr "Παρακαλώ ρυθμίστε το tuner A"
+
+msgid "Please set up tuner B"
+msgstr "Παρακαλώ ρυθμίστε το tuner B"
+
+msgid "Please set up tuner C"
+msgstr "Παρακαλώ ρυθμίστε το tuner C"
+
+msgid "Please set up tuner D"
+msgstr "Παρακαλώ ρυθμίστε το tuner D"
+
+msgid "Please set up tuner E"
+msgstr "Παρακαλώ ρυθμίστε το tuner E"
+
+msgid "Please set up tuner F"
+msgstr "Παρακαλώ ρυθμίστε το tuner F"
+
+msgid "Please set up tuner G"
+msgstr "Παρακαλώ ρυθμίστε το tuner G"
+
+msgid "Please set up tuner H"
+msgstr "Παρακαλώ ρυθμίστε το tuner H"
+
+msgid "Please set up tuner I"
+msgstr "Παρακαλώ ρυθμίστε το tuner I"
+
+msgid "Please set up tuner J"
+msgstr "Παρακαλώ ρυθμίστε το tuner J"
+
+msgid "Please set up tuner K"
+msgstr "Παρακαλώ ρυθμίστε το tuner K"
+
+msgid ""
+"Skip internet connection check (disables automatic package installation)"
+msgstr ""
+"Παράλειψη ελέγχου σύνδεσης στο διαδίκτυο (απενεργοποιεί την αυτόματη "
+"εγκατάσταση πακέτων)"
+
+msgid ""
+"Thank you for using the wizard. Your receiver is now ready for use.\n"
+"Press OK to start using your receiver."
+msgstr ""
+"Σας ευχαριστούμε που χρησιμοποιήσατε τον οδηγό. Ο δέκτης σας είναι πλέον "
+"έτοιμος για χρήση.\n"
+"Παρακαλώ πιέστε ΟΚ για να ξεκινήσετε."
+
+msgid ""
+"Use the up/down keys on your remote control to select an option. After that, "
+"press OK."
+msgstr ""
+"Πιέστε τα πλήκτρα πάνω/κάτω του τηλεχειριστηρίου για επιλογή. Μετά, πιέστε "
+"ΟΚ."
+
+msgid "Use the wizard to set up basic features"
+msgstr "Χρήση οδηγού για τις απλές ρυθμίσεις"
+
+msgid ""
+"Welcome.\n"
+"\n"
+"This start wizard will guide you through the basic setup of your receiver.\n"
+"Press the OK button on your remote control to move to the next step."
+msgstr ""
+"Καλώς ήρθατε. \n"
+"\n"
+"Αυτός ο οδηγός εκκίνησης θα σας καθοδηγήσει στις βασικές ρυθμίσεις του δέκτη "
+"σας.\n"
+"Πατήστε το πλήκτρο OK στο τηλεχειριστήριο για να προχωρήσετε στο επόμενο "
+"βήμα."
+
+msgid "What do you want to scan?"
+msgstr "Τι θέλετε να ανιχνεύσετε;"
+
+msgid "Would you like to install a softcam?"
+msgstr "Θέλετε να εγκαταστήσετε ένα Softcam;"
+
+msgid "Yes, do a manual scan now"
+msgstr "Ναι, να γίνει χειροκίνητη ανίχνευση τώρα"
+
+msgid "Yes, do an automatic scan now"
+msgstr "Ναι, να γίνει αυτόματη ανίχνευση τώρα"
+
+msgid "Yes, do another manual scan now"
+msgstr "Ναι, να γίνει ακόμα μία χειροκίνητη ανίχνευση τώρα"
+
+msgid "®"
+msgstr "®"
+
+msgid "Rec"
+msgstr "Εγγρ."
+
 msgid "Convert ext3 filesystem to ext4"
 msgstr "Μετατροπή συστήματος αρχείων ext3 σε ext4"
 
@@ -8022,6 +8213,9 @@ msgstr "Χρονοδιακόπτης ύπνου"
 
 msgid "SoftCam / CI"
 msgstr "SoftCam / CI"
+
+msgid "Softcam setup..."
+msgstr "Ρυθμίσεις softcam..."
 
 msgid "Standby / restart"
 msgstr "Αναμονή / επανεκκίνηση"
@@ -9505,9 +9699,6 @@ msgstr "8"
 msgid "9"
 msgstr "9"
 
-msgid "Audio"
-msgstr "Ήχος"
-
 msgid "Channellist menu"
 msgstr "Μενού λίστας καναλιών"
 
@@ -9625,27 +9816,6 @@ msgstr "Καλώς ορίσατε..."
 msgid "config menu"
 msgstr "μενού ρύθμισης"
 
-msgid "help..."
-msgstr "βοήθεια..."
-
-msgid "Rec"
-msgstr "Εγγρ."
-
-msgid "[REC]"
-msgstr "[ΕΓΓΡ]"
-
-msgid "EtPortal"
-msgstr "EtPortal"
-
-msgid "®"
-msgstr "®"
-
-msgid "C"
-msgstr "C"
-
-msgid "D"
-msgstr "D"
-
 msgid "F"
 msgstr "F"
 
@@ -9664,132 +9834,38 @@ msgstr "J"
 msgid "TUNER:"
 msgstr "TUNER:"
 
-msgid "REC"
-msgstr "ΕΓΓΡ"
+msgid "EtPortal"
+msgstr "EtPortal"
 
-msgid "BER"
-msgstr "BER"
+msgid "Refresh rate selection."
+msgstr "Επιλογή συχνότητας ανανέωσης."
 
-msgid "Extensions"
-msgstr "Επεκτάσεις"
+msgid "Select refresh rate"
+msgstr "Επιλογή ρυθμού ανανέωσης"
 
-msgid "Info bar"
-msgstr "Μπάρα πληροφοριών"
+msgid "Select video input with up/down buttons"
+msgstr "Επιλογή εισόδου εικόνας με τα πλήκτρα πάνω/κάτω"
 
-msgid "SNR"
-msgstr "SNR"
-
-msgid "Timeshift"
-msgstr "Χρονομετατόπιση"
-
-msgid "Check the internet connection"
-msgstr "Ελέγξτε τη σύνδεση στο διαδύκτιο"
-
-msgid "Check the internet connection again"
-msgstr "Ελέγξτε τη σύνδεση στο διαδίκτυο εκ νέου"
-
-msgid "Checking the internet connection"
-msgstr "Έλεγχος της σύνδεσης στο διαδίκτυο"
-
-msgid "Do you want to do a service scan?"
-msgstr "Θέλετε να γίνει ανίχνευση υπηρεσιών;"
-
-msgid "Do you want to do another manual service scan?"
-msgstr "Θέλετε να γίνει μία ακόμα χειροκίνητη ανίχνευση;"
-
-msgid "Do you want to install a channel list?"
-msgstr "Θέλετε να γίνει εγκατάσταση μιας λίστας καναλιών;"
-
-msgid "Exit the wizard"
-msgstr "Έξοδος από τον οδηγό"
-
-msgid "Please connect your receiver to the internet"
-msgstr "Παρακαλώ συνδέστε το δέκτη σας στο διαδίκτυο"
-
-msgid "Please set up tuner A"
-msgstr "Παρακαλώ ρυθμίστε το tuner A"
-
-msgid "Please set up tuner B"
-msgstr "Παρακαλώ ρυθμίστε το tuner B"
-
-msgid "Please set up tuner C"
-msgstr "Παρακαλώ ρυθμίστε το tuner C"
-
-msgid "Please set up tuner D"
-msgstr "Παρακαλώ ρυθμίστε το tuner D"
-
-msgid "Please set up tuner E"
-msgstr "Παρακαλώ ρυθμίστε το tuner E"
-
-msgid "Please set up tuner F"
-msgstr "Παρακαλώ ρυθμίστε το tuner F"
-
-msgid "Please set up tuner G"
-msgstr "Παρακαλώ ρυθμίστε το tuner G"
-
-msgid "Please set up tuner H"
-msgstr "Παρακαλώ ρυθμίστε το tuner H"
-
-msgid "Please set up tuner I"
-msgstr "Παρακαλώ ρυθμίστε το tuner I"
-
-msgid "Please set up tuner J"
-msgstr "Παρακαλώ ρυθμίστε το tuner J"
-
-msgid "Please set up tuner K"
-msgstr "Παρακαλώ ρυθμίστε το tuner K"
+msgid "Select video mode"
+msgstr "Επιλογή λειτουργίας εικόνας"
 
 msgid ""
-"Skip internet connection check (disables automatic package installation)"
-msgstr ""
-"Παράλειψη ελέγχου σύνδεσης στο διαδίκτυο (απενεργοποιεί την αυτόματη "
-"εγκατάσταση πακέτων)"
-
-msgid ""
-"Thank you for using the wizard. Your receiver is now ready for use.\n"
-"Press OK to start using your receiver."
-msgstr ""
-"Σας ευχαριστούμε που χρησιμοποιήσατε τον οδηγό. Ο δέκτης σας είναι πλέον "
-"έτοιμος για χρήση.\n"
-"Παρακαλώ πιέστε ΟΚ για να ξεκινήσετε."
-
-msgid ""
-"Use the up/down keys on your remote control to select an option. After that, "
-"press OK."
-msgstr ""
-"Πιέστε τα πλήκτρα πάνω/κάτω του τηλεχειριστηρίου για επιλογή. Μετά, πιέστε "
-"ΟΚ."
-
-msgid "Use the wizard to set up basic features"
-msgstr "Χρήση οδηγού για τις απλές ρυθμίσεις"
-
-msgid ""
-"Welcome.\n"
+"Video input selection\n"
 "\n"
-"This start wizard will guide you through the basic setup of your receiver.\n"
-"Press the OK button on your remote control to move to the next step."
-msgstr ""
-"Καλώς ήρθατε. \n"
+"Please press OK if you can see this page on your TV (or select a different "
+"input port).\n"
 "\n"
-"Αυτός ο οδηγός εκκίνησης θα σας καθοδηγήσει στις βασικές ρυθμίσεις του δέκτη "
-"σας.\n"
-"Πατήστε το πλήκτρο OK στο τηλεχειριστήριο για να προχωρήσετε στο επόμενο "
-"βήμα."
+"The next input port will be automatically probed in 20 seconds."
+msgstr ""
+"Επιλογή εισόδου εικόνας\n"
+"\n"
+"Παρακαλώ πιέστε ΟΚ εάν μπορείτε να δείτε αυτή τη σελίδα στην TV (ή επιλέξτε "
+"διαφορετική είσοδο).\n"
+"\n"
+"Η επόμενη είσοδος εικόνας θα εμφανιστεί αυτόματα σε 20 δευτερόλεπτα."
 
-msgid "What do you want to scan?"
-msgstr "Τι θέλετε να ανιχνεύσετε;"
-
-msgid "Would you like to install a softcam?"
-msgstr "Θέλετε να εγκαταστήσετε ένα Softcam;"
-
-msgid "Yes, do a manual scan now"
-msgstr "Ναι, να γίνει χειροκίνητη ανίχνευση τώρα"
-
-msgid "Yes, do an automatic scan now"
-msgstr "Ναι, να γίνει αυτόματη ανίχνευση τώρα"
-
-msgid "Yes, do another manual scan now"
-msgstr "Ναι, να γίνει ακόμα μία χειροκίνητη ανίχνευση τώρα"
+msgid "Video mode selection."
+msgstr "Επιλογή λειτουργίας εικόνας"
 
 msgid "Configure interface"
 msgstr "Ρύθμιση διεπαφής"
@@ -9981,14 +10057,14 @@ msgstr ""
 
 msgid ""
 "You need a PC connected to your receiver. If you need further instructions, "
-"please visit the website http://www.dm7025.de.\n"
+"please visit the website https://openpli.org\n"
 "Your receiver will now be halted. After you have performed the update "
 "instructions from the website, your new firmware will ask you to restore "
 "your settings."
 msgstr ""
 "Απαιτείται ένα PC συνδεδεμένο με το δέκτη. Αν χρειάζεστε περισσότερες "
-"οδηγίες, παρακαλούμε επισκεφτείτε τον ιστότοπο http://www.dm7025.de. Ο "
-"δέκτης σας τώρα θα σταματήσει. Αν έχετε ακολουθήσει τις οδηγίες από τον "
+"οδηγίες, παρακαλούμε επισκεφτείτε τον ιστότοπο https://openpli.org\n"
+"Ο δέκτης σας τώρα θα παγώσει. Αν έχετε ακολουθήσει τις οδηγίες από τον "
 "ιστότοπο, το νέο υλικολογισμικό θα ζητήσει να επαναφέρετε τις ρυθμίσεις σας."
 
 msgid ""
@@ -10001,50 +10077,20 @@ msgstr ""
 msgid "Your receiver is shutting down. Please stand by..."
 msgstr "Ο δέκτης σας απενεργοποιείται. Παρακαλώ περιμένετε..."
 
-msgid "Refresh rate selection."
-msgstr "Επιλογή συχνότητας ανανέωσης."
-
-msgid "Select refresh rate"
-msgstr "Επιλογή ρυθμού ανανέωσης"
-
-msgid "Select video input with up/down buttons"
-msgstr "Επιλογή εισόδου εικόνας με τα πλήκτρα πάνω/κάτω"
-
-msgid "Select video mode"
-msgstr "Επιλογή λειτουργίας εικόνας"
-
-msgid ""
-"Video input selection\n"
-"\n"
-"Please press OK if you can see this page on your TV (or select a different "
-"input port).\n"
-"\n"
-"The next input port will be automatically probed in 20 seconds."
-msgstr ""
-"Επιλογή εισόδου εικόνας\n"
-"\n"
-"Παρακαλώ πιέστε ΟΚ εάν μπορείτε να δείτε αυτή τη σελίδα στην TV (ή επιλέξτε "
-"διαφορετική είσοδο).\n"
-"\n"
-"Η επόμενη είσοδος εικόνας θα εμφανιστεί αυτόματα σε 20 δευτερόλεπτα."
-
-msgid "Video mode selection."
-msgstr "Επιλογή λειτουργίας εικόνας"
+msgid "Audio:"
+msgstr "Ήχος:"
 
 msgid "Greek, Modern (1453-)"
 msgstr "Ελληνικά, Νέα (1453-)"
 
-msgid "Video:"
-msgstr "Βίντεο:"
-
-msgid "Audio:"
-msgstr "Ήχος:"
-
 msgid "Input Stream ID"
 msgstr "ID Ροής Εισόδου"
+
+msgid "PLS Code"
+msgstr "PLS Κωδικός"
 
 msgid "PLS Mode"
 msgstr "PLS Λειτουργία"
 
-msgid "PLS Code"
-msgstr "PLS Κωδικός"
+msgid "Video:"
+msgstr "Βίντεο:"
