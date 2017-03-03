@@ -23,7 +23,7 @@ class eServiceFactoryEPlayer3: public iServiceHandler
 public:
 	eServiceFactoryEPlayer3();
 	virtual ~eServiceFactoryEPlayer3();
-	enum { id = 0x1003 };
+	enum { id = 0x1001 };
 
 		// iServiceHandler
 	RESULT play(const eServiceReference &, ePtr<iPlayableService> &ptr);
