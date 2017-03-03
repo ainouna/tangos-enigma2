@@ -467,6 +467,8 @@ eServiceEPlayer3::eServiceEPlayer3(eServiceReference ref)
 				free(TrackList);
 			}*/
 		}
+		player->output.Open();
+		player->Play();
 		m_state = stRunning;
 		m_event(this, evStart);
 	}
