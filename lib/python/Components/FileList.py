@@ -64,7 +64,7 @@ def FileEntryComponent(name, absolute = None, isDir = False):
 	else:
 		extension = name.split('.')
 		extension = extension[-1].lower()
-		if EXTENSIONS.has_key(extension):
+		if extension in EXTENSIONS:
 			png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/" + EXTENSIONS[extension] + ".png"))
 		else:
 			png = None
@@ -300,7 +300,7 @@ def MultiFileSelectEntryComponent(name, absolute = None, isDir = False, selected
 	else:
 		extension = name.split('.')
 		extension = extension[-1].lower()
-		if EXTENSIONS.has_key(extension):
+		if extension in EXTENSIONS:
 			png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/" + EXTENSIONS[extension] + ".png"))
 		else:
 			png = None
@@ -343,7 +343,7 @@ class MultiFileSelectList(FileList):
 				realPathname = x[0][0]
 			else:
 				realPathname = self.current_directory + x[0][0]
-			if x[0][2] == True:
+			if x[0][2]:
 				SelectState = False
 				try:
 					self.selectedFiles.remove(realPathname)

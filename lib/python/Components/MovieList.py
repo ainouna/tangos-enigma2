@@ -617,7 +617,7 @@ class MovieList(GUIComponent):
 			return
 		realtags = set()
 		autotags = {}
-		rootPath = os.path.normpath(root.getPath());
+		rootPath = os.path.normpath(root.getPath())
 		parent = None
 		# Don't navigate above the "root"
 		if len(rootPath) > 1 and (os.path.realpath(rootPath) != os.path.realpath(config.movielist.root.value)):
@@ -655,7 +655,7 @@ class MovieList(GUIComponent):
 				# For auto tags, we are keeping a (tag, movies) dictionary.
 				#It will be used later to check if movies have a complete sentence in common.
 				for tag in this_tags:
-					if autotags.has_key(tag):
+					if tag in autotags:
 						autotags[tag].append(name)
 					else:
 						autotags[tag] = [name]
