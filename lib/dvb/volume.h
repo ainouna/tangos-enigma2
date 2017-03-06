@@ -26,11 +26,14 @@ private:
 	bool muted;
 	int leftVol, rightVol;
 	long min, max;
+	int m_volsteps;
 
 	int checkVolume(int vol);
 
 public:
 	static eDVBVolumecontrol* getInstance();
+
+	void setVolumeSteps(int steps);
 	void volumeUp(int left = eConfigManager::getConfigIntValue("config.usage.volumestep"), int right = eConfigManager::getConfigIntValue("config.usage.volumestep")); //j00zek
 	void volumeDown(int left = eConfigManager::getConfigIntValue("config.usage.volumestep"), int right = eConfigManager::getConfigIntValue("config.usage.volumestep")); //j00zek
 
