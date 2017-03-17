@@ -20,10 +20,6 @@
 #include <lib/dvb/streamserver.h>
 #include <lib/dvb/encoder.h>
 
-#ifndef TCP_USER_TIMEOUT
-#define TCP_USER_TIMEOUT        18
-#endif
-
 eStreamClient::eStreamClient(eStreamServer *handler, int socket, const std::string remotehost)
  : parent(handler), encoderFd(-1), streamFd(socket), streamThread(NULL), m_remotehost(remotehost)
 {
@@ -175,8 +171,10 @@ void eStreamClient::notifier(int what)
 				set_tcp_option(streamFd, TCP_KEEPINTVL, 10); // every 10 seconds
 				set_tcp_option(streamFd, TCP_KEEPIDLE, 1);	// after 1 second of idle
 				set_tcp_option(streamFd, TCP_KEEPCNT, 2);	// drop connection after second miss
+#ifdef TCP_USER_TIMEOUT
 				/* also set 10 seconds data push timeout */
 				set_tcp_option(streamFd, TCP_USER_TIMEOUT, 10 * 1000);
+#endif
 
 				if (serviceref.substr(0, 10) == "file?file=") /* convert openwebif stream reqeust back to serviceref */
 					serviceref = "1:0:1:0:0:0:0:0:0:0:" + serviceref.substr(10);
