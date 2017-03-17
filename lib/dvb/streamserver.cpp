@@ -20,6 +20,10 @@
 #include <lib/dvb/streamserver.h>
 #include <lib/dvb/encoder.h>
 
+#ifndef TCP_USER_TIMEOUT
+#define TCP_USER_TIMEOUT        18
+#endif
+
 eStreamClient::eStreamClient(eStreamServer *handler, int socket, const std::string remotehost)
  : parent(handler), encoderFd(-1), streamFd(socket), streamThread(NULL), m_remotehost(remotehost)
 {
