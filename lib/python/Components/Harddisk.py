@@ -1,7 +1,7 @@
 import os
 import time
 from os import system, listdir, statvfs, popen, makedirs, stat, major, minor, path, access
-from Tools.Directories import SCOPE_HDD, resolveFilename, pathExists
+from Tools.Directories import SCOPE_HDD, resolveFilename, pathExists, fileExists
 from Tools.CList import CList
 from Tools.HardwareInfo import HardwareInfo
 from SystemInfo import SystemInfo
@@ -9,10 +9,13 @@ from Components.Console import Console
 import Task
 
 def readFile(filename):
-    file = open(filename)
-    data = file.read().strip()
-    file.close()
-    return data
+    if fileExists(filename):
+      file = open(filename)
+      data = file.read().strip()
+      file.close()
+      return data
+    else:
+      return ""
 
 
 def getProcMounts():
