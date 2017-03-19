@@ -276,16 +276,8 @@ class TryQuitMainloop(MessageBox):
 			self.hide()
 			if self.retval == 1:
 				config.misc.DeepStandby.value = True
-				if not inStandby:
-					if os.path.exists("/usr/script/standby_enter.sh"):
-						Console().ePopen("/usr/script/standby_enter.sh")
-					if HardwareInfo().has_hdmi() and config.hdmicec.enabled.value and config.hdmicec.control_tv_standby.value and config.hdmicec.next_boxes_detect.value:
-						import Components.HdmiCec
-						Components.HdmiCec.hdmi_cec.secondBoxActive()
-						self.delay = eTimer()
-						self.delay.timeout.callback.append(self.quitMainloop)
-						self.delay.start(1500, True)
-						return
+				if os.path.exists("/usr/script/standby_enter.sh"):
+					Console().ePopen("/usr/script/standby_enter.sh")
 			elif not inStandby:
 				config.misc.RestartUI.value = True
 				config.misc.RestartUI.save()
