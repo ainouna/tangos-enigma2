@@ -651,13 +651,15 @@ class HarddiskManager():
 
     def getBlockDevInfo(self, blockdev):
         devpath = '/sys/block/' + blockdev
+        rempath = devpath + '/removable'
         error = False
         removable = False
         blacklisted = False
         is_cdrom = False
         partitions = []
         try:
-            removable = bool(int(readFile(devpath + '/removable')))
+            if os.path.exists(rempath):
+                removable = bool(int(readFile(rempath)))
             dev = int(readFile(devpath + '/dev').split(':')[0])
             if dev in (7, 31, 253):
                 blacklisted = True
